@@ -34,6 +34,9 @@
 # Ignore folder named '.vs'
 .vs/
 
+# Ignore folder named 'cmake-build-debug'
+cmake-build-debug/
+
 # Ignore all .lastbuildstate files
 *.lastbuildstate
 

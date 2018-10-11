@@ -36,3 +36,6 @@
 
 # Ignore all .lastbuildstate files
 *.lastbuildstate
+
+# Ignore all .sqlite files
+*.sqlite

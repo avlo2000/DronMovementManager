@@ -33,3 +33,6 @@
 
 # Ignore folder named '.vs'
 .vs/
+
+# Ignore all .lastbuildstate files
+*.lastbuildstate

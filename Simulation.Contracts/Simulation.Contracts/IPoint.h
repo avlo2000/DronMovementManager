@@ -11,6 +11,6 @@ public:
 	double rotSpeed; //in radians per second
 	double x, y, z;
 	virtual void Move(double time) {};
-	virtual void Rotate(double time) {};
+	virtual void Rotate(double time, double x, double y, double z) {};
 };
 

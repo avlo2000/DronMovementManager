@@ -1,4 +1,5 @@
 #include "Point.h"
+#include <iostream>
 
 Point::Point()
 {
@@ -16,7 +17,7 @@ Point::Point(double x, double y, double z)
 
 void Point::SetInstSpeed(Vector3d speed)
 {
-	instSpeed = speed;
+	this->instSpeed = speed;
 }
 
 void Point::SetRotation(Vector3d centre, double rotSpeed)
@@ -27,16 +28,20 @@ void Point::SetRotation(Vector3d centre, double rotSpeed)
 
 void Point::Move(double time)
 {
-	x = instSpeed.x * time;
-	y = instSpeed.y * time;
-	z = instSpeed.z * time;
+	this->x = this->instSpeed.x * time;
+	this->y = this->instSpeed.y * time;
+	this->z = this->instSpeed.z * time;
 }
 
-void Point::Rotate(double time)
-{
+	void Point::Rotate(double time, double x, double y, double z) {
+	Vector3d rotAxis(x - this->x, y - this->y, z - this->z);
 	double angle = this->rotSpeed * time;
-
-	//TO DO
+	Vector3d vPoint(this->x, this->y, this->z);
+	Affine3d A = Translation3d(this->rotationCentre) * AngleAxisd(angle, rotAxis) * Translation3d(-this->rotationCentre);
+	vPoint = A.matrix() * vPoint;
+	this->x = vPoint.x;
+	this->y = vPoint.y;
+	this->z = vPoint.z;
 }
 
 

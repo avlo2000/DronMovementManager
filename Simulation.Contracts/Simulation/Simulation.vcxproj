@@ -85,7 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\Simulation.Contracts\Simulation.Contracts;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\DronMovementManagerVs\Simulation.Contracts\Simulation.Contracts;C:\Users\SSJ\source\repos\DronMovementManagerVs\third_party\eigen</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

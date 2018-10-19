@@ -36,9 +36,9 @@ void Point::Move(double time)
 void Point::Rotate(double time, double x, double y, double z) {
 	Vector3d rotAxis(x - this->x, y - this->y, z - this->z);
 	double angle = this->rotSpeed * time;
-	Vector3d vPoint(this->x, this->y, this->z);
+	Vector4d vPoint(this->x, this->y, this->z, 0.0);
 	Affine3d A = Translation3d(this->rotationCentre) * AngleAxisd(angle, rotAxis) * Translation3d(-this->rotationCentre);
-	vPoint = A.matrix().cwiseProduct(vPoint);
+	vPoint = (A.matrix() * vPoint);
 	this->x = vPoint.x();
 	this->y = vPoint.y();
 	this->z = vPoint.z();

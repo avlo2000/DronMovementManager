@@ -1,6 +1,7 @@
 #include "IPoint.h"
 
-class Point : IPoint
+class Point :
+	public IPoint
 {
 public:
 	explicit Point();

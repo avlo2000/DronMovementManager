@@ -1,5 +1,5 @@
-#pragma once
 #include "Point.h"
+
 class ForcePoint :
 	public Point
 {

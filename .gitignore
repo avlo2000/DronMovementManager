@@ -44,3 +44,4 @@ cmake-build-debug/
 *.sqlite
 /Simulation.Contracts/Simulation/Debug/Simulation.Build.CppClean.log
 /Simulation.Contracts/Simulation/Debug/Simulation.log
+/Simulation.Contracts/Simulation/Debug/Simulation.tlog

@@ -42,3 +42,6 @@ cmake-build-debug/
 
 # Ignore all .sqlite files
 *.sqlite
+/Simulation.Contracts/Simulation/Debug/Simulation.Build.CppClean.log
+/Simulation.Contracts/Simulation/Debug/Simulation.log
+/Simulation.Contracts/Simulation/Debug/Simulation.tlog

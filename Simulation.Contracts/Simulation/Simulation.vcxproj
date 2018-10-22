@@ -124,11 +124,15 @@
   <ItemGroup>
     <ClInclude Include="ForcePoint.h" />
     <ClInclude Include="MassPoint.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ForcePoint.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MassPoint.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

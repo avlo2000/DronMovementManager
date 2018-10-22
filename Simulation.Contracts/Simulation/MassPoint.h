@@ -1,17 +1,27 @@
 #pragma once
 #include "Point.h"
-class MassPoint :
-	public Point
+
+namespace Simulator
 {
-private:
-	double mass;
-public:
-	using Point::Point;
-	explicit MassPoint(double mass, double x, double y, double z)
-		: Point(x, y, z)
+
+	class MassPoint : public Point
 	{
-		this->mass = mass;
+	private:
+		double _mass;
+	public:
+		explicit MassPoint()
+			: Point()
+		{
+			this->_mass = 0;
+		}
+		explicit MassPoint(double mass, double x, double y, double z)
+			: Point(x, y, z)
+		{
+			this->_mass = mass;
+		};
+		double GetMass();
+		~MassPoint();
 	};
-	~MassPoint();
-};
+
+}
 

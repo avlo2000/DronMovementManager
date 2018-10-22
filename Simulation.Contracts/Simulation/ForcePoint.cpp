@@ -1,5 +1,11 @@
+#pragma once
 #include "ForcePoint.h"
 
-ForcePoint::~ForcePoint()
+namespace Simulator
 {
+
+	ForcePoint::~ForcePoint()
+	{
+	}
+
 }

@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ForcePoint.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MassPoint.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Point.cpp" />

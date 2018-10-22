@@ -2,13 +2,15 @@
 #include "IPoint.h"
 
 using namespace std;
+using namespace Contracts;
 
-
-class IObject
+namespace Contracts 
 {
-protected:
-	IPoint _massCentre;
-public:
-	virtual void Move(double timeStep) {};
-};
 
+	class IObject
+	{
+	public:
+		virtual void Move(double timeStep) {};
+	};
+
+}

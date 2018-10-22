@@ -1,10 +1,16 @@
+#pragma once
 #include "MassPoint.h"
 
-double MassPoint::GetMass()
+namespace Simulator
 {
-	return _mass;
-}
 
-MassPoint::~MassPoint()
-{
+	double MassPoint::GetMass()
+	{
+		return _mass;
+	}
+
+	MassPoint::~MassPoint()
+	{
+	}
+
 }

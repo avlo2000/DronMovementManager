@@ -55,7 +55,7 @@ namespace Simulator
 	void Point::Rotate(double time, double x, double y, double z) {
 		Vector3d rotAxis(x - this->x, y - this->y, z - this->z);
 		double angle = this->rotSpeed * time;
-		Vector4d vPoint(this->x, this->y, this->z, 0.0);
+		Vector4d vPoint(this->x, this->y, this->z, 1.0);
 		Affine3d A = Translation3d(this->rotationCentre) * AngleAxisd(angle, rotAxis) * Translation3d(-this->rotationCentre);
 		vPoint = (A.matrix() * vPoint);
 		this->x = vPoint.x();

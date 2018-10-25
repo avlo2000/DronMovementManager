@@ -21,8 +21,10 @@ namespace Simulator
 		double _inertMoment;
 
 		void Init();
+		pair<Vector3d, Vector3d> GetForceComponents(int fPointIndex);
 	public:
 		Object(vector<MassPoint> mPoints, vector<ForcePoint> fPoints);
+		void PowerToPoint(int fPointIndex, double power);
 		~Object();
 	};
 

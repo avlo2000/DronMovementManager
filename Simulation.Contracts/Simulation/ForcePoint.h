@@ -1,5 +1,6 @@
 #pragma once
 #include "Point.h"
+#include "Utils.h"
 
 namespace Simulator
 {
@@ -8,18 +9,24 @@ namespace Simulator
 		public Point
 	{
 	private:
-		Vector3d force;
+		Vector3d _force;
+		bool _isActive;
 	public:
 		explicit ForcePoint()
 			: Point()
 		{
-			this->force = Vector3d(0, 0, 0);
+			this->_force = Vector3d(0, 0, 0);
+			this->_isActive = false;
 		};
 		explicit ForcePoint(Vector3d force, double x, double y, double z)
 			: Point(x, y, z)
 		{
-			this->force = force;
+			this->_force = force;
 		};
+		void SetForce(double force);
+		Vector3d GetForce();
+		void Activate();
+		void Disactivate();
 		~ForcePoint();
 	};
 

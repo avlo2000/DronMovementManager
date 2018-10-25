@@ -29,12 +29,31 @@ namespace Simulator
 
 	}
 
+	pair<Vector3d, Vector3d> Object::GetForceComponents(int fPointIndex)
+	{
+		Vector3d axis(this->_fPoints[fPointIndex].X() - this->_massCentre.X(),
+			this->_fPoints[fPointIndex].Y() - this->_massCentre.Y(), 
+			this->_fPoints[fPointIndex].Z() - this->_massCentre.Z());
+
+		Vector3d instForce = PrjVecOnVec(this->_fPoints[fPointIndex].GetForce(), axis);
+		Vector3d rotateForce = _fPoints[fPointIndex].GetForce() - instForce;
+
+		return pair<Vector3d, Vector3d>(instForce, rotateForce);
+	}
+
 	Object::Object(vector<MassPoint> mPoints, vector<ForcePoint> fPoints)
 	{
 		this->_fPoints = fPoints;
 		this->_mPoints = mPoints;
 
 		this->Init();
+	}
+
+	void Object::PowerToPoint(int fPointIndex, double power)
+	{
+		//TO DO
+
+		this->_fPoints.at(fPointIndex).Activate();
 	}
 
 	Object::~Object()

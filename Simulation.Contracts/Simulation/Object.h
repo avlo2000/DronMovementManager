@@ -18,6 +18,7 @@ namespace Simulator
 		vector<ForcePoint> _fPoints;
 		vector<MassPoint> _mPoints;
 		MassPoint _massCentre;
+		Vector3d _instSpeed; 
 		double _inertMoment;
 
 		void Init();
@@ -25,6 +26,7 @@ namespace Simulator
 	public:
 		Object(vector<MassPoint> mPoints, vector<ForcePoint> fPoints);
 		void PowerToPoint(int fPointIndex, double power);
+		void Move(double time);
 		~Object();
 	};
 

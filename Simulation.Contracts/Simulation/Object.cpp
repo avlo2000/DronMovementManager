@@ -51,9 +51,38 @@ namespace Simulator
 
 	void Object::PowerToPoint(int fPointIndex, double power)
 	{
-		//TO DO
+		this->_fPoints[fPointIndex].SetForce(power);
+
+		pair<Vector3d, Vector3d> forceComponents = GetForceComponents(fPointIndex);
+		
+		Vector3d instComponent = forceComponents.first;
+		Vector3d rotComponent = forceComponents.second;
+
+		this->_instSpeed += instComponent;
+
+		//to do rotatiom impuls
 
 		this->_fPoints.at(fPointIndex).Activate();
+	}
+
+	void Object::Move(double time)
+	{
+		for (auto point = this->_fPoints.begin(); point < this->_fPoints.end(); point++)
+		{
+			(*point).X(time * this->_instSpeed.x());
+			(*point).Y(time * this->_instSpeed.y());
+			(*point).Z(time * this->_instSpeed.z());
+
+			//to do rotation movement
+		}
+
+		for (auto point = this->_mPoints.begin(); point < this->_mPoints.end(); point++)
+		{
+			(*point).X(time * this->_instSpeed.x());
+			(*point).Y(time * this->_instSpeed.y());
+			(*point).Z(time * this->_instSpeed.z());
+			//to do rotation movement
+		}
 	}
 
 	Object::~Object()

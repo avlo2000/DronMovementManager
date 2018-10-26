@@ -15,6 +15,9 @@ namespace Simulator
 		double X();
 		double Y();
 		double Z();
+		void X(double x);
+		void Y(double y);
+		void Z(double z);
 		explicit Point();
 		explicit Point(double x, double y, double z);
 		void SetInstSpeed(Vector3d speed);

@@ -20,6 +20,21 @@ namespace Simulator
 		return z;
 	}
 
+	void Point::X(double x)
+	{
+		this->x = x;
+	}
+
+	void Point::Y(double y)
+	{
+		this->y = y;
+	}
+
+	void Point::Z(double z)
+	{
+		this->z = z;
+	}
+
 	Point::Point()
 	{
 		x = 0;

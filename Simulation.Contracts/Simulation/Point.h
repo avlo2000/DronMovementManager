@@ -6,8 +6,7 @@ using namespace Contracts;
 namespace Simulator 
 {
 
-	class Point :
-		public Contracts::IPoint
+	class Point : public IPoint
 	{
 	protected:
 		double x, y, z;

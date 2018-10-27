@@ -46,3 +46,4 @@ cmake-build-debug/
 /Simulation.Contracts/Simulation/Debug/Simulation.log
 /Simulation.Contracts/Simulation/Debug/Simulation.tlog
 /Simulation.Contracts/Debug
+/Simulation.Contracts/SimulationTests/Debug

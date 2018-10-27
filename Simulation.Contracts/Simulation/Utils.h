@@ -20,4 +20,10 @@ namespace Simulator
 		double corrCoef = prjLen / GetVecLength(targetVec);
 		return Vector3d(corrCoef * targetVec.x(), corrCoef * targetVec.y(), corrCoef * targetVec.z());
 	}
+
+	inline Vector3d InstSpeedFromImpuls(double mass, Vector3d currentSpeed, Vector3d force, double time)
+	{
+		Vector3d resultSpeed = (mass * currentSpeed - force * time) / mass;
+		return resultSpeed;
+	}
 }

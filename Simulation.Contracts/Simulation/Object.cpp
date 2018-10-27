@@ -49,16 +49,20 @@ namespace Simulator
 		this->Init();
 	}
 
-	void Object::PowerToPoint(int fPointIndex, double power)
+	void Object::PowerToPoint(int fPointIndex, double force, double forceDuration)
 	{
-		this->_fPoints[fPointIndex].SetForce(power);
+		this->_fPoints[fPointIndex].SetForce(force);
 
 		pair<Vector3d, Vector3d> forceComponents = GetForceComponents(fPointIndex);
 		
 		Vector3d instComponent = forceComponents.first;
 		Vector3d rotComponent = forceComponents.second;
 
-		this->_instSpeed += instComponent;
+		this->_instSpeed = InstSpeedFromImpuls(this->_massCentre.GetMass(),
+			this->_instSpeed, instComponent, forceDuration);
+
+		for (auto point = this->_fPoints.begin(); point < this->_fPoints.end(); point++)
+			(*point).instSpeed = this->_instSpeed;
 
 		//to do rotatiom impuls
 
@@ -69,20 +73,20 @@ namespace Simulator
 	{
 		for (auto point = this->_fPoints.begin(); point < this->_fPoints.end(); point++)
 		{
-			(*point).X(time * this->_instSpeed.x());
-			(*point).Y(time * this->_instSpeed.y());
-			(*point).Z(time * this->_instSpeed.z());
-
+			(*point).Move(time);
 			//to do rotation movement
 		}
 
 		for (auto point = this->_mPoints.begin(); point < this->_mPoints.end(); point++)
 		{
-			(*point).X(time * this->_instSpeed.x());
-			(*point).Y(time * this->_instSpeed.y());
-			(*point).Z(time * this->_instSpeed.z());
+			(*point).Move(time);
 			//to do rotation movement
 		}
+	}
+
+	double Object::GetInertMoment()
+	{
+		return this->_inertMoment;
 	}
 
 	Object::~Object()

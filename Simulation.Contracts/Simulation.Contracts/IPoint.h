@@ -13,7 +13,7 @@ namespace Contracts
 		Vector3d instSpeed;
 		double rotSpeed; //in radians per second
 		virtual void Move(double time) {};
-		virtual void Rotate(double time, double x, double y, double z) {};
+		virtual void Rotate(double time) {};
 	};
 
 }

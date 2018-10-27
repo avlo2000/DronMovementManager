@@ -26,4 +26,18 @@ namespace Simulator
 		Vector3d resultSpeed = (mass * currentSpeed - force * time) / mass;
 		return resultSpeed;
 	}
+
+	inline double RotationSpeedFromRotImpuls(double inertMoment, Vector3d moment, double time)
+	{
+		double rotSpeed = inertMoment * GetVecLength(moment) * time;
+		return rotSpeed;
+	}
+
+	inline Vector3d GetPerpendicularVec(Vector3d vec1, Vector3d vec2)
+	{
+		double y = -(vec2.z() / (vec2.y() - ((vec1.y() + vec1.z() / vec1.x()))));
+		double x = -((y * vec1.y() + vec1.z()) / vec1.x());
+		double z = 1;
+		return Vector3d(x, y, z);
+	}
 }

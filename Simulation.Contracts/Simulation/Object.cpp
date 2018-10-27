@@ -58,29 +58,55 @@ namespace Simulator
 		Vector3d instComponent = forceComponents.first;
 		Vector3d rotComponent = forceComponents.second;
 
+		//Instante speed change
+		//--------------------
 		this->_instSpeed = InstSpeedFromImpuls(this->_massCentre.GetMass(),
 			this->_instSpeed, instComponent, forceDuration);
+		//---------------------
 
-		for (auto point = this->_fPoints.begin(); point < this->_fPoints.end(); point++)
-			(*point).instSpeed = this->_instSpeed;
 
-		//to do rotatiom impuls
+		//Object rotation change
+		//--------------------
+		Vector3d centre_fpoint(this->_fPoints[fPointIndex].X() - this->_massCentre.X(),
+			this->_fPoints[fPointIndex].Y() - this->_massCentre.Y(),
+			this->_fPoints[fPointIndex].Z() - this->_massCentre.Z());
 
-		this->_fPoints.at(fPointIndex).Activate();
+		Rotation newRotation;
+		newRotation.AxisPoint = this->_massCentre;
+		newRotation.AxisVector = GetPerpendicularVec(rotComponent, centre_fpoint);
+
+		double forceRadius = sqrt(SqrDistance(this->_massCentre, _fPoints[fPointIndex]));
+		Vector3d moment = forceRadius * rotComponent;
+		newRotation.AngleSpeed = RotationSpeedFromRotImpuls(this->_inertMoment, moment, forceDuration);
+
+		this->_rotations.push_back(newRotation);
+		//--------------------
 	}
 
-	void Object::Move(double time)
+	void Object::MoveAndRotate(double time)
 	{
 		for (auto point = this->_fPoints.begin(); point < this->_fPoints.end(); point++)
 		{
+			(*point).SetInstSpeed(this->_instSpeed);
 			(*point).Move(time);
-			//to do rotation movement
+			
+			for (Rotation rotation : this->_rotations)
+			{
+				(*point).SetRotation(rotation.AxisVector, rotation.AxisPoint, rotation.AngleSpeed);
+				(*point).Rotate(time);
+			}
 		}
 
 		for (auto point = this->_mPoints.begin(); point < this->_mPoints.end(); point++)
 		{
+			(*point).SetInstSpeed(this->_instSpeed);
 			(*point).Move(time);
-			//to do rotation movement
+
+			for (Rotation rotation : this->_rotations)
+			{
+				(*point).SetRotation(rotation.AxisVector, rotation.AxisPoint, rotation.AngleSpeed);
+				(*point).Rotate(time);
+			}
 		}
 	}
 

@@ -80,6 +80,7 @@ namespace Simulator
 	}
 	Point::~Point()
 	{
+		delete this->axesPoint;
 	}
 
 }

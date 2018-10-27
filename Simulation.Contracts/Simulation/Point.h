@@ -11,7 +11,7 @@ namespace Simulator
 	protected:
 		double x, y, z;
 		Vector3d axesVector;
-		Point *axesPoint;
+		Point *axesPoint;	
 	public:
 		double X();
 		double Y();
@@ -23,7 +23,7 @@ namespace Simulator
 		explicit Point(double x, double y, double z);
 		void SetInstSpeed(Vector3d speed);
 		void SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed);
-		void Move(double time);
+		void Move(double time);		
 		void Rotate(double time);
 		~Point();
 	};

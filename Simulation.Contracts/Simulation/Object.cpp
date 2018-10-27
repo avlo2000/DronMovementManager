@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "Utils.h"
+#include <iostream>
 
 namespace Simulator
 {
@@ -25,7 +26,10 @@ namespace Simulator
 		this->_massCentre = MassPoint(mass, xSum / mass, ySum / mass, zSum / mass);
 
 		for (auto mPoint : this->_mPoints)
+		{
+			double d = SqrDistance(this->_massCentre, mPoint);
 			this->_inertMoment += mPoint.GetMass() * SqrDistance(this->_massCentre, mPoint);
+		}
 
 	}
 
@@ -85,6 +89,9 @@ namespace Simulator
 
 	void Object::MoveAndRotate(double time)
 	{
+		this->_massCentre.SetInstSpeed(this->_instSpeed);
+		this->_massCentre.Move(time);
+
 		for (auto point = this->_fPoints.begin(); point < this->_fPoints.end(); point++)
 		{
 			(*point).SetInstSpeed(this->_instSpeed);
@@ -113,6 +120,18 @@ namespace Simulator
 	double Object::GetInertMoment()
 	{
 		return this->_inertMoment;
+	}
+
+	void Object::LogInfo(ostream& out)
+	{
+		out << "Instanse speed vector: " << this->_instSpeed.x() << " "
+			<< this->_instSpeed.y() << " "
+			<< this->_instSpeed.z() << endl;
+		out << "Moment of inertion: " << this->_inertMoment << endl;
+		out << "Position of centre of mass: " << this->_massCentre.X() << " "
+			<< this->_massCentre.Y()<<" "
+			<< this->_massCentre.Z() << endl;
+		out << endl;
 	}
 
 	Object::~Object()

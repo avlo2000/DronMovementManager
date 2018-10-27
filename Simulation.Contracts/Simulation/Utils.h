@@ -1,6 +1,6 @@
 #pragma once
 #include"Point.h"
-#define SQR(x) x*x
+#define SQR(x) pow(x, 2.0)
 
 namespace Simulator
 {

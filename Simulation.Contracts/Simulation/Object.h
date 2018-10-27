@@ -32,6 +32,7 @@ namespace Simulator
 		void PowerToPoint(int fPointIndex, double force, double forceDuration);
 		void MoveAndRotate(double time);
 		double GetInertMoment();
+		void LogInfo(ostream& out);
 		~Object();
 	};
 

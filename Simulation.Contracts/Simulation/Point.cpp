@@ -57,7 +57,7 @@ namespace Simulator
 	void Point::SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed)
 	{
 		this->axesVector = axesVector;
-		*this->axesPoint = axesPoint;
+		this->axesPoint = &axesPoint;
 		this->rotSpeed = rotSpeed;
 	}
 
@@ -80,7 +80,6 @@ namespace Simulator
 	}
 	Point::~Point()
 	{
-		delete this->axesPoint;
 	}
 
 }

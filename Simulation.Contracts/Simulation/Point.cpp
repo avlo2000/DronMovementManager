@@ -57,8 +57,8 @@ namespace Simulator
 		double angle = this->rotSpeed * time;
 		Vector4d point(this->x, this->y, this->z, 1.0);
 		Vector3d currentAxesPoint(this->axesPoint->X(), this->axesPoint->Y(), this->axesPoint->Z());
-		Affine3d A = Translation3d(currentAxesPoint) * AngleAxisd(angle, this->axesVector) * Translation3d(-currentAxesPoint);
-		point = (A.matrix() * point);
+		Affine3d affineTransformation = Translation3d(currentAxesPoint) * AngleAxisd(angle, this->axesVector) * Translation3d(-currentAxesPoint);
+		point = (affineTransformation.matrix() * point);
 		this->x = point.x();
 		this->y = point.y();
 		this->z = point.z();

@@ -11,7 +11,6 @@ namespace Contracts
 	{
 	public:
 		Vector3d instSpeed;
-		Vector3d rotationCentre;
 		double rotSpeed; //in radians per second
 		virtual void Move(double time) {};
 		virtual void Rotate(double time, double x, double y, double z) {};

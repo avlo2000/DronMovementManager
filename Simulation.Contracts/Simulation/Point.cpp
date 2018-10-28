@@ -63,9 +63,9 @@ namespace Simulator
 
 	void Point::Move(double time)
 	{
-		this->x = this->instSpeed.x() * time;
-		this->y = this->instSpeed.y() * time;
-		this->z = this->instSpeed.z() * time;
+		this->x += this->instSpeed.x() * time;
+		this->y += this->instSpeed.y() * time;
+		this->z += this->instSpeed.z() * time;
 	}
 
 	void Point::Rotate(double time) {

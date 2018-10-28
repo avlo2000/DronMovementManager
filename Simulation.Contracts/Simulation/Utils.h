@@ -35,9 +35,12 @@ namespace Simulator
 
 	inline Vector3d GetPerpendicularVec(Vector3d vec1, Vector3d vec2)
 	{
-		double y = -(vec2.z() / (vec2.y() - ((vec1.y() + vec1.z() / vec1.x()))));
-		double x = -((y * vec1.y() + vec1.z()) / vec1.x());
-		double z = 1;
+		Vector3d scal(vec2.y() * vec1.z() - vec1.y() * vec2.z(),
+			vec1.x() * vec2.z() - vec2.x() * vec1.z(),
+			vec2.x() * vec1.y() - vec1.x() * vec2.y());
+		double x = scal.x() / GetVecLength(scal);
+		double y = scal.y() / GetVecLength(scal);
+		double z = scal.z() / GetVecLength(scal);
 		return Vector3d(x, y, z);
 	}
 }

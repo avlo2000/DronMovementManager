@@ -33,6 +33,7 @@ namespace Simulator
 		void MoveAndRotate(double time);
 		double GetInertMoment();
 		void LogInfo(ostream& out);
+		Point GetPoint(int index, char type);
 		~Object();
 	};
 

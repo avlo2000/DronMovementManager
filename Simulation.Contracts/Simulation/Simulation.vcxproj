@@ -122,6 +122,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Exceptions.h" />
     <ClInclude Include="ForcePoint.h" />
     <ClInclude Include="MassPoint.h" />
     <ClInclude Include="Object.h" />

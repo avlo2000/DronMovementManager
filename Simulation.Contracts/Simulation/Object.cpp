@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "Exceptions.h"
 #include "Utils.h"
 #include <iostream>
 
@@ -132,6 +133,15 @@ namespace Simulator
 			<< this->_massCentre.Y()<<" "
 			<< this->_massCentre.Z() << endl;
 		out << endl;
+	}
+
+	Point Object::GetPoint(int index, char type)
+	{
+		if(type == 'f')
+			return this->_fPoints[index];
+		if (type == 'm')
+			return this->_mPoints[index];
+		throw WrongPointTypeException();
 	}
 
 	Object::~Object()

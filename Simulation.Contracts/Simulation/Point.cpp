@@ -57,7 +57,7 @@ namespace Simulator
 	void Point::SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed)
 	{
 		this->axesVector = axesVector;
-		this->axesPoint = &axesPoint;
+		this->axesPoint = Vector3d(axesPoint.X(), axesPoint.Y(), axesPoint.Z());
 		this->rotSpeed = rotSpeed;
 	}
 
@@ -71,7 +71,7 @@ namespace Simulator
 	void Point::Rotate(double time) {
 		double angle = this->rotSpeed * time;
 		Vector4d point(this->x, this->y, this->z, 1.0);
-		Vector3d currentAxesPoint(this->axesPoint->X(), this->axesPoint->Y(), this->axesPoint->Z());
+		Vector3d currentAxesPoint(this->axesPoint.x(), this->axesPoint.y(), this->axesPoint.z());
 		Affine3d affineTransformation = Translation3d(currentAxesPoint) * AngleAxisd(angle, this->axesVector) * Translation3d(-currentAxesPoint);
 		point = (affineTransformation.matrix() * point);
 		this->x = point.x();

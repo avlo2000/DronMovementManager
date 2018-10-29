@@ -11,7 +11,7 @@ namespace Simulator
 	protected:
 		double x, y, z;
 		Vector3d axesVector;
-		Point *axesPoint;	
+		Vector3d axesPoint;
 	public:
 		double X();
 		double Y();

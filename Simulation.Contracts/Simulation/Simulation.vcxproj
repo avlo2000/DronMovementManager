@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{825B8F72-1E9C-4123-BA86-51F8415152A6}</ProjectGuid>
-    <RootNamespace>SimulationContracts</RootNamespace>
+    <ProjectGuid>{A1A0A21D-F1DB-49CB-B9E8-3278E09473CB}</ProjectGuid>
+    <RootNamespace>Simulation</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\Simulation.Contracts\Simulation.Contracts;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -85,7 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\DronMovementManagerVs\third_party\eigen;C:\Users\SSJ\Source\Repos\DronMovementManagerVs\third_party\eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\DronMovementManagerVs\Simulation.Contracts\Simulation.Contracts;C:\Users\SSJ\source\repos\DronMovementManagerVs\third_party\eigen</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,9 +117,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="IObject.h" />
-    <ClInclude Include="IPoint.h" />
-    <ClInclude Include="ISimulator.h" />
+    <ProjectReference Include="..\Simulation.Contracts\Simulation.Contracts.vcxproj">
+      <Project>{825b8f72-1e9c-4123-ba86-51f8415152a6}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="ForcePoint.h" />
+    <ClInclude Include="MassPoint.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ForcePoint.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MassPoint.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

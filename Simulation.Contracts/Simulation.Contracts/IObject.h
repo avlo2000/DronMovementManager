@@ -10,7 +10,7 @@ namespace Contracts
 	class IObject
 	{
 	public:
-		virtual void Move(double timeStep) {};
+		virtual void MoveAndRotate(double timeStep) {};
 	};
 
 }

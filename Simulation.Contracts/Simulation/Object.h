@@ -10,20 +10,25 @@ namespace Simulator
 
 	class Object : IObject
 	{
-	private:
+	protected:
 		struct Rotation 
 		{
 			Vector3d AxisVector;
 			Point AxisPoint;
 			double AngleSpeed;
 		};
-		vector<Rotation> _rotations;
+		double _inertiaX;
+		double _inertiaY;
+		double _inertiaZ;
+
+		Rotation _rotationX;
+		Rotation _rotationY;
+		Rotation _rotationZ;
 
 		vector<ForcePoint> _fPoints;
 		vector<MassPoint> _mPoints;
 		MassPoint _massCentre;
 		Vector3d _instSpeed; 
-		double _inertMoment;
 
 		void Init();
 		pair<Vector3d, Vector3d> GetForceComponents(int fPointIndex);
@@ -31,7 +36,7 @@ namespace Simulator
 		Object(vector<MassPoint> mPoints, vector<ForcePoint> fPoints);
 		void PowerToPoint(int fPointIndex, double force, double forceDuration);
 		void MoveAndRotate(double time);
-		double GetInertMoment();
+		Vector3d GetInertia();
 		void LogInfo(ostream& out);
 		Point GetPoint(int index, char type);
 		~Object();

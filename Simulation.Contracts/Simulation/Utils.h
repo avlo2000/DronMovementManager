@@ -27,9 +27,9 @@ namespace Simulator
 		return resultSpeed;
 	}
 
-	inline double RotationSpeedFromRotImpuls(double inertMoment, Vector3d moment, double time)
+	inline double RotationSpeedFromRotImpuls(double inertMoment, double moment, double time)
 	{
-		double rotSpeed = inertMoment * GetVecLength(moment) * time;
+		double rotSpeed = inertMoment * moment * time;
 		return rotSpeed;
 	}
 

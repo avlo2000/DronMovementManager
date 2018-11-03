@@ -14,14 +14,7 @@ namespace Simulator
 	{
 		return this->_force;
 	}
-	void ForcePoint::Activate()
-	{
-		this->_isActive = true;
-	}
-	void ForcePoint::Disactivate()
-	{
-		this->_isActive = false;
-	}
+
 	ForcePoint::~ForcePoint()
 	{
 	}

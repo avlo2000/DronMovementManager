@@ -25,8 +25,6 @@ namespace Simulator
 		};
 		void SetForce(double force);
 		Vector3d GetForce();
-		void Activate();
-		void Disactivate();
 		~ForcePoint();
 	};
 

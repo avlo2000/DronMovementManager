@@ -21,7 +21,7 @@ namespace SimulationTests
 			mPoints.push_back(MassPoint(2, 1, 0, 0));
 			mPoints.push_back(MassPoint(2, -1, 0, 0));
 			Object obj(mPoints, fPoints);
-			Assert::AreEqual(obj.GetInertMoment(), 4.0);
+			Assert::AreEqual(obj.GetInertia(), 4.0);
 		}
 
 	};

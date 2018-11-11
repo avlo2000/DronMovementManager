@@ -1,7 +1,11 @@
+#pragma once
 #include <vector>
+#include<iostream>
 #include "IPoint.h"
 #include "IMovable.h"
 #include "IRotatable.h"
+
+using namespace std;
 
 namespace Contracts 
 {
@@ -17,7 +21,6 @@ namespace Contracts
 			this->Move(time);
 			this->Rotate(time);
 		};
-		virtual void LogInfo(std::ostream& out);
 	};
 
 }

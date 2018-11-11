@@ -13,6 +13,7 @@ namespace Simulator
 	class Object : IObject
 	{
 	private:
+		string _name;
 		struct Rotation
 		{
 			Vector3d AxisVector;
@@ -36,7 +37,7 @@ namespace Simulator
 		void Init();
 		pair<Vector3d, Vector3d> GetForceComponents(int fPointIndex);
 	public:
-		explicit Object(vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints);
+		explicit Object(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints);
 		void PowerToPoint(int fPointIndex, double force, double forceDuration);
 		void MoveAndRotate(double time);
 		Vector3d GetInertia();

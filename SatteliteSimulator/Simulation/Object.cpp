@@ -45,14 +45,18 @@ namespace Simulator
 			this->_fPoints[fPointIndex].Y() - this->_massCentre.Y(), 
 			this->_fPoints[fPointIndex].Z() - this->_massCentre.Z());
 
+		if(GetVecLength(axis)==0)
+			return pair<Vector3d, Vector3d>(this->_fPoints[fPointIndex].GetForce(), Vector3d(0, 0, 0));
+
 		Vector3d instForce = PrjVecOnVec(this->_fPoints[fPointIndex].GetForce(), axis);
 		Vector3d rotateForce = _fPoints[fPointIndex].GetForce() - instForce;
 
 		return pair<Vector3d, Vector3d>(instForce, rotateForce);
 	}
 
-	Object::Object(vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints)
+	Object::Object(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints)
 	{
+		this->_name = name;
 		this->_fPoints = fPoints;
 		this->_mPoints = mPoints;
 
@@ -132,6 +136,7 @@ namespace Simulator
 
 	void Object::LogInfo(ostream& out)
 	{
+		out << "Info of " << this->_name << " :" << endl;
 		out << "Instanse speed vector: " 
 			<<	this->_instSpeed.x() << " "
 			<< this->_instSpeed.y() << " "

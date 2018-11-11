@@ -10,6 +10,11 @@ Simulator::Simulation::~Simulation()
 {
 }
 
+void Simulator::Simulation::AddObject(Object obj)
+{
+	this->objects.push_back(obj);
+}
+
 void Simulator::Simulation::SetTimeStep(double timeStep)
 {
 	this->_timeStep = timeStep;

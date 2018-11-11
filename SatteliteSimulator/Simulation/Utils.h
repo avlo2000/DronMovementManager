@@ -25,7 +25,7 @@ namespace Simulator
 
 	inline Vector3d InstSpeedFromImpuls(double mass, Vector3d currentSpeed, Vector3d force, double time)
 	{
-		Vector3d resultSpeed = (mass * currentSpeed - force * time) / mass;
+		Vector3d resultSpeed = (mass * currentSpeed + force * time) / mass;
 		return resultSpeed;
 	}
 

@@ -9,7 +9,7 @@ namespace Simulator
 		public Point
 	{
 	private:
-		Vector3d _force; // module of vector[Newton]
+		Vector3d _force; // [Newton]
 	public:
 		explicit ForcePoint();
 		explicit ForcePoint(Vector3d force, double x, double y, double z);

@@ -2,7 +2,7 @@
 
 namespace Simulator
 {
-	Sattelite::Sattelite(vector<MassPoint> mPoints, vector<ForcePoint> fPoints, vector<ReactionWheel> wheels)
+	Sattelite::Sattelite(vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
 		: Object(mPoints, fPoints)
 	{
 		this->_reactionWheels = wheels;

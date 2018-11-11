@@ -7,7 +7,7 @@ namespace Simulator
 	class MassPoint : public Point
 	{
 	private:
-		double _mass; // kg
+		double _mass; // [kg]
 	public:
 		explicit MassPoint()
 			: Point()

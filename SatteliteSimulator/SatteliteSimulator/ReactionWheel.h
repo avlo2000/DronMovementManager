@@ -12,10 +12,10 @@ namespace Simulator {
 	{
 	private:
 		Vector3d _rotAxes;
-		double _speed; // radians per second
-		double _inertia; // kg per meter^2
+		double _speed; // [radians per second]
+		double _inertia; // [kg per meter^2]
 		Vector3d _rotImpuls;
-		double _heatLoss; // radians per second^2
+		double _heatLoss; // [radians per second^2]
 		Vector3d _instSpeed;
 
 		void Init();

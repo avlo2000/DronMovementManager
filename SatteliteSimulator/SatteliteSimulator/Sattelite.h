@@ -10,7 +10,7 @@ namespace Simulator
 	private:
 		vector<ReactionWheel> _reactionWheels;
 	public:
-		Sattelite(vector<MassPoint> mPoints, vector<ForcePoint> fPoints, vector<ReactionWheel> wheels);
+		Sattelite(vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels);
 		void SetReactionWheelSpeed(int index, double speed);
 		void MoveAndRotate(double time) override;
 		~Sattelite();

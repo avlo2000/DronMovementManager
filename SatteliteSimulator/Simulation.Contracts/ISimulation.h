@@ -12,7 +12,7 @@ namespace Contracts
 		vector<IObject> objects;
 
 		virtual void SetTimeStep(double timeStep) = 0;
-		virtual void Simulate(double time) = 0;
+		virtual void Simulate(double time, ostream &logger) = 0;
 	};
 
 }

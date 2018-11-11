@@ -17,6 +17,7 @@ namespace Contracts
 			this->Move(time);
 			this->Rotate(time);
 		};
+		virtual void LogInfo(std::ostream& out);
 	};
 
 }

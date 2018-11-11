@@ -51,7 +51,7 @@ namespace Simulator
 		return pair<Vector3d, Vector3d>(instForce, rotateForce);
 	}
 
-	Object::Object(vector<MassPoint> mPoints, vector<ForcePoint> fPoints)
+	Object::Object(vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints)
 	{
 		this->_fPoints = fPoints;
 		this->_mPoints = mPoints;
@@ -136,7 +136,7 @@ namespace Simulator
 			<<	this->_instSpeed.x() << " "
 			<< this->_instSpeed.y() << " "
 			<< this->_instSpeed.z() << endl;
-		out << "Rotation arount centre of mass: " 
+		out << "Rotation speed vector: " 
 			<< this->_rotationX.AngleSpeed << " "
 			<< this->_rotationY.AngleSpeed << " "
 			<< this->_rotationZ.AngleSpeed << endl;

@@ -36,7 +36,7 @@ namespace Simulator
 		void Init();
 		pair<Vector3d, Vector3d> GetForceComponents(int fPointIndex);
 	public:
-		explicit Object(vector<MassPoint> mPoints, vector<ForcePoint> fPoints);
+		explicit Object(vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints);
 		void PowerToPoint(int fPointIndex, double force, double forceDuration);
 		void MoveAndRotate(double time);
 		Vector3d GetInertia();

@@ -2,7 +2,7 @@
 #include "Simulation.h"
 #include <iostream>
 
-using namespace Simulator;
+using namespace simulator;
 using namespace std;
 
 int main()

@@ -4,7 +4,7 @@
 #include"MassPoint.h"
 #define SQR(x) pow(x, 2.0)
 
-namespace Simulator
+namespace simulator
 {
 	inline double SqrDistance(Point p1, Point p2)
 	{

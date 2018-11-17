@@ -4,7 +4,7 @@
 #include "Utils.h"
 #include <iostream>
 
-namespace Simulator
+namespace simulator
 {
 
 	void Object::Init()

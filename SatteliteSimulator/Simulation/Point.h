@@ -1,9 +1,9 @@
 #pragma once
 #include "IPoint.h"
 
-using namespace Contracts;
+using namespace contracts;
 
-namespace Simulator 
+namespace simulator 
 {
 
 	class Point : public IPoint

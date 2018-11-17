@@ -1,7 +1,7 @@
 #include "ReactionWheel.h"
 #include "Utils.h"
 
-namespace Simulator {
+namespace simulator {
 
 	void ReactionWheel::Init()
 	{

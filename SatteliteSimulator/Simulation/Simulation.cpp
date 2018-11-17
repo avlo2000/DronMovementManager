@@ -2,25 +2,25 @@
 #include "Simulation.h"
 #include <omp.h>
 
-Simulator::Simulation::Simulation()
+simulator::Simulation::Simulation()
 {
 }
 
-Simulator::Simulation::~Simulation()
+simulator::Simulation::~Simulation()
 {
 }
 
-void Simulator::Simulation::AddObject(Object obj)
+void simulator::Simulation::AddObject(Object obj)
 {
 	this->objects.push_back(obj);
 }
 
-void Simulator::Simulation::SetTimeStep(double timeStep)
+void simulator::Simulation::SetTimeStep(double timeStep)
 {
 	this->_timeStep = timeStep;
 }
 
-void Simulator::Simulation::Simulate(double time, ostream& logger)
+void simulator::Simulation::Simulate(double time, ostream& logger)
 {
 	while (time > 0)
 	{

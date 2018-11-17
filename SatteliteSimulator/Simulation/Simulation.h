@@ -2,9 +2,9 @@
 #include"ISimulation.h"
 #include"Object.h"
 
-using namespace Contracts;
+using namespace contracts;
 
-namespace Simulator
+namespace simulator
 {
 	class Simulation :
 		public ISimulation

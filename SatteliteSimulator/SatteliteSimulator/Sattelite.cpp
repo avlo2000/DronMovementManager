@@ -1,6 +1,6 @@
 #include "Sattelite.h"
 
-namespace Simulator
+namespace simulator
 {
 	Sattelite::Sattelite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
 		: Object(name, mPoints, fPoints)

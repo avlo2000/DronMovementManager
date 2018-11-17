@@ -1,7 +1,7 @@
 #pragma once
 #include "ForcePoint.h"
 
-namespace Simulator
+namespace simulator
 {
 	ForcePoint::ForcePoint()
 		: Point()

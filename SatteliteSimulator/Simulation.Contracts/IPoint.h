@@ -6,7 +6,7 @@
 
 using namespace Eigen;
 
-namespace Contracts 
+namespace contracts 
 {
 
 	class IPoint : public IMovable, public IRotatable

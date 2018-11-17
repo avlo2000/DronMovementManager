@@ -4,7 +4,7 @@
 
 using namespace Eigen;
 
-namespace Contracts
+namespace contracts
 {
 
 	class IRotatable

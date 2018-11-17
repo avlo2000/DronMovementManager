@@ -2,7 +2,7 @@
 #include "Point.h"
 #include "Utils.h"
 
-namespace Simulator
+namespace simulator
 {
 
 	class ForcePoint :

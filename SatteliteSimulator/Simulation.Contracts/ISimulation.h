@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace Contracts
+namespace contracts
 {
 
 	class ISimulation

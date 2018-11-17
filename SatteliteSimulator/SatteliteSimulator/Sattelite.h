@@ -1,11 +1,12 @@
 #pragma once
 #include "Object.h"
 #include "ReactionWheel.h"
+#include "Controlable.h"
 
-namespace Simulator 
+namespace simulator 
 {
 
-	class Sattelite : public Object
+	class Sattelite : Controlable, public Object
 	{
 	private:
 		vector<ReactionWheel> _reactionWheels;

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace Simulator
+namespace simulator
 {
 
 	class Object : IObject

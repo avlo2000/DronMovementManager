@@ -4,9 +4,9 @@
 #include"IRotatable.h"
 #include"MassPoint.h"
 using namespace Eigen;
-using namespace Contracts;
+using namespace contracts;
 
-namespace Simulator {
+namespace simulator {
 
 	class ReactionWheel : public MassPoint
 	{

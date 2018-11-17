@@ -53,3 +53,4 @@ cmake-build-debug/
 /SatteliteSimulator/Simulation.Contracts/x64/Debug
 /SatteliteSimulator/Simulation.Contracts/Debug
 /SatteliteSimulator/SimulationTests/Debug
+/SatteliteSimulator/Controller.Contracts/Debug

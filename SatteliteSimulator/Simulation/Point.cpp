@@ -3,7 +3,7 @@
 #include<iostream>
 #include"Utils.h"
 
-namespace Simulator
+namespace simulator
 {
 
 	double Point::X()

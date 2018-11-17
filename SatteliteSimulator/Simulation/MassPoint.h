@@ -1,7 +1,7 @@
 #pragma once
 #include "Point.h"
 
-namespace Simulator
+namespace simulator
 {
 
 	class MassPoint : public Point

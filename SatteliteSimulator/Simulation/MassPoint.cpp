@@ -1,7 +1,7 @@
 #pragma once
 #include "MassPoint.h"
 
-namespace Simulator
+namespace simulator
 {
 
 	double MassPoint::GetMass()

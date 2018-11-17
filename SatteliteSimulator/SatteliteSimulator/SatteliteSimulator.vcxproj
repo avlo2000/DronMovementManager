@@ -127,7 +127,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ReactionWheel.cpp" />
     <ClCompile Include="Sattelite.cpp" />
-    <ClCompile Include="TestController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller.Contracts\Controller.Contracts.vcxproj">
@@ -140,7 +139,6 @@
   <ItemGroup>
     <ClInclude Include="ReactionWheel.h" />
     <ClInclude Include="Sattelite.h" />
-    <ClInclude Include="TestController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

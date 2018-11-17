@@ -24,18 +24,12 @@
     <ClCompile Include="ReactionWheel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sattelite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ReactionWheel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TestController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

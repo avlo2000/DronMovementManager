@@ -16,8 +16,8 @@ namespace contracts {
 		{
 			_obj = obj;
 		};
-		virtual void ControlRotation(Vector3d rotSpeed) {};
-		virtual void ControlInstanceSpeed(Vector3d instSpeed) {};
+		virtual void ControlRotation(Vector3d rotSpeed) = 0;
+		virtual void ControlInstanceSpeed(Vector3d instSpeed) = 0;
 	};
 
 }

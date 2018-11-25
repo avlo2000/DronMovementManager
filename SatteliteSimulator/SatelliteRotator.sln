@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SatteliteSimulator", "Satte
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Controller.Contracts", "Controller.Contracts\Controller.Contracts.vcxproj", "{9CF359C7-B19D-4696-8AB9-BE8CC6789EA4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Controller", "Controller\Controller.vcxproj", "{B65915F1-27F4-481B-B284-B96BA80D99F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -71,6 +73,18 @@ Global
 		{9CF359C7-B19D-4696-8AB9-BE8CC6789EA4}.Release|x64.Build.0 = Release|x64
 		{9CF359C7-B19D-4696-8AB9-BE8CC6789EA4}.Release|x86.ActiveCfg = Release|Win32
 		{9CF359C7-B19D-4696-8AB9-BE8CC6789EA4}.Release|x86.Build.0 = Release|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Debug|ARM.ActiveCfg = Debug|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Debug|x64.ActiveCfg = Debug|x64
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Debug|x64.Build.0 = Debug|x64
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Debug|x86.ActiveCfg = Debug|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Debug|x86.Build.0 = Debug|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Release|ARM.ActiveCfg = Release|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Release|ARM64.ActiveCfg = Release|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Release|x64.ActiveCfg = Release|x64
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Release|x64.Build.0 = Release|x64
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Release|x86.ActiveCfg = Release|Win32
+		{B65915F1-27F4-481B-B284-B96BA80D99F6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

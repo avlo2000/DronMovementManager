@@ -123,7 +123,6 @@
   <ItemGroup>
     <ClInclude Include="Controlable.h" />
     <ClInclude Include="IController.h" />
-    <ClInclude Include="Sample.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Simulation\Simulation.vcxproj">
@@ -132,8 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controlable.cpp" />
-    <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="NeuralNetwork.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

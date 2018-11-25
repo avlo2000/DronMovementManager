@@ -17,6 +17,8 @@ void train(vector<Vector3d> instSpeed, vector<Vector3d> rotSpeed) {
 	adagrad optimizer;
 	int epochs = 10000;
 	int batch = 1;
-	net.fit<mse>(optimizer, instSpeed, rotSpeed, batch, epochs);
+	vector<Vector3d> trainInput = instSpeed;
+	vector<Vector3d> expectedOutput = rotSpeed;
+	net.fit<mse>(optimizer, trainInput, expectedOutput, batch, epochs);
 	net.save("network");
 }

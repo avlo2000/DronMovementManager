@@ -85,8 +85,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\tiny-dnn-master;C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\eigen;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Simulation;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\eigen;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Simulation;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Simulation.Contracts;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -119,6 +123,7 @@
   <ItemGroup>
     <ClInclude Include="Controlable.h" />
     <ClInclude Include="IController.h" />
+    <ClInclude Include="Sample.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Simulation\Simulation.vcxproj">
@@ -127,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controlable.cpp" />
+    <ClCompile Include="NeuralNetwork.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SatteliteSimulator",
+    "\\SatteliteSimulator\\Simulation.Contracts",
+    "\\Simulation.Contracts",
+    "\\third_party"
   ],
   "PreviewInSolutionExplorer": false
 }

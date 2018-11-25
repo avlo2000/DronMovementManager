@@ -10,7 +10,7 @@ namespace contracts {
 	class IController
 	{
 	protected:
-		T *_obj;
+		T _obj;
 	public:
 		void RegisterObject(T &obj)
 		{

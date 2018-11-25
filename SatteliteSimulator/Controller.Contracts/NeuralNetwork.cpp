@@ -15,6 +15,8 @@ void train(vector<Vector3d> instSpeed, vector<Vector3d> rotSpeed) {
 		<< fully_connected_layer(6, 6) << sigmoid_layer()
 		<< fully_connected_layer(6, 3) << sigmoid_layer();
 	adagrad optimizer;
-	net.fit<mse>(optimizer, instSpeed, rotSpeed, 1, 10000);
-	net.save("my-network");
+	int epochs = 10000;
+	int batch = 1;
+	net.fit<mse>(optimizer, instSpeed, rotSpeed, batch, epochs);
+	net.save("network");
 }

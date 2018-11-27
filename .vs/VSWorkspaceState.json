@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\SatteliteSimulator",
+    "\\SatteliteSimulator\\Controller.Contracts",
     "\\SatteliteSimulator\\Simulation.Contracts",
     "\\Simulation.Contracts",
     "\\third_party"
   ],
+  "SelectedNode": "\\SatteliteSimulator\\Controller.Contracts\\IController.h",
   "PreviewInSolutionExplorer": false
 }

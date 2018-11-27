@@ -2,23 +2,19 @@
 #include<vector>
 #include <Eigen/Geometry>
 #include <iostream>
-
+#include "NetworkArchitecture.h"
+#include "Sample.h"
 using namespace tiny_dnn;
 using namespace tiny_dnn::layers;
 using namespace tiny_dnn::activation;
 using namespace Eigen;
 using namespace std;
 
-void train(vector<Vector3d> instSpeed, vector<Vector3d> rotSpeed) {
-	network<sequential> net;
-	net << fully_connected_layer(3, 6) << sigmoid_layer()
-		<< fully_connected_layer(6, 6) << sigmoid_layer()
-		<< fully_connected_layer(6, 3) << sigmoid_layer();
+void train(Sample sample) {
+	NetworkArchitecture networkArchitecture(10000,1);
+	networkArchitecture.setNumberOfHiddenLayers(2,6);
+	network<sequential> net = networkArchitecture.getNetwork();
 	adagrad optimizer;
-	int epochs = 10000;
-	int batch = 1;
-	vector<Vector3d> trainInput = instSpeed;
-	vector<Vector3d> expectedOutput = rotSpeed;
-	net.fit<mse>(optimizer, trainInput, expectedOutput, batch, epochs);
+	net.fit<mse>(optimizer, sample.getInstSpeed(), sample.getRotSpeed(), networkArchitecture.getBatch(), networkArchitecture.getEpoch());
 	net.save("network");
 }

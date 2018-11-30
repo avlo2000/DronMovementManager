@@ -4,11 +4,13 @@
 #include <iostream>
 #include "NetworkArchitecture.h"
 #include "Sample.h"
+
 using namespace tiny_dnn;
 using namespace tiny_dnn::layers;
 using namespace tiny_dnn::activation;
 using namespace Eigen;
-using namespace std;
+using namespace SampleNamespace;
+
 namespace neuralNetwork {
 	NetworkArchitecture::NetworkArchitecture(int newEpoch, int newBatch) {
 		epoch = newEpoch;

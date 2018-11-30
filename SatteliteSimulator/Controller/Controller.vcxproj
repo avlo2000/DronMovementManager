@@ -76,7 +76,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Controller.Contracts;C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\eigen;C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\tiny-dnn-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\SatteliteSimulator;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Controller.Contracts;C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\eigen;C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\tiny-dnn-master;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -122,11 +123,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Generator.cpp" />
     <ClCompile Include="NeuralNetwork.cpp" />
+    <ClCompile Include="Sample.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller.Contracts\Controller.Contracts.vcxproj">
       <Project>{9cf359c7-b19d-4696-8ab9-be8cc6789ea4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SatteliteSimulator\SatteliteSimulator.vcxproj">
+      <Project>{46e93123-7fe4-4764-b9af-363a1cd397e2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Simulation\Simulation.vcxproj">
+      <Project>{a1a0a21d-f1db-49cb-b9e8-3278e09473cb}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

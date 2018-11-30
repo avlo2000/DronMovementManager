@@ -1,0 +1,43 @@
+﻿  Controller.cpp
+c:\users\ssj\source\repos\satellitemovementmanager\sattelitesimulator\simulation\point.h(2): fatal error C1083: Cannot open include file: 'IPoint.h': No such file or directory
+  NeuralNetwork.cpp
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\optimizers\optimizer.h(162): warning C4244: '-=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=tiny_dnn::float_t
+          ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\activations\selu_layer.h(97): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=tiny_dnn::float_t
+          ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\activations\softsign_layer.h(26): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=tiny_dnn::float_t
+          ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\activations\softsign_layer.h(38): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=tiny_dnn::float_t
+          ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\layers\power_layer.h(91): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=tiny_dnn::float_t
+          ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\layers\recurrent_layer.h(235): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\layers\recurrent_layer.h(255): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\util\nms.h(42): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=int32_t
+          ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\util\parallel_for.h(200): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\optimizers\optimizer.h(163): note: see reference to function template instantiation 'void tiny_dnn::for_i<unsigned __int64,tiny_dnn::adamax::update::<lambda_67a23042fa2c82e77257ea9be4b99d39>>(bool,T,Func,size_t)' being compiled
+          with
+          [
+              T=unsigned __int64,
+              Func=tiny_dnn::adamax::update::<lambda_67a23042fa2c82e77257ea9be4b99d39>
+          ]
+  Generating Code...

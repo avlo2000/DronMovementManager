@@ -4,15 +4,18 @@
 
 using namespace Eigen;
 using namespace std;
-class Sample {
-private:
-	vector<Vector3d> instSpeed;
-	vector<Vector3d> rotSpeed;
-public:
-	vector<Vector3d> getInstSpeed() {
-		return instSpeed;
-	}
-	vector<Vector3d> getRotSpeed() {
-		return rotSpeed;
-	}
-};
+
+namespace SampleNamespace {
+	class Sample {
+	private:
+		vector<Vector3d> instSpeed;
+		vector<Vector3d> rotSpeed;
+	public:
+		Sample() {};
+		~Sample() {};
+		void addInstSpeed(Vector3d vec);
+		void addRotSpeed(Vector3d vec);
+		vector<Vector3d> getInstSpeed();
+		vector<Vector3d> getRotSpeed();
+	};
+}

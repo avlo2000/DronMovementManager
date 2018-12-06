@@ -10,9 +10,9 @@ simulator::Simulation::~Simulation()
 {
 }
 
-void simulator::Simulation::AddObject(Object obj)
+void simulator::Simulation::AddObject(Object &obj)
 {
-	this->objects.push_back(obj);
+	this->objects.push_back(&obj);
 }
 
 void simulator::Simulation::SetTimeStep(double timeStep)
@@ -29,9 +29,9 @@ void simulator::Simulation::Simulate(double time, ostream& logger)
 		{
 #pragma omp for
 			for (ptrdiff_t i = 0; i < this->objects.size(); i++)
-				objects[i].MoveAndRotate(this->_timeStep);
+				this->objects[i]->MoveAndRotate(this->_timeStep);
 		}
 		for (auto obj : objects)
-			obj.LogInfo(logger);
+			obj->LogInfo(logger);
 	}
 }

@@ -72,7 +72,8 @@ namespace simulator
 	void Point::Rotate(double time) {
 		double angle = this->rotSpeed * time;
 
-		*this = RotatePoint(*this, this->axesVector, Point(this->axesPoint.x(), 
+
+		RotatePoint(*this, this->axesVector, Point(this->axesPoint.x(), 
 			this->axesPoint.y(), this->axesPoint.z()), angle);
 	}
 	Point::~Point()

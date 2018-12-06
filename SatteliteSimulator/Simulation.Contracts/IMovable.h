@@ -9,9 +9,9 @@ namespace contracts
 
 	class IMovable
 	{
-	public:
+	protected:
 		Vector3d instSpeed; // meters per second
-
+	public:
 		virtual void Move(double time) = 0;
 	};
 

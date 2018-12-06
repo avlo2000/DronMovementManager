@@ -10,9 +10,9 @@ namespace simulator
 		Object::Init();
 	}
 
-	void Sattelite::SetReactionWheelSpeed(int index, double speed)
+	void Sattelite::EnergyToReactionWheel(int index, double work)
 	{
-		this->_reactionWheels[index].SetSpeed(speed);
+		this->_reactionWheels[index].PowerToWheel(work);
 		
 		double rotImpX = this->_rotationX.AngleSpeed * this->_inertiaX;
 		double rotImpY = this->_rotationY.AngleSpeed * this->_inertiaY;

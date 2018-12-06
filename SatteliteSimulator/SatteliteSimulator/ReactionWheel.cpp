@@ -9,13 +9,13 @@ namespace simulator {
 		this->_rotImpuls = this->_speed * this->_inertia * this->_rotAxes;
 	}
 
-	ReactionWheel::ReactionWheel(double mass, double x, double y, double z, Vector3d rotAxes, double inertia)
+	ReactionWheel::ReactionWheel(double mass, double x, double y, double z, Vector3d rotAxes, double radius)
 		: MassPoint(mass, x, y, z)
 	{
-		this->_inertia = inertia;
+		this->_inertia = mass * SQR(radius) / 2;
 		this->_rotAxes = rotAxes;
 		this->_speed = 0;
-		this->_heatLoss = 0;
+		this->_frictionCoef = 0;
 	}
 
 	double ReactionWheel::GetSpeed()
@@ -23,10 +23,19 @@ namespace simulator {
 		return this->_speed;
 	}
 
-	void ReactionWheel::SetSpeed(double speed)
+	void ReactionWheel::PowerToWheel(double work)
 	{
-		this->_speed = speed;
+		work = -work;
+		if(SQR(this->_speed) > 2 * work / this->_inertia)
+			this->_speed = sqrt(SQR(this->_speed) - 2 * work / this->_inertia);
+		else
+			this->_speed = -sqrt(-SQR(this->_speed) + 2 * work / this->_inertia);
 		Init();
+	}
+
+	void ReactionWheel::SetFrictionCoef(double friction)
+	{
+		this->_frictionCoef = friction;
 	}
 
 	void ReactionWheel::SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed)
@@ -53,10 +62,7 @@ namespace simulator {
 		this->_rotAxes = RotateVector(this->_rotAxes, this->axesVector, Point(this->axesPoint.x(),
 			this->axesPoint.y(), this->axesPoint.z()), angle);
 
-		if(this->_speed > 0)
-			this->_speed -= time * this->_heatLoss;
-		else
-			this->_speed += time * this->_heatLoss;
+		//TO DO(include friction)
 		this->Init();
 	}
 }

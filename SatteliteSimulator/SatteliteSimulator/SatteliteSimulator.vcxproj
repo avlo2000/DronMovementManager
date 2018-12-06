@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="ReactionWheel.h" />
     <ClInclude Include="Sattelite.h" />
+    <ClInclude Include="TestSattelite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

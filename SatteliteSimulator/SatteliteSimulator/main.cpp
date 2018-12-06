@@ -1,31 +1,28 @@
 #include "Sattelite.h"
 #include "Simulation.h"
 #include <iostream>
+#include "TestSattelite.h"
 
 using namespace simulator;
 using namespace std;
 
 int main()
 {
-	vector<MassPoint> mPoints;
-	vector<ForcePoint> fPoints;
-	vector<ReactionWheel> wheels;
-	mPoints.push_back(MassPoint(1, 1, 0, 0));
-	mPoints.push_back(MassPoint(1, -1, 0, 0));
-	mPoints.push_back(MassPoint(1, 0, 1, 0));
-	mPoints.push_back(MassPoint(1, 0, -1, 0));
-	mPoints.push_back(MassPoint(1, 0, 0, 1));
-	wheels.push_back(ReactionWheel(1, 0, 0, -1, Vector3d(0, 1, 0), 3));
-	fPoints.push_back(ForcePoint(Vector3d(1, 1, 1), 0, 0, 0));
+	auto testSat = CreateSattelite();
 
-	Sattelite obj("MySattelite", mPoints, fPoints, wheels);
-	obj.SetReactionWheelSpeed(0, 1);
-	obj.PowerToPoint(0, 1, 0.1);
-
+	
 	Simulation sim;
-	sim.AddObject(obj);
-	sim.SetTimeStep(0.1);
-	sim.Simulate(2, cout);
+	sim.AddObject(testSat);
+	sim.SetTimeStep(1);
+
+	testSat.EnergyToReactionWheel(0, 1);
+	testSat.EnergyToReactionWheel(1, -1);
+	testSat.EnergyToReactionWheel(2, 1);
+
+	
+	sim.Simulate(1, cout);
+	testSat.EnergyToReactionWheel(1, 2);
+	sim.Simulate(1, cout);
 
 	system("pause");
 	return 0;

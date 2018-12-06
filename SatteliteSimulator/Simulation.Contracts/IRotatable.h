@@ -9,11 +9,11 @@ namespace contracts
 
 	class IRotatable
 	{
-	public:
+	protected:
 		double rotSpeed; //in radians per second
 		Vector3d axesVector;
 		Vector3d axesPoint;
-	
+	public:
 		virtual void Rotate(double time) = 0;
 	};
 

@@ -11,6 +11,7 @@ namespace simulator
 	protected:
 		double x, y, z;
 	public:
+		
 		double X();
 		double Y();
 		double Z();

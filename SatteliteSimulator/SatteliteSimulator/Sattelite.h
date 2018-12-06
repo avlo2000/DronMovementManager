@@ -11,8 +11,8 @@ namespace simulator
 	private:
 		vector<ReactionWheel> _reactionWheels;
 	public:
-		Sattelite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels);
-		void SetReactionWheelSpeed(int index, double speed);
+		Sattelite(string name, vector<MassPoint>&, vector<ForcePoint>& , vector<ReactionWheel>&);
+		void EnergyToReactionWheel(int index, double work);//work - energy that the wheel receivs from engine
 		void MoveAndRotate(double time) override;
 		~Sattelite();
 	};

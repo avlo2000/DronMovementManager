@@ -32,5 +32,8 @@
     <ClInclude Include="ReactionWheel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TestSattelite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

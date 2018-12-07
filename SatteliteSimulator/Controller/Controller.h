@@ -6,12 +6,12 @@
 
 using namespace contracts;
 using namespace Eigen;
-using namespace SampleNamespace;
+
 
 namespace controller {
 	class Controller : public  IController<Sattelite>{
 	private:
-		Sample sample;
+		Sample _sample;
 	public:
 		void ControlRotation(Vector3d rotSpeed);
 		void ControlInstanceSpeed(Vector3d instSpeed);

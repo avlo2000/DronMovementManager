@@ -1,18 +1,16 @@
 #include "Controller.h"
-#include "NetworkArchitecture.h"
+#include "NeuralNetwork.h"
 #include "Sample.h"
-using namespace SampleNamespace;
-using namespace neuralNetwork;
 
 
 namespace controller {
 	  
 		void Controller::ControlRotation(Vector3d rotSpeed) {
-			sample.addRotSpeed(rotSpeed);
+			_sample.AddRotSpeed(rotSpeed);
 		}
 
 		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
-			sample.addRotSpeed(instSpeed);
+			_sample.AddInstSpeed(instSpeed);
 		}
 		
 }

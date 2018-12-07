@@ -5,17 +5,17 @@
 using namespace Eigen;
 using namespace std;
 
-namespace SampleNamespace {
+namespace controller {
 	class Sample {
 	private:
-		vector<Vector3d> instSpeed;
-		vector<Vector3d> rotSpeed;
+		vector<Vector3d> _instSpeed;
+		vector<Vector3d> _rotSpeed;
 	public:
 		Sample() {};
 		~Sample() {};
-		void addInstSpeed(Vector3d vec);
-		void addRotSpeed(Vector3d vec);
-		vector<Vector3d> getInstSpeed();
-		vector<Vector3d> getRotSpeed();
+		void AddInstSpeed(Vector3d &vec);
+		void AddRotSpeed(Vector3d &vec);
+		vector<Vector3d> GetInstSpeed();
+		vector<Vector3d> GetRotSpeed();
 	};
 }

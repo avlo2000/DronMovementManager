@@ -1,5 +1,6 @@
 ﻿  Controller.cpp
 c:\users\ssj\source\repos\satellitemovementmanager\sattelitesimulator\simulation\point.h(2): fatal error C1083: Cannot open include file: 'IPoint.h': No such file or directory
+  Generator.cpp
   NeuralNetwork.cpp
 c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\optimizers\optimizer.h(162): warning C4244: '-=': conversion from 'double' to '_Ty', possible loss of data
           with
@@ -40,4 +41,104 @@ c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\t
               T=unsigned __int64,
               Func=tiny_dnn::adamax::update::<lambda_67a23042fa2c82e77257ea9be4b99d39>
           ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(379): error C2664: 'void tiny_dnn::network<tiny_dnn::sequential>::normalize_tensor(const std::vector<size_t,std::allocator<_Ty>> &,std::vector<tiny_dnn::tensor_t,std::allocator<std::vector<tiny_dnn::vec_t,std::allocator<std::vector<tiny_dnn::float_t,tiny_dnn::aligned_allocator<tiny_dnn::float_t,64>>>>>> &)': cannot convert argument 1 from 'const std::vector<Eigen::Vector3d,std::allocator<_Ty>>' to 'const std::vector<tiny_dnn::tensor_t,std::allocator<_Ty>> &'
+          with
+          [
+              _Ty=size_t
+          ]
+          and
+          [
+              _Ty=Eigen::Vector3d
+          ]
+          and
+          [
+              _Ty=tiny_dnn::tensor_t
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(379): note: Reason: cannot convert from 'const std::vector<Eigen::Vector3d,std::allocator<_Ty>>' to 'const std::vector<tiny_dnn::tensor_t,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Eigen::Vector3d
+          ]
+          and
+          [
+              _Ty=tiny_dnn::tensor_t
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(379): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(402): note: see reference to function template instantiation 'bool tiny_dnn::network<tiny_dnn::sequential>::fit<Error,Optimizer,void(__cdecl *)(void),void(__cdecl *)(void),Eigen::Vector3d,Eigen::Vector3d>(Optimizer &,const std::vector<Eigen::Vector3d,std::allocator<_Ty>> &,const std::vector<_Ty,std::allocator<_Ty>> &,size_t,int,OnBatchEnumerate,OnEpochEnumerate,const bool,const int,const std::vector<_Ty,std::allocator<_Ty>> &)' being compiled
+          with
+          [
+              Error=tiny_dnn::mse,
+              Optimizer=tiny_dnn::adagrad,
+              _Ty=Eigen::Vector3d,
+              OnBatchEnumerate=void (__cdecl *)(void),
+              OnEpochEnumerate=void (__cdecl *)(void)
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(401): note: see reference to function template instantiation 'bool tiny_dnn::network<tiny_dnn::sequential>::fit<Error,Optimizer,void(__cdecl *)(void),void(__cdecl *)(void),Eigen::Vector3d,Eigen::Vector3d>(Optimizer &,const std::vector<Eigen::Vector3d,std::allocator<_Ty>> &,const std::vector<_Ty,std::allocator<_Ty>> &,size_t,int,OnBatchEnumerate,OnEpochEnumerate,const bool,const int,const std::vector<_Ty,std::allocator<_Ty>> &)' being compiled
+          with
+          [
+              Error=tiny_dnn::mse,
+              Optimizer=tiny_dnn::adagrad,
+              _Ty=Eigen::Vector3d,
+              OnBatchEnumerate=void (__cdecl *)(void),
+              OnEpochEnumerate=void (__cdecl *)(void)
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\sattelitesimulator\controller\neuralnetwork.cpp(36): note: see reference to function template instantiation 'bool tiny_dnn::network<tiny_dnn::sequential>::fit<tiny_dnn::mse,tiny_dnn::adagrad,Eigen::Vector3d,Eigen::Vector3d>(Optimizer &,const std::vector<Eigen::Vector3d,std::allocator<_Ty>> &,const std::vector<_Ty,std::allocator<_Ty>> &,size_t,int)' being compiled
+          with
+          [
+              Optimizer=tiny_dnn::adagrad,
+              _Ty=Eigen::Vector3d
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\sattelitesimulator\controller\neuralnetwork.cpp(36): note: see reference to function template instantiation 'bool tiny_dnn::network<tiny_dnn::sequential>::fit<tiny_dnn::mse,tiny_dnn::adagrad,Eigen::Vector3d,Eigen::Vector3d>(Optimizer &,const std::vector<Eigen::Vector3d,std::allocator<_Ty>> &,const std::vector<_Ty,std::allocator<_Ty>> &,size_t,int)' being compiled
+          with
+          [
+              Optimizer=tiny_dnn::adagrad,
+              _Ty=Eigen::Vector3d
+          ]
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(380): error C2664: 'void tiny_dnn::network<tiny_dnn::sequential>::normalize_tensor(const std::vector<size_t,std::allocator<_Ty>> &,std::vector<tiny_dnn::tensor_t,std::allocator<std::vector<tiny_dnn::vec_t,std::allocator<std::vector<tiny_dnn::float_t,tiny_dnn::aligned_allocator<tiny_dnn::float_t,64>>>>>> &)': cannot convert argument 1 from 'const std::vector<Eigen::Vector3d,std::allocator<_Ty>>' to 'const std::vector<tiny_dnn::tensor_t,std::allocator<_Ty>> &'
+          with
+          [
+              _Ty=size_t
+          ]
+          and
+          [
+              _Ty=Eigen::Vector3d
+          ]
+          and
+          [
+              _Ty=tiny_dnn::tensor_t
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(380): note: Reason: cannot convert from 'const std::vector<Eigen::Vector3d,std::allocator<_Ty>>' to 'const std::vector<tiny_dnn::tensor_t,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Eigen::Vector3d
+          ]
+          and
+          [
+              _Ty=tiny_dnn::tensor_t
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(380): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(381): error C2664: 'void tiny_dnn::network<tiny_dnn::sequential>::normalize_tensor(const std::vector<size_t,std::allocator<_Ty>> &,std::vector<tiny_dnn::tensor_t,std::allocator<std::vector<tiny_dnn::vec_t,std::allocator<std::vector<tiny_dnn::float_t,tiny_dnn::aligned_allocator<tiny_dnn::float_t,64>>>>>> &)': cannot convert argument 1 from 'const std::vector<Eigen::Vector3d,std::allocator<_Ty>>' to 'const std::vector<tiny_dnn::tensor_t,std::allocator<_Ty>> &'
+          with
+          [
+              _Ty=size_t
+          ]
+          and
+          [
+              _Ty=Eigen::Vector3d
+          ]
+          and
+          [
+              _Ty=tiny_dnn::tensor_t
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(381): note: Reason: cannot convert from 'const std::vector<Eigen::Vector3d,std::allocator<_Ty>>' to 'const std::vector<tiny_dnn::tensor_t,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Eigen::Vector3d
+          ]
+          and
+          [
+              _Ty=tiny_dnn::tensor_t
+          ]
+  c:\users\ssj\source\repos\satellitemovementmanager\third_party\tiny-dnn-master\tiny_dnn\network.h(381): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  Sample.cpp
   Generating Code...

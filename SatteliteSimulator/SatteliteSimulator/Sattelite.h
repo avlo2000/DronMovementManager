@@ -10,6 +10,7 @@ namespace simulator
 	{
 	private:
 		vector<ReactionWheel> _reactionWheels;
+		void Init();
 	public:
 		Sattelite(string name, vector<MassPoint>&, vector<ForcePoint>& , vector<ReactionWheel>&);
 		void EnergyToReactionWheel(int index, double work);//work - energy that the wheel receivs from engine

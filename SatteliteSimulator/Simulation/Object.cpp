@@ -137,18 +137,21 @@ namespace simulator
 	void Object::LogInfo(ostream& out)
 	{
 		out << "Info of " << this->_name << " :" << endl;
-		out << "Instanse speed vector: " 
+		out << "Instanse speed vector(meters per sec): " 
 			<<	this->_instSpeed.x() << " "
 			<< this->_instSpeed.y() << " "
 			<< this->_instSpeed.z() << endl;
-		out << "Rotation speed vector: " 
+		out << "Rotation speed vector(radians per sec): " 
 			<< this->_rotationX.AngleSpeed << " "
 			<< this->_rotationY.AngleSpeed << " "
 			<< this->_rotationZ.AngleSpeed << endl;
-		out << "Position of centre of mass: " 
+		out << "Position of centre of mass(meters): " 
 			<< this->_massCentre.X() << " "
 			<< this->_massCentre.Y()<<" "
 			<< this->_massCentre.Z() << endl;
+		out << "Rotation kinetic energy: " << (SQR(this->_rotationX.AngleSpeed) * this->_inertiaX +
+			SQR(this->_rotationY.AngleSpeed) * this->_inertiaY 
+			+ SQR(this->_rotationZ.AngleSpeed) * this->_inertiaZ) / 2 << endl;
 		out << endl;
 	}
 

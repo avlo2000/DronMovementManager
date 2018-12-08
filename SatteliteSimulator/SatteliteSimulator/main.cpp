@@ -15,15 +15,16 @@ int main()
 	sim.AddObject(testSat);
 	sim.SetTimeStep(1);
 
-	testSat.EnergyToReactionWheel(0, 1);
-	testSat.EnergyToReactionWheel(1, -1);
-	testSat.EnergyToReactionWheel(2, 1);
-
+	testSat.EnergyToReactionWheel(0, -17);
+	testSat.EnergyToReactionWheel(1, 49);
+	testSat.EnergyToReactionWheel(2, 19);
+	
 	
 	sim.Simulate(1, cout);
-	testSat.EnergyToReactionWheel(1, 2);
+	//testSat.EnergyToReactionWheel(0, -9);
 	sim.Simulate(1, cout);
-
+	//testSat.EnergyToReactionWheel(1, -9);
+	sim.Simulate(1, cout);
 	system("pause");
 	return 0;
 }

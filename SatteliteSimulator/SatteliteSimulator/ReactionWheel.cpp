@@ -16,6 +16,7 @@ namespace simulator {
 		this->_rotAxes = rotAxes;
 		this->_speed = 0;
 		this->_frictionCoef = 0;
+		Init();
 	}
 
 	double ReactionWheel::GetSpeed()
@@ -26,11 +27,13 @@ namespace simulator {
 	void ReactionWheel::PowerToWheel(double work)
 	{
 		work = -work;
-		if(SQR(this->_speed) > 2 * work / this->_inertia)
-			this->_speed = sqrt(SQR(this->_speed) - 2 * work / this->_inertia);
+
+		if(work > 0)
+			this->_speed = sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
 		else
-			this->_speed = -sqrt(-SQR(this->_speed) + 2 * work / this->_inertia);
-		Init();
+			this->_speed = -sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
+
+		this->Init();
 	}
 
 	void ReactionWheel::SetFrictionCoef(double friction)
@@ -59,8 +62,7 @@ namespace simulator {
 
 		double angle = this->rotSpeed * time;
 
-		this->_rotAxes = RotateVector(this->_rotAxes, this->axesVector, Point(this->axesPoint.x(),
-			this->axesPoint.y(), this->axesPoint.z()), angle);
+		this->_rotAxes = RotateVector(this->_rotAxes, this->axesVector, Point(0, 0, 0), angle);
 
 		//TO DO(include friction)
 		this->Init();

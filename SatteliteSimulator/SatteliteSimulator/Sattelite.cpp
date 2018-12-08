@@ -2,6 +2,25 @@
 
 namespace simulator
 {
+	void Sattelite::Init()
+	{
+		//start impuls is not included [Imp1 + Imp2 = 0]
+		double rotImpX = 0;
+		double rotImpY = 0;
+		double rotImpZ = 0;
+
+		for (int index = 0; index < _reactionWheels.size(); index++)
+		{
+			rotImpX -= _reactionWheels[index].GetMomentumImpuls().x();
+			rotImpY -= _reactionWheels[index].GetMomentumImpuls().y();
+			rotImpZ -= _reactionWheels[index].GetMomentumImpuls().z();
+		}
+
+
+		this->_rotationX.AngleSpeed = rotImpX / this->_inertiaX;
+		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
+		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
+	}
 	Sattelite::Sattelite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
 		: Object(name, mPoints, fPoints)
 	{
@@ -13,19 +32,8 @@ namespace simulator
 	void Sattelite::EnergyToReactionWheel(int index, double work)
 	{
 		this->_reactionWheels[index].PowerToWheel(work);
-		
-		double rotImpX = this->_rotationX.AngleSpeed * this->_inertiaX;
-		double rotImpY = this->_rotationY.AngleSpeed * this->_inertiaY;
-		double rotImpZ = this->_rotationZ.AngleSpeed * this->_inertiaZ;
 
-		rotImpX -= _reactionWheels[index].GetMomentumImpuls().x();
-		rotImpY -= _reactionWheels[index].GetMomentumImpuls().y();
-		rotImpZ -= _reactionWheels[index].GetMomentumImpuls().z();
-	
-
-		this->_rotationX.AngleSpeed = rotImpX / this->_inertiaX;
-		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
-		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
+		Init();
 	}
 
 	void Sattelite::MoveAndRotate(double time)
@@ -48,6 +56,7 @@ namespace simulator
 			(*wheel).SetRotation(this->_rotationZ.AxisVector, this->_rotationZ.AxisPoint, this->_rotationZ.AngleSpeed);
 			(*wheel).Rotate(time);
 		}
+		Init();
 	}
 
 	Sattelite::~Sattelite()

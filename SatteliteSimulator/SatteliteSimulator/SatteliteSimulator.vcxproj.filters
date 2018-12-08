@@ -26,13 +26,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sattelite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ReactionWheel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestSattelite.h">
+    <ClInclude Include="Satellite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestSatellite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

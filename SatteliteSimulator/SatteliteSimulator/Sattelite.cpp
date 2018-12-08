@@ -1,8 +1,8 @@
-#include "Sattelite.h"
+#include "Satellite.h"
 
 namespace simulator
 {
-	void Sattelite::Init()
+	void Satellite::Init()
 	{
 		//start impuls is not included [Imp1 + Imp2 = 0]
 		double rotImpX = 0;
@@ -21,7 +21,7 @@ namespace simulator
 		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
 		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
 	}
-	Sattelite::Sattelite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
+	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
 		: Object(name, mPoints, fPoints)
 	{
 		this->_reactionWheels = wheels;
@@ -29,14 +29,14 @@ namespace simulator
 		Object::Init();
 	}
 
-	void Sattelite::EnergyToReactionWheel(int index, double work)
+	void Satellite::EnergyToReactionWheel(int index, double work)
 	{
 		this->_reactionWheels[index].PowerToWheel(work);
 
 		Init();
 	}
 
-	void Sattelite::MoveAndRotate(double time)
+	void Satellite::MoveAndRotate(double time)
 	{
 
 
@@ -59,7 +59,7 @@ namespace simulator
 		Init();
 	}
 
-	Sattelite::~Sattelite()
+	Satellite::~Satellite()
 	{
 	}
 

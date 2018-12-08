@@ -1,14 +1,14 @@
-#include "Sattelite.h"
+#include "Satellite.h"
 #include "Simulation.h"
 #include <iostream>
-#include "TestSattelite.h"
+#include "TestSatellite.h"
 
 using namespace simulator;
 using namespace std;
 
 int main()
 {
-	auto testSat = CreateSattelite();
+	auto testSat = CreateSatellite();
 
 	
 	Simulation sim;
@@ -16,8 +16,8 @@ int main()
 	sim.SetTimeStep(1);
 
 	testSat.EnergyToReactionWheel(0, -17);
-	testSat.EnergyToReactionWheel(1, 49);
-	testSat.EnergyToReactionWheel(2, 19);
+	testSat.EnergyToReactionWheel(1, 0);
+	testSat.EnergyToReactionWheel(2, 0);
 	
 	
 	sim.Simulate(1, cout);

@@ -1,12 +1,12 @@
 #pragma once
-#include "Sattelite.h"
+#include "Satellite.h"
 #include "Simulation.h"
 #include <iostream>
 
 using namespace simulator;
 using namespace std;
 
-Sattelite CreateSattelite() {
+Satellite CreateSatellite() {
 	vector<MassPoint> mPoints;
 	vector<ForcePoint> fPoints;
 	vector<ReactionWheel> wheels;
@@ -20,6 +20,6 @@ Sattelite CreateSattelite() {
 	wheels.push_back(ReactionWheel(1, 0, 0, 0, Vector3d(0, 1, 0), 3));
 	wheels.push_back(ReactionWheel(1, 0, 0, 0, Vector3d(0, 0, 1), 3));
 
-	Sattelite sat("TestSattelite", mPoints, fPoints, wheels);
+	Satellite sat("TestSattelite", mPoints, fPoints, wheels);
 	return sat;
 }

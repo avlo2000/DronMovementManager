@@ -10,9 +10,13 @@ using namespace Eigen;
 
 namespace controller {
 	class Controller : public  IController<Sattelite>{
-	private:
+	protected:
 		Sample _sample;
 	public:
+		Controller() {};
+		~Controller() {};
+		void SetSample(Sample &sample);
+		Sample GetSample();
 		void ControlRotation(Vector3d rotSpeed);
 		void ControlInstanceSpeed(Vector3d instSpeed);
 	};

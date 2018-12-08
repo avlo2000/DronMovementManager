@@ -118,6 +118,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="Generator.h" />
     <ClInclude Include="NeuralNetwork.h" />
     <ClInclude Include="Sample.h" />
   </ItemGroup>

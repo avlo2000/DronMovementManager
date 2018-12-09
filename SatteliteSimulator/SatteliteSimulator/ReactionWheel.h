@@ -15,14 +15,15 @@ namespace simulator {
 		double _speed; // [radians per second]
 		double _inertia; // [kg per meter^2]
 		Vector3d _rotImpuls;
-		double _heatLoss; // [radians per second^2]
+		double _frictionCoef;
 		Vector3d _instSpeed;
 
 		void Init();
 	public:
-		ReactionWheel(double mass, double x, double y, double z, Vector3d rotAxes, double inertia);
+		ReactionWheel(double mass, double x, double y, double z, Vector3d rotAxes, double radius);
 		double GetSpeed();
-		void SetSpeed(double speed);
+		void PowerToWheel(double work);//work - energy that the wheel receivs from engine
+		void SetFrictionCoef(double friction); 
 		void SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed);
 		Vector3d GetMomentumImpuls();
 		~ReactionWheel();

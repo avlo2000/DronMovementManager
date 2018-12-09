@@ -1,8 +1,27 @@
-#include "Sattelite.h"
+#include "Satellite.h"
 
 namespace simulator
 {
-	Sattelite::Sattelite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
+	void Satellite::Init()
+	{
+		//start impuls is not included [Imp1 + Imp2 = 0]
+		double rotImpX = 0;
+		double rotImpY = 0;
+		double rotImpZ = 0;
+
+		for (int index = 0; index < _reactionWheels.size(); index++)
+		{
+			rotImpX -= _reactionWheels[index].GetMomentumImpuls().x();
+			rotImpY -= _reactionWheels[index].GetMomentumImpuls().y();
+			rotImpZ -= _reactionWheels[index].GetMomentumImpuls().z();
+		}
+
+
+		this->_rotationX.AngleSpeed = rotImpX / this->_inertiaX;
+		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
+		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
+	}
+	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
 		: Object(name, mPoints, fPoints)
 	{
 		this->_reactionWheels = wheels;
@@ -10,25 +29,14 @@ namespace simulator
 		Object::Init();
 	}
 
-	void Sattelite::SetReactionWheelSpeed(int index, double speed)
+	void Satellite::EnergyToReactionWheel(int index, double work)
 	{
-		this->_reactionWheels[index].SetSpeed(speed);
-		
-		double rotImpX = this->_rotationX.AngleSpeed * this->_inertiaX;
-		double rotImpY = this->_rotationY.AngleSpeed * this->_inertiaY;
-		double rotImpZ = this->_rotationZ.AngleSpeed * this->_inertiaZ;
+		this->_reactionWheels[index].PowerToWheel(work);
 
-		rotImpX -= _reactionWheels[index].GetMomentumImpuls().x();
-		rotImpY -= _reactionWheels[index].GetMomentumImpuls().y();
-		rotImpZ -= _reactionWheels[index].GetMomentumImpuls().z();
-	
-
-		this->_rotationX.AngleSpeed = rotImpX / this->_inertiaX;
-		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
-		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
+		Init();
 	}
 
-	void Sattelite::MoveAndRotate(double time)
+	void Satellite::MoveAndRotate(double time)
 	{
 
 
@@ -48,9 +56,10 @@ namespace simulator
 			(*wheel).SetRotation(this->_rotationZ.AxisVector, this->_rotationZ.AxisPoint, this->_rotationZ.AngleSpeed);
 			(*wheel).Rotate(time);
 		}
+		Init();
 	}
 
-	Sattelite::~Sattelite()
+	Satellite::~Satellite()
 	{
 	}
 

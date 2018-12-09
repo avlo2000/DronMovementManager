@@ -11,12 +11,12 @@ namespace simulator
 	{
 	private:
 		double _timeStep;
-		vector<Object> objects;
+		vector<Object*> objects;
 
 	public:
 		Simulation();
 		~Simulation();
-		void AddObject(Object obj);
+		void AddObject(Object &obj);
 		virtual void SetTimeStep(double timeStep) override;
 		virtual void Simulate(double time, ostream& logger) override;
 	};

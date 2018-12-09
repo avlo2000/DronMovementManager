@@ -1,0 +1,54 @@
+Part I (Done)
+
+General:
+	Firs part of poject is a library which provides creating of any material object as enumeration of material							
+	points which are fixed relative to one another and points of attachment of force(approximately two weeks).							
+																																	
+Entities:																															
+	Point - provides an abstract point for further implementations	;																
+	MaterialPoint - point which has mass and movement vector ;																
+	ForcePoint - predetermines point of attachment of force and current vector of force	;											
+	Object - provides enumeration of points which interact with each other	;	
+
+Note:
+	All entities are ideal physical model. No heat losses or external forces are included. The system is ideal.
+																																	
+Purpose:																															
+	Create the API providing further aims: work with material objects of different forms; then create an object which is identic to	
+	the experimental object and test simulation of its movement; then create console controlling of simulation 						
+	and logging of imortant events. 																								
+	
+-------------------------------------------------------------------------------------------------------------------------------------
+	
+Part II 
+
+General:
+	In this part of project the physical model of sattelite will be created.
+
+Entities:
+	ReactionWheel - inherited from MaterialPoint, is used for changing rotation speed of sattelite by changing its angular momentum ; (Done)
+	Sattelite - inherited from Object, provides simulated Settelite of arbitrary form, which moves and rotates using  (Done)
+				thrusters(ForcePoint) and reaction wheels;
+	Simulator - provides enumeration of Objects and configuration of scenario of their behavior ;
+				
+Note:
+	In ReactionWheel is included friction force as speed loss(meters per second).
+	In Sattelite is included force of gravity it can be set as a constant vector.
+
+Purpose:
+	Create library which provides creating and simulation of sattelite. Include there heat loss external forces.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+	
+Part III
+
+General:
+	In this part of project the library which provides simulation of sattelite will be used in Simulator and created: data representer 
+	for training AI module; data generator using Simulator; Sattelite that has rotation wheels. 
+	
+Entities:
+
+Note:
+
+Purpose:
+

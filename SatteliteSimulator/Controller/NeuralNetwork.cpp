@@ -24,12 +24,12 @@ namespace controller {
 	network<sequential> NeuralNetwork::Network() {
 		return _net;
 	}
-	void NeuralNetwork::SetNumberOfHiddenLayers(int numberOfHiddelLayers, int hiddenLayersLength) {
+	void NeuralNetwork::SetNumberOfHiddenLayers(int numberOfHiddenLayers, int hiddenLayersLength, int numberOfOutPutValue) {
 		_net << fully_connected_layer(3, hiddenLayersLength) << sigmoid_layer();
-		for (int i = 0; i < numberOfHiddelLayers - 1; i++) {
+		for (int i = 0; i < numberOfHiddenLayers - 1; i++) {
 			_net << fully_connected_layer(hiddenLayersLength, hiddenLayersLength) << sigmoid_layer();
 		}
-		_net << fully_connected_layer(hiddenLayersLength, 3) << sigmoid_layer();
+		_net << fully_connected_layer(hiddenLayersLength, numberOfOutPutValue) << sigmoid_layer();
 	}
 	void NeuralNetwork::Train(Sample sample) {
 		adagrad optimizer;

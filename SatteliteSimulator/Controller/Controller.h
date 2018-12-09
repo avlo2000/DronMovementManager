@@ -19,5 +19,6 @@ namespace controller {
 		Sample GetSample();
 		void ControlRotation(Vector3d rotSpeed);
 		void ControlInstanceSpeed(Vector3d instSpeed);
+		void Generate(int rangeStart, int rangeEnd, int sampleSize);
 	};
 }

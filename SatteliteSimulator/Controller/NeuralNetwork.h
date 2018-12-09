@@ -13,7 +13,7 @@ namespace controller {
 	public:
 		NeuralNetwork() {};
 		NeuralNetwork(int newEpoch, int newBatch);
-		void SetNumberOfHiddenLayers(int numberOfHiddelLayers, int hiddenLayersLength);
+		void SetNumberOfHiddenLayers(int numberOfHiddelLayers, int hiddenLayersLength, int numberOfOutPutValue);
 		int Epoch();
 		int Batch();
 		network<sequential> Network();

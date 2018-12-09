@@ -1,7 +1,7 @@
 #include "Controller.h"
 #include "NeuralNetwork.h"
 #include "Sample.h"
-
+#include <cmath>
 
 namespace controller {
 		void Controller::SetSample(Sample &sample) {
@@ -17,11 +17,17 @@ namespace controller {
 		Sample  Controller::GetSample() {
 			return _sample;
 		}
-		void Controller::Generate(int rangeStart, int rangeEnd, int sampleSize) {
+		void Controller::Generate(double rangeStart, double rangeEnd, int sampleSize) {
 			vector<double> firstNeuronInput;
 			srand(time(0));
-			for (int i = 0; i < sampleSize; i++) {
-				firstNeuronInput.push_back(rangeStart + (rand() / (RAND_MAX + 1.0) *(rangeEnd - rangeStart)));
+			int numberOfRanges = 5 * log10(sampleSize);
+			double step = (double)(rangeEnd - rangeStart)/numberOfRanges;
+			for (int i = 0; i < numberOfRanges; i++) {
+				int numberOfPointsInThisRange = (i == numberOfRanges - 1) ? sampleSize / numberOfRanges + sampleSize % numberOfRanges : sampleSize / numberOfRanges;
+				for (int j = 0; j < numberOfPointsInThisRange; j++) {
+					firstNeuronInput.push_back(rangeStart + (rand() / (RAND_MAX + 1.0) *(rangeStart + step - rangeStart)));
+				}
+				rangeStart += step;
 			}
 			vector<double> secondNeuronInput(firstNeuronInput);
 			vector<double> thirdNeuronInput(firstNeuronInput);

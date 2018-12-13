@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Simulation.Contracts;..\..\third_party\eigen;..\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -85,7 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Simulation.Contracts;..\..\third_party\eigen;..\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

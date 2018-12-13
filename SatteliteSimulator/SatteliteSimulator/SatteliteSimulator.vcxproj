@@ -83,7 +83,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Controller.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Controller.Contracts;..\..\third_party\eigen;..\Simulation.Contracts;..\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Controller.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Controller.Contracts;..\..\third_party\eigen;..\Simulation.Contracts;..\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

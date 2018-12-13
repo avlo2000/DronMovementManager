@@ -31,9 +31,17 @@ namespace controller {
 		}
 		_net << fully_connected_layer(hiddenLayersLength, numberOfOutPutValue) << sigmoid_layer();
 	}
-	void NeuralNetwork::Train(Sample sample) {
+	void NeuralNetwork::Train(Sample &sample) {
 		adagrad optimizer;
 		_net.fit<mse>(optimizer, sample.GetInstSpeed(), sample.GetRotSpeed(), Batch(), Epoch());
-		_net.save("network");
+	}
+	void NeuralNetwork::SaveNetwork(string name) {
+		_net.save(name);
+	}
+	void NeuralNetwork::LoadNetwork(string name) {
+		_net.load(name);
+	}
+	vec_t NeuralNetwork::PredictNetwork(vec_t &input) {
+		return _net.predict(input);
 	}
 }

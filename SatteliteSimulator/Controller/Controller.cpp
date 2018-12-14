@@ -2,17 +2,21 @@
 #include "NeuralNetwork.h"
 #include "Sample.h"
 #include <cmath>
-
+class NotImplementedException : public std::logic_error{
+public:
+	virtual char const * what() const { return "Function not yet implemented."; }
+}notImplementedException;
 namespace controller {
 		void Controller::SetSample(Sample &sample) {
 			_sample = sample;
 		}
-		void Controller::ControlRotation(Vector3d rotSpeed) {
-			_sample.AddRotSpeed(rotSpeed);
+		void Controller::ControlRotation() {
+			throw notImplementedException;
 		}
 
-		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
-			_sample.AddInstSpeed(instSpeed);
+		vec_t Controller::ControlInstanceSpeed(Vector3d &instSpeed) {
+			vec_t convertedVector = this->_sample.Convertor(instSpeed);
+			return this->_neuralNetwork.PredictNetwork(convertedVector);
 		}
 		Sample  Controller::GetSample() {
 			return _sample;
@@ -41,8 +45,9 @@ namespace controller {
 				sattelite.SetReactionWheelSpeed(1, secondNeuronInput.at(randIndex2));
 				sattelite.SetReactionWheelSpeed(2, thirdNeuronInput.at(randIndex3));
 				sattelite.MoveAndRotate(1.0);
-				this->ControlInstanceSpeed(Vector3d(firstNeuronInput.at(randIndex1), secondNeuronInput.at(randIndex2), thirdNeuronInput.at(randIndex3)));
-				this->ControlRotation(sattelite.GetRotationSpeeds());
+				Vector3d inputData(firstNeuronInput.at(randIndex1), secondNeuronInput.at(randIndex2), thirdNeuronInput.at(randIndex3));
+				this->_sample.AddInstSpeed(inputData);
+				this->_sample.AddRotSpeed(sattelite.GetRotationSpeeds());
 				firstNeuronInput.erase(firstNeuronInput.begin() + randIndex1);
 				secondNeuronInput.erase(secondNeuronInput.begin() + randIndex2);
 				thirdNeuronInput.erase(thirdNeuronInput.begin() + randIndex3);

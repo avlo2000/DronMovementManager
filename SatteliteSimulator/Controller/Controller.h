@@ -19,7 +19,7 @@ namespace controller {
 		void SetSample(Sample &sample);
 		Sample GetSample();
 		void ControlRotation();
-		vec_t ControlInstanceSpeed(Vector3d &instSpeed);
+		void ControlInstanceSpeed(Vector3d instSpeed);
 		void Generate(double rangeStart, double rangeEnd, int sampleSize);
 	};
 }

@@ -14,9 +14,13 @@ namespace controller {
 			throw notImplementedException;
 		}
 
-		vec_t Controller::ControlInstanceSpeed(Vector3d &instSpeed) {
+		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
 			vec_t convertedVector = this->_sample.Convertor(instSpeed);
-			return this->_neuralNetwork.PredictNetwork(convertedVector);
+			Sattelite sattelite = *(this->_obj);
+			vec_t predictionVector = this->_neuralNetwork.PredictNetwork(convertedVector);
+			sattelite.PowerToWheel(predictionVector.at(0));
+			sattelite.PowerToWheel(predictionVector.at(1));
+			sattelite.PowerToWheel(predictionVector.at(2));
 		}
 		Sample  Controller::GetSample() {
 			return _sample;

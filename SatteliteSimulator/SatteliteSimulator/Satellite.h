@@ -15,6 +15,7 @@ namespace simulator
 		Satellite(string name, vector<MassPoint>&, vector<ForcePoint>& , vector<ReactionWheel>&);
 		void EnergyToReactionWheel(int index, double work);//work - energy that the wheel receivs from engine
 		void MoveAndRotate(double time) override;
+		int GetNumOfWheels();
 		~Satellite();
 	};
 

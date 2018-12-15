@@ -58,7 +58,9 @@ namespace simulator
 		}
 		Init();
 	}
-
+	int Satellite::GetNumOfWheels() {
+		return this->_reactionWheels.size();
+	}
 	Satellite::~Satellite()
 	{
 	}

@@ -8,3 +8,7 @@ class WrongPointTypeException : public std::exception
 		return "No such type of point";
 	}
 };
+class NotImplementedException : public std::logic_error {
+	public:
+		virtual char const * what() const { return "Function not yet implemented."; }
+}notImplementedException;

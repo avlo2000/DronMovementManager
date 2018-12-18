@@ -1,8 +1,7 @@
 #include "Controller.h"
-#include "NeuralNetwork.h"
-#include "Sample.h"
 #include <cmath>
 #include "Exceptions.h"
+
 
 namespace controller {
 		void Controller::SetSample(Sample &sample) {
@@ -17,7 +16,7 @@ namespace controller {
 		}
 
 		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
-			throw notImplementedException;
+			//throw NotImplementedException();
 		}
 		Sample  Controller::GetSample() {
 			return _sample;
@@ -42,7 +41,7 @@ namespace controller {
 			}
 			
 			for (int size = firstNeuronInput.size(); 0 < size; size--) {
-				Sattelite sattelite = *(this->_obj);
+				Satellite sattelite = *(_obj);
 				Vector3d inputVector(wheelSize);
 				for (int i = 0; i < wheelSize; i++) {
 					int randIndex = rand() % size;
@@ -52,7 +51,7 @@ namespace controller {
 				}
 				sattelite.MoveAndRotate(1.0);
 				this->_sample.AddInstSpeed(inputVector); //power
-				this->_sample.AddRotSpeed(sattelite.GetRotationSpeeds()); 
+				//this->_sample.AddRotSpeed(sattelite.GetRotationSpeeds()); 
 			}
 		}
 }

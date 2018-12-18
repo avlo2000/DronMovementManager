@@ -1,3 +1,4 @@
+#pragma once
 #include"Sample.h"
 namespace controller {
 	vec_t Sample::Convertor(Vector3d &eigenVec) {

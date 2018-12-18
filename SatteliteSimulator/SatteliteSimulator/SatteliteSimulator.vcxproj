@@ -83,7 +83,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Controller.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Controller.Contracts;..\..\third_party\eigen;..\Simulation.Contracts;..\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -93,11 +93,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Simulation;C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Controller.Contracts;C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Controller.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\third_party\eigen;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation.Contracts;C:\Users\pavlo\source\repos\DronMovementManager\SatteliteSimulator\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Controller.Contracts;..\..\third_party\eigen;..\Simulation.Contracts;..\Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\eigen;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

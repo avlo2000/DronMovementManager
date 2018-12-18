@@ -36,17 +36,22 @@ namespace simulator
 		Init();
 	}
 
-	void Satellite::MoveAndRotate(double time)
+	void Satellite::Move(double time)
 	{
-
-
-		Object::MoveAndRotate(time);
-
+		Object::Move(time);
 		for (auto wheel = this->_reactionWheels.begin(); wheel < this->_reactionWheels.end(); wheel++)
 		{
 			(*wheel).SetInstSpeed(this->_instSpeed);
 			(*wheel).Move(time);
+		}
+		Init();
+	}
 
+	void Satellite::Rotate(double time)
+	{
+		Object::Rotate(time);
+		for (auto wheel = this->_reactionWheels.begin(); wheel < this->_reactionWheels.end(); wheel++)
+		{
 			(*wheel).SetRotation(this->_rotationX.AxisVector, this->_rotationX.AxisPoint, this->_rotationX.AngleSpeed);
 			(*wheel).Rotate(time);
 

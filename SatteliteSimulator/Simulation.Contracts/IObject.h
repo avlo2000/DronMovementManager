@@ -13,10 +13,10 @@ namespace contracts
 	class IObject : IMovable, IRotatable
 	{
 	protected:
-		virtual void Move(double time) {};
-		virtual void Rotate(double time) {};
+		virtual void Move(double time) = 0;
+		virtual void Rotate(double time) = 0;
 	public:
-		virtual void MoveAndRotate(double time)
+		void MoveAndRotate(double time)
 		{
 			this->Move(time);
 			this->Rotate(time);

@@ -13,9 +13,6 @@ namespace simulator
 		double xSum = 0;
 		double ySum = 0;
 		double zSum = 0;
-		this->_inertiaX = 0;
-		this->_inertiaY = 0;
-		this->_inertiaZ = 0;
 
 		for (auto mPoint : this->_mPoints)
 		{
@@ -26,6 +23,10 @@ namespace simulator
 		}
 
 		this->_massCentre = MassPoint(mass, xSum / mass, ySum / mass, zSum / mass);
+
+		this->_inertiaX = 0;
+		this->_inertiaY = 0;
+		this->_inertiaZ = 0;
 
 		for (auto mPoint : this->_mPoints)
 		{
@@ -93,7 +94,7 @@ namespace simulator
 		//--------------------
 	}
 
-	void Object::MoveAndRotate(double time)
+	void Object::Move(double time)
 	{
 		this->_massCentre.SetInstSpeed(this->_instSpeed);
 		this->_massCentre.Move(time);
@@ -102,7 +103,18 @@ namespace simulator
 		{
 			(*point).SetInstSpeed(this->_instSpeed);
 			(*point).Move(time);
-			
+		}
+		for (auto point = this->_mPoints.begin(); point < this->_mPoints.end(); point++)
+		{
+			(*point).SetInstSpeed(this->_instSpeed);
+			(*point).Move(time);
+		}
+	}
+
+	void Object::Rotate(double time)
+	{
+		for (auto point = this->_fPoints.begin(); point < this->_fPoints.end(); point++)
+		{
 			(*point).SetRotation(this->_rotationX.AxisVector, this->_rotationX.AxisPoint, this->_rotationX.AngleSpeed);
 			(*point).Rotate(time);
 
@@ -115,9 +127,6 @@ namespace simulator
 
 		for (auto point = this->_mPoints.begin(); point < this->_mPoints.end(); point++)
 		{
-			(*point).SetInstSpeed(this->_instSpeed);
-			(*point).Move(time);
-
 			(*point).SetRotation(this->_rotationX.AxisVector, this->_rotationX.AxisPoint, this->_rotationX.AngleSpeed);
 			(*point).Rotate(time);
 

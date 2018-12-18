@@ -10,7 +10,7 @@ using namespace std;
 namespace simulator
 {
 
-	class Object : IObject
+	class Object : public IObject
 	{
 	private:
 		string _name;
@@ -39,7 +39,8 @@ namespace simulator
 	public:
 		explicit Object(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints);
 		void PowerToPoint(int fPointIndex, double force, double forceDuration);
-		void MoveAndRotate(double time);
+		virtual void Move(double time);
+		virtual void Rotate(double time);
 		Vector3d GetInertia();
 		void LogInfo(ostream& out);
 		Vector3d GetRotationSpeeds();

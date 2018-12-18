@@ -6,10 +6,6 @@ simulator::Simulation::Simulation()
 {
 }
 
-simulator::Simulation::~Simulation()
-{
-}
-
 void simulator::Simulation::AddObject(Object &obj)
 {
 	this->objects.push_back(&obj);
@@ -34,4 +30,8 @@ void simulator::Simulation::Simulate(double time, ostream& logger)
 		for (auto obj : objects)
 			obj->LogInfo(logger);
 	}
+}
+
+simulator::Simulation::~Simulation()
+{
 }

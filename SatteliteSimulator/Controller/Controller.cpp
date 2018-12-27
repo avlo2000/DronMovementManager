@@ -5,11 +5,11 @@
 
 namespace controller {
 		void Controller::SetSample(Sample &sample) {
-			_sample = sample;
+			this->_sample = sample;
 		}
 		void Controller::ControlRotation(Vector3d rotSpeed) {
 			MatrixXd rotSpeedMatrix = rotSpeed;
-			MatrixXd predictionMatrix = _neuralNetwork.Predict(rotSpeedMatrix);
+			MatrixXd predictionMatrix = this->_neuralNetwork.Predict(rotSpeedMatrix);
 			int numberOfWheels = _obj->GetNumOfWheels();
 			for (int i = 0; i < numberOfWheels; i++) {
 				_obj->EnergyToReactionWheel(i, predictionMatrix(0, i));
@@ -20,13 +20,13 @@ namespace controller {
 			//throw NotImplementedException();
 		}
 		
-		void Controller::Generate(double rangeStart, double rangeEnd, int sampleSize) {
+		void Controller::Generate(double rangeStart, double rangeEnd, int numberOfSamples) {
 			vector<double> firstNeuronInput;
 			int wheelSize = _obj->GetNumOfWheels();
-			int numberOfRanges = 5 * log10(sampleSize);
+			int numberOfRanges = 5 * log10(numberOfSamples);
 			double step = (double)(rangeEnd - rangeStart) / numberOfRanges;
 			for (int i = 0, currentSize = 0; i < numberOfRanges; i++) {
-				int numberOfPointsInThisRange = (i == numberOfRanges - 1) ? sampleSize / numberOfRanges + sampleSize % numberOfRanges : sampleSize / numberOfRanges;
+				int numberOfPointsInThisRange = (i == numberOfRanges - 1) ? numberOfSamples / numberOfRanges + numberOfSamples % numberOfRanges : numberOfSamples / numberOfRanges;
 				for (int j = 0; j < numberOfPointsInThisRange; j++, currentSize++) {
 					firstNeuronInput.push_back(rangeStart + (rand() / (RAND_MAX + 1.0) *(rangeStart + step - rangeStart)));
 				}

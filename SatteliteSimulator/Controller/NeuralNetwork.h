@@ -13,6 +13,7 @@ namespace controller {
 	
 	public:
 		NeuralNetwork() {};
+		~NeuralNetwork() {};
 		void SetHiddenLayers(int numberOfHiddelLayers, int hiddenLayersLength, int numberOfOutputNode);
 		void SetLearningRate(double learningRate);
 		void PrintLossOnEachEpoch();

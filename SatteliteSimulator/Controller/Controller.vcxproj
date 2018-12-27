@@ -85,7 +85,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\Controller.Contracts;..\..\third_party\eigen;..\Simulation.Contracts;..\Simulation;..\..\third_party\tiny-dnn-master;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\MiniDNN\include;C:\Users\SSJ\source\repos\SatelliteMovementManager\third_party\eigen;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
   </ItemDefinitionGroup>

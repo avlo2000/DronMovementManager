@@ -1,23 +1,32 @@
 #pragma once
 #include"Sample.h"
 namespace controller {
-	vec_t Sample::Convertor(Vector3d &eigenVec) {
-		vec_t inputData;
-		inputData.push_back((float)eigenVec.x());
-		inputData.push_back((float)eigenVec.y());
-		inputData.push_back((float)eigenVec.z());
-		return inputData;
+	void Sample::AddEnergy(VectorXd &vec) {
+		_energy.push_back(vec);
 	}
-	void Sample::AddInstSpeed(Vector3d &vec) {
-		_instSpeed.push_back(Convertor(vec));
+	void Sample::AddRotSpeed(VectorXd &vec) {
+		_rotSpeed.push_back(vec);
 	}
-	void Sample::AddRotSpeed(Vector3d &vec) {
-		_rotSpeed.push_back(Convertor(vec));
+	MatrixXd Sample::ConvertToMatrix(vector<VectorXd> &vec) {
+		MatrixXd matrix(vec.at(0).size(), vec.size());
+		for (int i = 0; i < matrix.cols(); i++) {
+			for (int j = 0; j < matrix.rows(); j++) {
+				matrix(j, i) = vec.at(i)(j);
+			}
+		}
+		return matrix;
 	}
-	vector<vec_t> Sample::GetInstSpeed() {
-		return _instSpeed;
+	VectorXd Sample::ConvertVector3dToXd(Vector3d &vec) {
+		VectorXd newVec;
+		for (int i = 0; i < 3; i++) {
+			newVec(i) = vec(i);
+		}
+		return newVec;
 	}
-	vector<vec_t> Sample::GetRotSpeed() {
-		return _rotSpeed;
+	MatrixXd Sample::GetEnergy() {
+		return ConvertToMatrix(_energy);
+	}
+	MatrixXd Sample::GetRotSpeed() {
+		return ConvertToMatrix(_rotSpeed);
 	}
 }

@@ -2,17 +2,19 @@
 #include "Simulation.h"
 #include <iostream>
 #include "TestSatellite.h"
-#include "Controller.h"
+#include "../Controller/Controller.h"
 
 using namespace simulator;
 using namespace std;
-using namespace simulator;
+using namespace controller;
 
 int main()
 {
 	auto testSat = CreateSatellite();
 
-	
+	Controller contr;
+	contr.RegisterObject(testSat);
+
 	Simulation sim;
 	sim.AddObject(testSat);
 	sim.SetTimeStep(1);

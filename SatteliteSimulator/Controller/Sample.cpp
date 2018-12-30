@@ -17,7 +17,7 @@ namespace controller {
 		return matrix;
 	}
 	VectorXd Sample::ConvertVector3dToXd(Vector3d &vec) {
-		VectorXd newVec;
+		VectorXd newVec(3);
 		for (int i = 0; i < 3; i++) {
 			newVec(i) = vec(i);
 		}

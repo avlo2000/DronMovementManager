@@ -16,17 +16,23 @@ namespace controller {
 			_net.add_layer(new FullyConnected<Identity>(hiddenLayersLength, hiddenLayersLength));
 		}
 		_net.add_layer(new FullyConnected<Identity>(hiddenLayersLength, numberOfOutputNode));
+		_net.set_output(new RegressionMSE());
 	}
 	void NeuralNetwork::SetLearningRate(double learningRate) {
 		_opt.m_lrate = learningRate;
 	}
 	void NeuralNetwork::PrintLossOnEachEpoch() {
-		VerboseCallback callback;
-		_net.set_callback(callback);
+		
 	}
 	void NeuralNetwork::Train(Sample &sample, int batchSize, int epoch) {
-		_net.init(0, 0.01, 123);
-		_net.fit(_opt, sample.GetRotSpeed(), sample.GetEnergy(), batchSize, epoch, 123);
+		VerboseCallback callback;
+		_net.set_callback(callback);
+		_net.init(0, 0.01, 40);
+		MatrixXd input = sample.GetRotSpeed();
+		MatrixXd output = sample.GetEnergy();
+		std::cout << "speed:\n" << input  << endl;
+		std::cout << "energy:\n" <<output << endl;
+		_net.fit(_opt, input, output, batchSize, epoch, 123);
 	}
 	MatrixXd NeuralNetwork::Predict(MatrixXd &input) {
 		MatrixXd pred = _net.predict(input);

@@ -12,7 +12,7 @@ namespace contracts {
 	protected:
 		T *_obj;
 	public:
-		void RegisterObject(T &obj)
+		void RegisterObject(T *obj)
 		{
 			_obj = obj;
 		};

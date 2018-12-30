@@ -19,7 +19,14 @@ namespace controller {
 		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
 			//throw NotImplementedException();
 		}
-		
+		void Controller::Train(double rangeStart, double rangeEnd, int numberOfSamples, int numberOfHiddenLayers, int hiddenLayersLength, int numberOfOutputNode, double learningRate, int batchSize, int epoch) {
+			Generate(rangeStart, rangeEnd, numberOfSamples);
+			this->_neuralNetwork.SetHiddenLayers(numberOfHiddenLayers, hiddenLayersLength, numberOfOutputNode);
+			this->_neuralNetwork.SetLearningRate(learningRate);
+			this->_neuralNetwork.PrintLossOnEachEpoch();
+			this->_neuralNetwork.Train(this->_sample, batchSize, epoch);
+			
+		}
 		void Controller::Generate(double rangeStart, double rangeEnd, int numberOfSamples) {
 			vector<double> firstNeuronInput;
 			int wheelSize = _obj->GetNumOfWheels();
@@ -40,6 +47,7 @@ namespace controller {
 			
 			for (int size = firstNeuronInput.size(); 0 < size; size--) {
 				Satellite sattelite = *(_obj);
+				
 				VectorXd inputVector(wheelSize);
 				for (int i = 0; i < wheelSize; i++) {
 					int randIndex = rand() % size;
@@ -48,11 +56,17 @@ namespace controller {
 					vectorMatrix.at(i).erase(vectorMatrix.at(i).begin() + randIndex);
 				}
 				sattelite.MoveAndRotate(1.0);
+				
 				this->_sample.AddEnergy(inputVector); //power
+	
 				Vector3d rotationVector = sattelite.GetRotationSpeeds();
+				
 				VectorXd excpectedOutput = this->_sample.ConvertVector3dToXd(rotationVector);
+				
 				this->_sample.AddRotSpeed(excpectedOutput);
+				
 			}
+			
 		}
 		
 }

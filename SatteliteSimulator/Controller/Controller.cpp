@@ -12,7 +12,7 @@ namespace controller {
 			MatrixXd predictionMatrix = this->_neuralNetwork.Predict(rotSpeedMatrix);
 			int numberOfWheels = _obj->GetNumOfWheels();
 			for (int i = 0; i < numberOfWheels; i++) {
-				_obj->EnergyToReactionWheel(i, predictionMatrix(0, i));
+				_obj->EnergyToReactionWheel(i, predictionMatrix(i, 0));
 			}
 		}
 

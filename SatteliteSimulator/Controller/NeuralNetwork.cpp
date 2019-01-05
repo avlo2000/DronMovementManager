@@ -31,10 +31,6 @@ namespace controller {
 		MatrixXd input = sample.GetRotSpeed();
 		MatrixXd output = sample.GetEnergy();
 		_net.fit(_opt, input, output, batchSize, epoch, 40);
-		MatrixXd trainingOutput = Predict(input);
-		std::cout << "speed:\n" << input(0,0) << " " << input(1,0) << " " << input(2,0) << endl;
-		std::cout << "expected energy:\n" << output(0,0) << " " << output(1, 0) << " " << output(2, 0) << endl;
-		std::cout << "energy:\n" << trainingOutput(0, 0) << " " << trainingOutput(1, 0) << " " << trainingOutput(2, 0) << endl;
 	}
 	MatrixXd NeuralNetwork::Predict(MatrixXd &input) {
 		MatrixXd pred = _net.predict(input);

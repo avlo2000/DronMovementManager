@@ -44,10 +44,10 @@ namespace controller {
 				vector<double> NeuronInput(firstNeuronInput);
 				vectorMatrix.push_back(NeuronInput);
 			}
-			
+
 			for (int size = firstNeuronInput.size(); 0 < size; size--) {
 				Satellite sattelite = *(_obj);
-				
+
 				VectorXd inputVector(wheelSize);
 				for (int i = 0; i < wheelSize; i++) {
 					int randIndex = rand() % size;
@@ -56,17 +56,17 @@ namespace controller {
 					vectorMatrix.at(i).erase(vectorMatrix.at(i).begin() + randIndex);
 				}
 				sattelite.MoveAndRotate(1.0);
-				
+
 				this->_sample.AddEnergy(inputVector); //power
-	
+
 				Vector3d rotationVector = sattelite.GetRotationSpeeds();
-				
+
 				VectorXd excpectedOutput = this->_sample.ConvertVector3dToXd(rotationVector);
-				
+
 				this->_sample.AddRotSpeed(excpectedOutput);
-				
+
 			}
-			
+
 		}
 		
 }

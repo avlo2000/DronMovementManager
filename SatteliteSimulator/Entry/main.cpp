@@ -14,13 +14,16 @@ int main()
 	auto sat = CreateSatellite();
 	Controller contr;
 	contr.RegisterObject(&testSat);
-	contr.Train(0,40,4,10,30,3,0.001,100,10);
+	//Config: 0,40,1000,2,15,3,0.0007,200,40000
+	contr.Train(0,40,1000,2,15,3,0.0007,200,40000);
 	Simulation sim;
 	sim.AddObject(sat);
 	sim.AddObject(testSat);
 
 	sim.SetTimeStep(1);
-
+	sat.EnergyToReactionWheel(0, 0.0166829);
+	sat.EnergyToReactionWheel(1, 29.244);
+	sat.EnergyToReactionWheel(2, 37.4495);
 	testSat.EnergyToReactionWheel(0, 2);
 	sim.Simulate(1, cout);
 

@@ -12,9 +12,10 @@ int main()
 {
 	auto testSat = CreateSatellite();
 	auto sat = CreateSatellite();
+
 	Controller contr;
 	contr.RegisterObject(&testSat);
-	contr.Train();
+	
 	Simulation sim;
 	sim.AddObject(sat);
 	sim.AddObject(testSat);

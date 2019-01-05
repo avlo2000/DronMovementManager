@@ -4,10 +4,19 @@
 #include <random>
 
 namespace controller {
-		void Controller::SetSample(Sample &sample) {
+	void Controller::RegisterObject(Satellite *sat)
+	{
+		IController<Satellite>::RegisterObject(sat);
+		this->Train();
+	}
+	void Controller::SetSample(Sample &sample) {
 			this->_sample = sample;
 		}
+
 		void Controller::ControlRotation(Vector3d rotSpeed) {
+			if (this->_obj == NULL)
+				throw UnregisteredObjectException();
+
 			MatrixXd rotSpeedMatrix = rotSpeed;
 			MatrixXd predictionMatrix = this->_neuralNetwork.Predict(rotSpeedMatrix);
 			int numberOfWheels = _obj->GetNumOfWheels();
@@ -17,17 +26,21 @@ namespace controller {
 		}
 
 		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
-			//throw NotImplementedException();
+			throw NotImplementedException();
 		}
+
 		void Controller::Train() {
 			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);
 			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
 			this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
 			this->_neuralNetwork.PrintLossOnEachEpoch();
 			this->_neuralNetwork.Train(this->_sample, BATCHSIZE, EPOCH);
-			
 		}
+
 		void Controller::Generate(double rangeStart, double rangeEnd, int numberOfSamples) {
+			if (this->_obj == NULL)
+				throw UnregisteredObjectException();
+
 			vector<double> firstNeuronInput;
 			int wheelSize = _obj->GetNumOfWheels();
 			int numberOfRanges = 5 * log10(numberOfSamples);

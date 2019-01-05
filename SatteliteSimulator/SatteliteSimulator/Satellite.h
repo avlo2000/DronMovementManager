@@ -1,12 +1,12 @@
 #pragma once
 #include "Object.h"
 #include "ReactionWheel.h"
-#include "Controlable.h"
+#include "IControlable.h"
 
 namespace simulator 
 {
 
-	class Satellite : Controlable, public Object
+	class Satellite : IControlable, public Object
 	{
 	private:
 		vector<ReactionWheel> _reactionWheels;
@@ -17,6 +17,10 @@ namespace simulator
 		void MoveAndRotate(double time) override;
 		int GetNumOfWheels();
 		~Satellite();
+
+		// Inherited via IControlable
+		virtual void RegisterControl(IController<Object>* controller) override;
+		virtual void Control(Vector3d instSpeed, Vector3d rotSpeed) override;
 	};
 
 }

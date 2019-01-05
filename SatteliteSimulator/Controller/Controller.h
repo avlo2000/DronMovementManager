@@ -16,10 +16,11 @@ namespace controller {
 	private:
 		Sample _sample;
 		NeuralNetwork _neuralNetwork;
+		void Train();
 	public:
 		Controller() {};
 		~Controller() {};
-		void Train();
+		virtual void RegisterObject(Satellite *sat);
 		void SetSample(Sample &sample);
 		void ControlRotation(Vector3d instSpeed);
 		void ControlInstanceSpeed(Vector3d instSpeed);

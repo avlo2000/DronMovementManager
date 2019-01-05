@@ -117,11 +117,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Controlable.h" />
+    <ClInclude Include="IControlable.h" />
     <ClInclude Include="IController.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Controlable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Simulation\Simulation.vcxproj">

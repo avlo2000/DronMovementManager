@@ -67,4 +67,15 @@ namespace simulator
 	{
 	}
 
+	void Satellite::RegisterControl(IController<Object>* controller)
+	{
+		this->_controller->RegisterObject(this);
+	}
+
+	void Satellite::Control(Vector3d instSpeed, Vector3d rotSpeed)
+	{
+		this->_controller->ControlRotation(rotSpeed);
+		this->_controller->ControlInstanceSpeed(instSpeed);
+	}
+
 }

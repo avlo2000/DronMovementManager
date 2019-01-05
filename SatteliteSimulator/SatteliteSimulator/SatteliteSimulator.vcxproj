@@ -126,7 +126,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ReactionWheel.cpp" />
-    <ClCompile Include="Sattelite.cpp" />
+    <ClCompile Include="Satellite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Simulation\Simulation.vcxproj">

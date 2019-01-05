@@ -4,6 +4,7 @@
 #include "Satellite.h"
 #include "Sample.h"
 #include "NeuralNetwork.h"
+#include "NeuralConfig.h"
 
 using namespace contracts;
 using namespace simulator;
@@ -18,7 +19,7 @@ namespace controller {
 	public:
 		Controller() {};
 		~Controller() {};
-		void Train(double rangeStart, double rangeEnd, int numberOfSamples, int numberOfHiddenLayers, int hiddenLayersLength, int numberOfOutputNode, double learningRate, int batchSize, int epoch);
+		void Train();
 		void SetSample(Sample &sample);
 		void ControlRotation(Vector3d instSpeed);
 		void ControlInstanceSpeed(Vector3d instSpeed);

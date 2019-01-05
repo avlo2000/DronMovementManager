@@ -19,12 +19,12 @@ namespace controller {
 		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
 			//throw NotImplementedException();
 		}
-		void Controller::Train(double rangeStart, double rangeEnd, int numberOfSamples, int numberOfHiddenLayers, int hiddenLayersLength, int numberOfOutputNode, double learningRate, int batchSize, int epoch) {
-			Generate(rangeStart, rangeEnd, numberOfSamples);
-			this->_neuralNetwork.SetHiddenLayers(numberOfHiddenLayers, hiddenLayersLength, numberOfOutputNode);
-			this->_neuralNetwork.SetLearningRate(learningRate);
+		void Controller::Train() {
+			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);
+			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
+			this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
 			this->_neuralNetwork.PrintLossOnEachEpoch();
-			this->_neuralNetwork.Train(this->_sample, batchSize, epoch);
+			this->_neuralNetwork.Train(this->_sample, BATCHSIZE, EPOCH);
 			
 		}
 		void Controller::Generate(double rangeStart, double rangeEnd, int numberOfSamples) {

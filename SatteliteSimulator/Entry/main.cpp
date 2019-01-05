@@ -14,8 +14,7 @@ int main()
 	auto sat = CreateSatellite();
 	Controller contr;
 	contr.RegisterObject(&testSat);
-	//Config: 0,40,1000,2,15,3,0.0007,200,40000
-	contr.Train(0,40,1000,2,15,3,0.0007,200,40000);
+	contr.Train();
 	Simulation sim;
 	sim.AddObject(sat);
 	sim.AddObject(testSat);

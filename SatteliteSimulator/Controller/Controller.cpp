@@ -33,7 +33,6 @@ namespace controller {
 			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);
 			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
 			this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
-			this->_neuralNetwork.PrintLossOnEachEpoch();
 			this->_neuralNetwork.Train(this->_sample, BATCHSIZE, EPOCH);
 		}
 

@@ -12,7 +12,7 @@ namespace controller {
 	
 	void NeuralNetwork::SetHiddenLayers(int numberOfHiddenLayers, int hiddenLayersLength, int numberOfOutputNode) {
 		_net.add_layer(new FullyConnected<Identity>(3, hiddenLayersLength));
-		for (int i = 0; i < numberOfHiddenLayers - 1; i++) {
+		for (int i = 0; i < numberOfHiddenLayers; i++) {
 			_net.add_layer(new FullyConnected<Sigmoid>(hiddenLayersLength, hiddenLayersLength));
 		}
 		_net.add_layer(new FullyConnected<Identity>(hiddenLayersLength, numberOfOutputNode));
@@ -21,9 +21,7 @@ namespace controller {
 	void NeuralNetwork::SetLearningRate(double learningRate) {
 		_opt.m_lrate = learningRate;
 	}
-	void NeuralNetwork::PrintLossOnEachEpoch() {
-		
-	}
+	
 	void NeuralNetwork::Train(Sample &sample, int batchSize, int epoch) {
 		VerboseCallback callback;
 		_net.set_callback(callback);

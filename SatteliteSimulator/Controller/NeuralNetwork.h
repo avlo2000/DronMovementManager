@@ -16,7 +16,6 @@ namespace controller {
 		~NeuralNetwork() {};
 		void SetHiddenLayers(int numberOfHiddelLayers, int hiddenLayersLength, int numberOfOutputNode);
 		void SetLearningRate(double learningRate);
-		void PrintLossOnEachEpoch();
 		void Train(Sample &sample, int batchSize, int epoch);
 		MatrixXd Predict(MatrixXd &input);
 	};

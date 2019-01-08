@@ -25,10 +25,10 @@ namespace controller {
 	void NeuralNetwork::Train(Sample &sample, int batchSize, int epoch) {
 		VerboseCallback callback;
 		_net.set_callback(callback);
-		_net.init(0, 0.01, 40);
+		_net.init(NORMALDISTRIBUTIONMEAN, STANDARDDIVIATION, RANDOMSEED);
 		MatrixXd input = sample.GetRotSpeed();
 		MatrixXd output = sample.GetEnergy();
-		_net.fit(_opt, input, output, batchSize, epoch, 40);
+		_net.fit(_opt, input, output, batchSize, epoch, RANDOMSEED);
 	}
 	MatrixXd NeuralNetwork::Predict(MatrixXd &input) {
 		MatrixXd pred = _net.predict(input);

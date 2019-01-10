@@ -20,6 +20,7 @@ namespace simulator
 		this->_rotationX.AngleSpeed = rotImpX / this->_inertiaX;
 		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
 		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
+		Wobble();
 	}
 	void Satellite::Wobble()
 	{
@@ -35,10 +36,11 @@ namespace simulator
 			this->_rotationZ.AngleSpeed += distribution(generator);
 		}
 	}
-	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
-		: Object(name, mPoints, fPoints)
+	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ReactionWheel>& wheels)
+		: Object(name, mPoints)
 	{
 		this->_reactionWheels = wheels;
+		this->_wobbling = 0;
 		this->_mPoints.insert(this->_mPoints.end(), this->_reactionWheels.begin(), this->_reactionWheels.end());
 		Object::Init();
 	}
@@ -57,8 +59,6 @@ namespace simulator
 
 	void Satellite::MoveAndRotate(double time)
 	{
-
-
 		Object::MoveAndRotate(time);
 
 		for (auto wheel = this->_reactionWheels.begin(); wheel < this->_reactionWheels.end(); wheel++)
@@ -73,7 +73,6 @@ namespace simulator
 			(*wheel).Rotate(time);
 		}
 
-		Wobble();
 		Init();
 	}
 

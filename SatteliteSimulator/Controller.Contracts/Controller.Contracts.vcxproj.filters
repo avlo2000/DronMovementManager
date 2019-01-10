@@ -18,13 +18,8 @@
     <ClInclude Include="IController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Controlable.h">
+    <ClInclude Include="IControlable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Controlable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

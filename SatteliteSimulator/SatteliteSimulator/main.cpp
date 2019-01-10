@@ -2,9 +2,11 @@
 #include "Simulation.h"
 #include <iostream>
 #include "TestSatellite.h"
+#include "Controller.h"
 
 using namespace simulator;
 using namespace std;
+using namespace simulator;
 
 int main()
 {

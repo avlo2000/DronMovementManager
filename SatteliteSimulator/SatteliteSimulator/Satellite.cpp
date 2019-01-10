@@ -21,8 +21,22 @@ namespace simulator
 		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
 		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
 	}
-	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ReactionWheel>& wheels)
-		: Object(name, mPoints)
+	void Satellite::Wobble()
+	{
+		unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+		default_random_engine generator(seed);
+
+		if (this->_wobbling != 0)
+		{
+			normal_distribution<double> distribution(0.0, this->_wobbling);
+
+			this->_rotationX.AngleSpeed += distribution(generator);
+			this->_rotationY.AngleSpeed += distribution(generator);
+			this->_rotationZ.AngleSpeed += distribution(generator);
+		}
+	}
+	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
+		: Object(name, mPoints, fPoints)
 	{
 		this->_reactionWheels = wheels;
 		this->_mPoints.insert(this->_mPoints.end(), this->_reactionWheels.begin(), this->_reactionWheels.end());
@@ -34,6 +48,11 @@ namespace simulator
 		this->_reactionWheels[index].PowerToWheel(work);
 
 		Init();
+	}
+
+	void Satellite::SetWobbling(double wobbling)
+	{
+		this->_wobbling = wobbling;
 	}
 
 	void Satellite::MoveAndRotate(double time)
@@ -53,6 +72,8 @@ namespace simulator
 			(*wheel).SetRotation(this->_rotationZ.AxisVector, this->_rotationZ.AxisPoint, this->_rotationZ.AngleSpeed);
 			(*wheel).Rotate(time);
 		}
+
+		Wobble();
 		Init();
 	}
 

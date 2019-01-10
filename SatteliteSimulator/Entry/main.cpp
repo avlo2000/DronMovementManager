@@ -13,8 +13,8 @@ int main()
 	auto testSat = CreateSatellite();
 	auto sat = CreateSatellite();
 
-	Controller contr;
-	contr.RegisterObject(&testSat);
+	//Controller contr;
+	//contr.RegisterObject(&testSat);
 	
 	Simulation sim;
 	sim.AddObject(sat);
@@ -27,7 +27,7 @@ int main()
 	testSat.EnergyToReactionWheel(0, 2);
 	sim.Simulate(1, cout);
 
-	contr.ControlRotation(Vector3d(0.2, 0, 0));
+	//contr.ControlRotation(Vector3d(0.2, 0, 0));
 	sim.Simulate(1, cout);
 	system("pause");
 	return 0;

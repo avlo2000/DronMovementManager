@@ -21,8 +21,8 @@ namespace simulator
 		this->_rotationY.AngleSpeed = rotImpY / this->_inertiaY;
 		this->_rotationZ.AngleSpeed = rotImpZ / this->_inertiaZ;
 	}
-	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints, vector<ReactionWheel>& wheels)
-		: Object(name, mPoints, fPoints)
+	Satellite::Satellite(string name, vector<MassPoint>& mPoints, vector<ReactionWheel>& wheels)
+		: Object(name, mPoints)
 	{
 		this->_reactionWheels = wheels;
 		this->_mPoints.insert(this->_mPoints.end(), this->_reactionWheels.begin(), this->_reactionWheels.end());
@@ -44,9 +44,6 @@ namespace simulator
 
 		for (auto wheel = this->_reactionWheels.begin(); wheel < this->_reactionWheels.end(); wheel++)
 		{
-			(*wheel).SetInstSpeed(this->_instSpeed);
-			(*wheel).Move(time);
-
 			(*wheel).SetRotation(this->_rotationX.AxisVector, this->_rotationX.AxisPoint, this->_rotationX.AngleSpeed);
 			(*wheel).Rotate(time);
 
@@ -75,7 +72,6 @@ namespace simulator
 	void Satellite::Control(Vector3d instSpeed, Vector3d rotSpeed)
 	{
 		this->_controller->ControlRotation(rotSpeed);
-		this->_controller->ControlInstanceSpeed(instSpeed);
 	}
 
 }

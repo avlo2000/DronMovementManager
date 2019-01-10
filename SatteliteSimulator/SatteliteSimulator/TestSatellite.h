@@ -8,7 +8,6 @@ using namespace std;
 
 Satellite CreateSatellite() {
 	vector<MassPoint> mPoints;
-	vector<ForcePoint> fPoints;
 	vector<ReactionWheel> wheels;
 	mPoints.push_back(MassPoint(20, 1, 0, 0));
 	mPoints.push_back(MassPoint(20, -1, 0, 0));
@@ -20,6 +19,6 @@ Satellite CreateSatellite() {
 	wheels.push_back(ReactionWheel(1, 0, 0, 0, Vector3d(0, 1, 0), 3));
 	wheels.push_back(ReactionWheel(1, 0, 0, 0, Vector3d(0, 0, 1), 3));
 
-	Satellite sat("TestSattelite", mPoints, fPoints, wheels);
+	Satellite sat("TestSattelite", mPoints, wheels);
 	return sat;
 }

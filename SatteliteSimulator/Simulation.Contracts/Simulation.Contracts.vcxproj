@@ -117,7 +117,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="IMovable.h" />
     <ClInclude Include="IObject.h" />
     <ClInclude Include="IPoint.h" />
     <ClInclude Include="IRotatable.h" />

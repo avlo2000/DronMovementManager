@@ -29,15 +29,13 @@ namespace simulator
 		Rotation _rotationY;
 		Rotation _rotationZ;
 
-		vector<ForcePoint> _fPoints;
 		vector<MassPoint> _mPoints;
 		MassPoint _massCentre;
-		Vector3d _instSpeed; 
 
 		void Init();
 		pair<Vector3d, Vector3d> GetForceComponents(int fPointIndex);
 	public:
-		explicit Object(string name, vector<MassPoint>& mPoints, vector<ForcePoint>& fPoints);
+		explicit Object(string name, vector<MassPoint>& mPoints);
 		void PowerToPoint(int fPointIndex, double force, double forceDuration);
 		void MoveAndRotate(double time);
 		Vector3d GetInertia();

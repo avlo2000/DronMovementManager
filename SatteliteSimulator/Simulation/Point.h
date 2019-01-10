@@ -20,9 +20,7 @@ namespace simulator
 		void Z(double z);
 		explicit Point();
 		explicit Point(double x, double y, double z);
-		void SetInstSpeed(Vector3d speed);
-		void SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed);
-		void Move(double time);		
+		void SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed);	
 		void Rotate(double time);
 		~Point();
 	};

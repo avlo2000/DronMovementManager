@@ -5,6 +5,7 @@
 #include "Sample.h"
 #include "NeuralNetwork.h"
 #include "NeuralConfig.h"
+#include <string>
 
 using namespace contracts;
 using namespace simulator;
@@ -24,6 +25,7 @@ namespace controller {
 		void SetSample(Sample &sample);
 		void ControlRotation(Vector3d instSpeed);
 		void ControlInstanceSpeed(Vector3d instSpeed);
+		void LoadNetwork(string fileName);
 		void Generate(double rangeStart, double rangeEnd, int sampleSize);
 	};
 }

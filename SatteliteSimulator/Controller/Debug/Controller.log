@@ -1,7 +1,3 @@
-﻿  Controller.cpp
+﻿  NeuralNetwork.cpp
 c:\users\ssj\source\repos\satellitemovementmanager\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
-c:\users\ssj\source\repos\satellitemovementmanager\sattelitesimulator\controller\controller.cpp(45): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  NeuralNetwork.cpp
-c:\users\ssj\source\repos\satellitemovementmanager\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
-  Generating Code...
-  Controller.vcxproj -> C:\Users\SSJ\Source\Repos\SatelliteMovementManager\SatteliteSimulator\Debug\Controller.lib
+  Controller.vcxproj -> C:\Users\SSJ\source\repos\SatelliteMovementManager\SatteliteSimulator\Debug\Controller.lib

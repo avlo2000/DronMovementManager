@@ -4,39 +4,48 @@
 #include <random>
 
 namespace controller {
-	void Controller::RegisterObject(Satellite *sat)
-	{
+
+	void Controller::RegisterObject(Satellite *sat){
 		IController<Satellite>::RegisterObject(sat);
-		this->Train();
 	}
+
 	void Controller::SetSample(Sample &sample) {
 			this->_sample = sample;
-		}
+	}
 
-		void Controller::ControlRotation(Vector3d rotSpeed) {
+	void Controller::ControlRotation(Vector3d rotSpeed) {
 			if (this->_obj == NULL)
 				throw UnregisteredObjectException();
 
 			MatrixXd rotSpeedMatrix = rotSpeed;
 			MatrixXd predictionMatrix = this->_neuralNetwork.Predict(rotSpeedMatrix);
+			
 			int numberOfWheels = _obj->GetNumOfWheels();
 			for (int i = 0; i < numberOfWheels; i++) {
 				_obj->EnergyToReactionWheel(i, predictionMatrix(i, 0));
 			}
-		}
+			
+	}
 
-		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
+	void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
 			throw NotImplementedException();
-		}
+	}
 
-		void Controller::Train() {
+	void Controller::Train() {
 			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);
 			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
 			this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
 			this->_neuralNetwork.Train(this->_sample, BATCHSIZE, EPOCH);
-		}
+			this->_neuralNetwork.Save("parameters.txt");
+	}
 
-		void Controller::Generate(double rangeStart, double rangeEnd, int numberOfSamples) {
+	void Controller::LoadNetwork(string fileName) {
+		this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
+		this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
+		this->_neuralNetwork.LoadParameters(fileName);
+	}
+
+	void Controller::Generate(double rangeStart, double rangeEnd, int numberOfSamples) {
 			if (this->_obj == NULL)
 				throw UnregisteredObjectException();
 
@@ -79,6 +88,6 @@ namespace controller {
 
 			}
 
-		}
+	}
 		
 }

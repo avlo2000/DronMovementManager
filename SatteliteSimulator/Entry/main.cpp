@@ -15,7 +15,7 @@ int main()
 
 	Controller contr;
 	contr.RegisterObject(&testSat);
-	
+	contr.LoadNetwork("parameters.txt");
 	Simulation sim;
 	sim.AddObject(sat);
 	sim.AddObject(testSat);
@@ -27,8 +27,9 @@ int main()
 	testSat.EnergyToReactionWheel(0, 2);
 	sim.Simulate(1, cout);
 
-	contr.ControlRotation(Vector3d(0.2, 0, 0));
+	contr.ControlRotation(Vector3d(0.499218, 0.491614, 0.352533));
 	sim.Simulate(1, cout);
+
 	system("pause");
 	return 0;
 }

@@ -2,11 +2,18 @@
   "ExpandedNodes": [
     "",
     "\\SatteliteSimulator",
-    "\\SatteliteSimulator\\Controller.Contracts",
-    "\\SatteliteSimulator\\Simulation.Contracts",
-    "\\Simulation.Contracts",
-    "\\third_party"
+    "\\SatteliteSimulator\\Controller",
+    "\\third_party",
+    "\\third_party\\tiny-dnn-master",
+    "\\third_party\\tiny-dnn-master\\third_party",
+    "\\third_party\\tiny-dnn-master\\third_party\\gemmlowp",
+    "\\third_party\\tiny-dnn-master\\third_party\\gemmlowp\\internal",
+    "\\third_party\\tiny-dnn-master\\third_party\\gemmlowp\\meta",
+    "\\third_party\\tiny-dnn-master\\third_party\\gemmlowp\\meta\\generators",
+    "\\third_party\\tiny-dnn-master\\tiny_dnn",
+    "\\third_party\\tiny-dnn-master\\tiny_dnn\\core",
+    "\\third_party\\tiny-dnn-master\\tiny_dnn\\core\\params",
+    "\\third_party\\tiny-dnn-master\\tiny_dnn\\util"
   ],
-  "SelectedNode": "\\SatteliteSimulator\\Controller.Contracts\\IController.h",
   "PreviewInSolutionExplorer": false
 }

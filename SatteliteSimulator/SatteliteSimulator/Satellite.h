@@ -2,6 +2,8 @@
 #include "Object.h"
 #include "ReactionWheel.h"
 #include "IControlable.h"
+#include <chrono>
+#include <random>
 
 namespace simulator 
 {
@@ -10,10 +12,16 @@ namespace simulator
 	{
 	private:
 		vector<ReactionWheel> _reactionWheels;
+
+		double _wobbling;//shows fluctuation of axes caused by external random forces  
+						 //there was used normal distribution for a random value
+						 //this value will show dispersion of normal distribution
 		void Init();
+		void Wobble();
 	public:
 		Satellite(string name, vector<MassPoint>&, vector<ForcePoint>& , vector<ReactionWheel>&);
 		void EnergyToReactionWheel(int index, double work);//work - energy that the wheel receivs from engine
+		void SetWobbling(double wobbling);
 		void MoveAndRotate(double time) override;
 		int GetNumOfWheels();
 		~Satellite();

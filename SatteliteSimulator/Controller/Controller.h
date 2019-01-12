@@ -22,8 +22,7 @@ namespace controller {
 		~Controller() {};
 		virtual void RegisterObject(Satellite *sat);
 		void SetSample(Sample &sample);
-		void ControlRotation(Vector3d instSpeed);
-		void ControlInstanceSpeed(Vector3d instSpeed);
+		void ControlRotation(Vector3d instSpeed) override;
 		void Generate(double rangeStart, double rangeEnd, int sampleSize);
 	};
 }

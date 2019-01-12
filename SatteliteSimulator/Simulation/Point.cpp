@@ -50,23 +50,11 @@ namespace simulator
 		this->z = z;
 	}
 
-	void Point::SetInstSpeed(Vector3d speed)
-	{
-		this->instSpeed = speed;
-	}
-
 	void Point::SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed)
 	{
 		this->axesVector = axesVector;
 		this->axesPoint = Vector3d(axesPoint.X(), axesPoint.Y(), axesPoint.Z());
 		this->rotSpeed = rotSpeed;
-	}
-
-	void Point::Move(double time)
-	{
-		this->x += this->instSpeed.x() * time;
-		this->y += this->instSpeed.y() * time;
-		this->z += this->instSpeed.z() * time;
 	}
 
 	void Point::Rotate(double time) {

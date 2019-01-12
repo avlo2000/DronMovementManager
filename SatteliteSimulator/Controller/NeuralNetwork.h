@@ -3,6 +3,7 @@
 #include "Sample.h"
 #include <string>
 #include <MiniDNN.h>
+#include "NeuralConfig.h"
 
 using namespace MiniDNN;
 namespace controller {

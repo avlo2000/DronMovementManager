@@ -24,9 +24,6 @@
     <ClInclude Include="IRotatable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IMovable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ISimulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>

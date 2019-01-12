@@ -124,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="ForcePoint.h" />
     <ClInclude Include="MassPoint.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Point.h" />
@@ -132,7 +131,6 @@
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ForcePoint.cpp" />
     <ClCompile Include="MassPoint.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Point.cpp" />

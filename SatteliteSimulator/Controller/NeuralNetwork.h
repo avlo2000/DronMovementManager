@@ -18,6 +18,8 @@ namespace controller {
 		void SetHiddenLayers(int numberOfHiddelLayers, int hiddenLayersLength, int numberOfOutputNode);
 		void SetLearningRate(double learningRate);
 		void Train(Sample &sample, int batchSize, int epoch);
+		void Save(string fileName);
+		void LoadParameters(string fileName);
 		MatrixXd Predict(MatrixXd &input);
 	};
 }

@@ -17,7 +17,6 @@ namespace controller {
 	private:
 		Sample _sample;
 		NeuralNetwork _neuralNetwork;
-		void Train();
 	public:
 		Controller() {};
 		~Controller() {};
@@ -27,5 +26,6 @@ namespace controller {
 		void ControlInstanceSpeed(Vector3d instSpeed);
 		void LoadNetwork(string fileName);
 		void Generate(double rangeStart, double rangeEnd, int sampleSize);
+		void Train();
 	};
 }

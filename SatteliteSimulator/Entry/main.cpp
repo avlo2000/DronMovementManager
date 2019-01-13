@@ -15,6 +15,7 @@ int main()
 
 	Controller contr;
 	contr.RegisterObject(&testSat);
+	//contr.Train();
 	contr.LoadNetwork("parameters.txt");
 	Simulation sim;
 	sim.AddObject(sat);

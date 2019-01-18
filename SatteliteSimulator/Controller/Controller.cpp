@@ -26,11 +26,11 @@ namespace controller {
 			
 	}
 
-	void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
+		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
 			throw NotImplementedException();
-	}
+		}
 
-	void Controller::Train() {
+		void Controller::Train() {
 			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);
 			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
 			this->_neuralNetwork.SetLearningRate(LEARNINGRATE);

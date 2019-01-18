@@ -13,19 +13,17 @@ int main()
 	auto sat = CreateSatellite();
 
 	Controller contr;
-	contr.RegisterObject(&testSat);
-	
+	contr.RegisterObject(&sat);
+	contr.Train();
 	Simulation sim;
 	sim.AddObject(sat);
 
 	sim.SetTimeStep(1);
-	sat.EnergyToReactionWheel(0, 0.0166829);
-	sat.EnergyToReactionWheel(1, 29.244);
-	sat.EnergyToReactionWheel(2, 37.4495);
+
 	sat.SetWobbling(0.001);
 	sim.Simulate(10, cout);
 
-	contr.ControlRotation(Vector3d(0.2, 0, 0));
+	contr.ControlRotation(Vector3d(0.2, 1, 1));
 	sim.Simulate(1, cout);
 
 	system("pause");

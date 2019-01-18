@@ -32,14 +32,14 @@ namespace controller {
 
 		void Controller::Train() {
 			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);
-			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
+			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, this->_obj->GetNumOfWheels());
 			this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
 			this->_neuralNetwork.Train(this->_sample, BATCHSIZE, EPOCH);
 			this->_neuralNetwork.Save("parameters.txt");
 	}
 
 	void Controller::LoadNetwork(string fileName) {
-		this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, NUMBEROFOUTPUTNODE);
+		this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, this->_obj->GetNumOfWheels());
 		this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
 		this->_neuralNetwork.LoadParameters(fileName);
 	}

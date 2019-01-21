@@ -48,7 +48,7 @@ namespace simulator
 	}
 
 
-	void Object::MoveAndRotate(double time)
+	void Object::Rotate(double time)
 	{
 
 		for (auto point = this->_mPoints.begin(); point < this->_mPoints.end(); point++)

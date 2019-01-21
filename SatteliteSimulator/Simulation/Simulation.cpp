@@ -29,7 +29,7 @@ void simulator::Simulation::Simulate(double time, ostream& logger)
 		{
 #pragma omp for
 			for (ptrdiff_t i = 0; i < this->objects.size(); i++)
-				this->objects[i]->MoveAndRotate(this->_timeStep);
+				this->objects[i]->Rotate(this->_timeStep);
 		}
 		for (auto obj : objects)
 			obj->LogInfo(logger);

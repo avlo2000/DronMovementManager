@@ -75,7 +75,7 @@ namespace controller {
 					inputVector(i) = vectorMatrix.at(i).at(randIndex);
 					vectorMatrix.at(i).erase(vectorMatrix.at(i).begin() + randIndex);
 				}
-				sattelite.MoveAndRotate(1.0);
+				sattelite.Rotate(1.0);
 
 				this->_sample.AddEnergy(inputVector); //power
 

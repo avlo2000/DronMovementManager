@@ -33,11 +33,9 @@ namespace simulator
 		MassPoint _massCentre;
 
 		void Init();
-		pair<Vector3d, Vector3d> GetForceComponents(int fPointIndex);
 	public:
 		explicit Object(string name, vector<MassPoint>& mPoints);
-		void PowerToPoint(int fPointIndex, double force, double forceDuration);
-		void MoveAndRotate(double time);
+		void Rotate(double time);
 		Vector3d GetInertia();
 		void LogInfo(ostream& out);
 		Vector3d GetRotationSpeeds();

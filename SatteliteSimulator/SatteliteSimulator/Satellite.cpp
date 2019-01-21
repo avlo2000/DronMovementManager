@@ -57,9 +57,9 @@ namespace simulator
 		this->_wobbling = wobbling;
 	}
 
-	void Satellite::MoveAndRotate(double time)
+	void Satellite::Rotate(double time)
 	{
-		Object::MoveAndRotate(time);
+		Object::Rotate(time);
 
 		for (auto wheel = this->_reactionWheels.begin(); wheel < this->_reactionWheels.end(); wheel++)
 		{

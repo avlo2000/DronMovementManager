@@ -1,5 +1,5 @@
 #pragma once
-//Config: 0,40,1000,2,15,0.0007,200,40000
+//Config: 0,40,1000,1,15,0.0007,200,40000
 #define RANGESTART 0
 #define RANGEEND 40
 #define NUMBEROFSAMPLES 1000

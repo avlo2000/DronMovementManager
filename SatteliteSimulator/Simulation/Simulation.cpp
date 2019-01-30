@@ -15,6 +15,15 @@ void simulator::Simulation::AddObject(Object &obj)
 	this->objects.push_back(&obj);
 }
 
+simulator::Object* simulator::Simulation::GetObjByName(string name)
+{
+	for (auto obj : this->objects)
+		if (obj->GetName() == name)
+			return obj;
+	
+	return NULL;
+}
+
 void simulator::Simulation::SetTimeStep(double timeStep)
 {
 	this->_timeStep = timeStep;

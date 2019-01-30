@@ -29,7 +29,7 @@
     <ClInclude Include="Satellite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestSatellite.h">
+    <ClInclude Include="DefaultSatellite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

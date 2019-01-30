@@ -6,7 +6,7 @@
 using namespace Eigen;
 using namespace std;
 
-namespace controller {
+namespace simulator {
 	class Sample {
 	private:
 		vector<VectorXd> _energy;

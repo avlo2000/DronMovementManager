@@ -47,6 +47,11 @@ namespace simulator
 		this->Init();
 	}
 
+	string Object::GetName()
+	{
+		return this->_name;
+	}
+
 
 	void Object::Rotate(double time)
 	{

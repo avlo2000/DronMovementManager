@@ -2,7 +2,6 @@
 #include<vector>
 
 #include"MassPoint.h"
-#include"ForcePoint.h"
 #include"IObject.h"
 
 using namespace std;
@@ -35,6 +34,7 @@ namespace simulator
 		void Init();
 	public:
 		explicit Object(string name, vector<MassPoint>& mPoints);
+		string GetName();
 		void Rotate(double time);
 		Vector3d GetInertia();
 		void LogInfo(ostream& out);

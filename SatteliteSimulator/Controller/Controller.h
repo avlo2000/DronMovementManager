@@ -8,11 +8,11 @@
 #include <string>
 
 using namespace contracts;
-using namespace simulator;
 using namespace Eigen;
 
 
-namespace controller {
+namespace simulator {
+
 	class Controller : public  IController<Satellite>{
 	private:
 		Sample _sample;
@@ -20,10 +20,8 @@ namespace controller {
 	public:
 		Controller() {};
 		~Controller() {};
-		virtual void RegisterObject(Satellite *sat);
 		void SetSample(Sample &sample);
-		void ControlRotation(Vector3d instSpeed);
-		void ControlInstanceSpeed(Vector3d instSpeed);
+		void ControlRotation(Vector3d rotSpeed);
 		void LoadNetwork(string fileName);
 		void Generate(double rangeStart, double rangeEnd, int sampleSize);
 		void Train();

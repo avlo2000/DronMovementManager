@@ -6,7 +6,7 @@
 #include "NeuralConfig.h"
 
 using namespace MiniDNN;
-namespace controller {
+namespace simulator {
 	class NeuralNetwork {
 	private:
 		Network _net;

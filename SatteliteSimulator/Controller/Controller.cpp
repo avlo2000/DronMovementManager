@@ -3,11 +3,7 @@
 #include "Exceptions.h"
 #include <random>
 
-namespace controller {
-
-	void Controller::RegisterObject(Satellite *sat){
-		IController<Satellite>::RegisterObject(sat);
-	}
+namespace simulator {
 
 	void Controller::SetSample(Sample &sample) {
 			this->_sample = sample;
@@ -25,10 +21,6 @@ namespace controller {
 			}
 			
 	}
-
-		void Controller::ControlInstanceSpeed(Vector3d instSpeed) {
-			throw NotImplementedException();
-		}
 
 		void Controller::Train() {
 			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);

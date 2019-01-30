@@ -1,7 +1,6 @@
 #pragma once
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
-#include "IMovable.h"
 #include "IRotatable.h"
 
 using namespace Eigen;

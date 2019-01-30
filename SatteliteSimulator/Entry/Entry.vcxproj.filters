@@ -13,10 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{21f9e849-9d47-4e6f-88cb-14ee99807c86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GlbState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CmdList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddDefaultSatCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="GlbState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdResolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulateCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 #pragma once
 #include"Sample.h"
-namespace controller {
+namespace simulator {
 	void Sample::AddEnergy(VectorXd &vec) {
 		_energy.push_back(vec);
 	}

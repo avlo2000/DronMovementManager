@@ -16,6 +16,10 @@ namespace contracts {
 		{
 			_obj = obj;
 		};
+		virtual const T* GetRegistration()
+		{
+			return _obj;
+		};
 		virtual void ControlRotation(Vector3d rotSpeed) = 0;
 	};
 

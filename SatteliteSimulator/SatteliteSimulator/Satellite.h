@@ -8,7 +8,7 @@
 namespace simulator 
 {
 
-	class Satellite : IControlable, public Object
+	class Satellite : public Object
 	{
 	private:
 		vector<ReactionWheel> _reactionWheels;
@@ -26,9 +26,9 @@ namespace simulator
 		int GetNumOfWheels();
 		~Satellite();
 
-		// Inherited via IControlable
-		virtual void RegisterControl(IController<Object>* controller) override;
-		virtual void Control(Vector3d instSpeed, Vector3d rotSpeed) override;
+		//// Inherited via IControlable
+		//virtual void RegisterControl(IController<Object>* simulator) override;
+		//virtual void Control(Vector3d instSpeed, Vector3d rotSpeed) override;
 	};
 
 }

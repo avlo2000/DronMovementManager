@@ -11,7 +11,7 @@
 
 using namespace Eigen;
 
-namespace controller {
+namespace simulator {
 	
 	void NeuralNetwork::SetHiddenLayers(int numberOfHiddenLayers, int hiddenLayersLength, int numberOfOutputNode) {
 

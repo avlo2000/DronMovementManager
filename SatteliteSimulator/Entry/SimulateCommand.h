@@ -4,21 +4,27 @@
 
 namespace simulator {
 
-	class AddDefaultSatCommand : public Command
+	class SimulateCommand : public Command
 	{
 	public:
-		AddDefaultSatCommand() {};
-		virtual AddDefaultSatCommand* create() { return new AddDefaultSatCommand; }
-		void Execute(std::string params) override
-		{
-			//TO DO
-		};
+		SimulateCommand() {};
+		~SimulateCommand() {};
+
+		// Inherited via Command
 		string name() override
 		{
-			// TO DO
-			return this->commands.createDefault;
+			return this->commands.simulate;
 		}
-		~AddDefaultSatCommand() {};
+		void Execute(string params) override
+		{
+			string::size_type sz;
+			auto str = Split(params, ' ').at(1);
+			double time = stod(str, &sz);
+			this->Log("\n...starting simulation...\n");
+			this->Log("\n...simulation time: " + str + "...\n");
+			this->global.Simulate(time, *this->_logger);			
+		};
+
 	};
 
 }

@@ -31,7 +31,7 @@ void simulator::Simulation::SetTimeStep(double timeStep)
 
 void simulator::Simulation::Simulate(double time, ostream& logger)
 {
-	while (time > 0)
+	while (time - this->_timeStep > 0)
 	{
 		time -= this->_timeStep;
 #pragma omp parallel
@@ -39,6 +39,17 @@ void simulator::Simulation::Simulate(double time, ostream& logger)
 #pragma omp for
 			for (ptrdiff_t i = 0; i < this->objects.size(); i++)
 				this->objects[i]->Rotate(this->_timeStep);
+		}
+		for (auto obj : objects)
+			obj->LogInfo(logger);
+	}
+	if (time - this->_timeStep < 0)
+	{
+#pragma omp parallel
+		{
+#pragma omp for
+			for (ptrdiff_t i = 0; i < this->objects.size(); i++)
+				this->objects[i]->Rotate(this->_timeStep - time);
 		}
 		for (auto obj : objects)
 			obj->LogInfo(logger);

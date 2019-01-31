@@ -3,12 +3,21 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <regex>
 
 using namespace std;
 
 namespace simulator {
 
-	const vector<string> Split(const string& s, const char& c)
+
+
+	inline string startsWith(const string &str, const string &prefix) {
+		smatch match;
+		regex_search(str, match, regex("^" + prefix));
+		return match.suffix();
+	}
+
+	inline const vector<string> Split(const string& s, const char& c)
 	{
 		string buff{ "" };
 		vector<string> v;

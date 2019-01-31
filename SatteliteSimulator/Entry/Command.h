@@ -28,7 +28,9 @@ namespace simulator {
 		}
 		bool Check(string cmd)
 		{
-			if (name().find(cmd) != string::npos)
+			string name = this->name();
+
+			if (cmd.find(name) == 0)
 				return true;
 			else
 				return false;

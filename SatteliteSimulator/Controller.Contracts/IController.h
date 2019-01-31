@@ -16,7 +16,7 @@ namespace contracts {
 		{
 			_obj = obj;
 		};
-		virtual const T* GetRegistration()
+		virtual T* GetRegistration()
 		{
 			return _obj;
 		};

@@ -8,23 +8,23 @@ namespace simulator {
 	{
 	public:
 		HelpCommand() {};
-		virtual HelpCommand* create() { return new HelpCommand; }
+		~HelpCommand() {};
 
-		std::string name() override
+		// Inherited via Command
+		string name() override
 		{
 			return this->commands.help;
 		};
-		void Execute(std::string params) override
+		void Execute(string params) override
 		{
-			this->Log(this->commands.addSat + "- adds new unconfigured satellite\nname of satellite as param\n\n");
-			this->Log(this->commands.addController + "- adds controller and train it\nname of satellite as param\n\n");
-			this->Log(this->commands.createDefault + "- adds satellite with default configuration(watch documantation)\nname of satellite as param\n\n");
-			this->Log(this->commands.simStep + "- sets time step(simulation interval)\n double as param\n\n");
-			this->Log(this->commands.control + "- control rotation speeds of satellite\nname of satellite and 3D vector as params\n\n");
-			this->Log(this->commands.simulate + "- simulates during setted time\n double(time) as param\n\n");
-			this->Log(this->commands.exit + "- exit the simulator");
+			this->Log(this->commands.addSat + "| adds new unconfigured satellite\nname of satellite as param(NOT IMPLEMENTED YET. USE DEFAULT SATELLITE)\n\n");
+			this->Log(this->commands.createDefault + "| adds satellite with default configuration(watch documantation) with controller\nname of satellite as param\n\n");
+			this->Log(this->commands.simStep + "| sets time step(simulation interval)\n double as param\n\n");
+			this->Log(this->commands.control + "| control rotation speeds of satellite\nname of satellite and 3D vector as params\n\n");
+			this->Log(this->commands.simulate + "| simulates during setted time\n double(time) as param\n\n");
+			this->Log(this->commands.exit + "| exit the simulator\n");
 		};
-		~HelpCommand() {};
+		
 	};
 
 }

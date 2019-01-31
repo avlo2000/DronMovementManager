@@ -2,6 +2,8 @@
 #include "Command.h"
 #include"AddDefaultSatCommand.h"
 #include"HelpCommand.h"
+#include "SetTimeStepCommand.h"
+#include "SimulateCommand.h"
 
 namespace simulator {
 
@@ -15,6 +17,8 @@ namespace simulator {
 		{
 			_commands.push_back(new AddDefaultSatCommand());
 			_commands.push_back(new HelpCommand());
+			_commands.push_back(new SetTimeStepCommand());
+			_commands.push_back(new SimulateCommand());
 			for (int i = 0; i < _commands.size(); i++)
 				_commands[i]->SetLogger(logger);
 		};
@@ -23,7 +27,10 @@ namespace simulator {
 		{
 			for (int i = 0; i < _commands.size(); i++)
 				if (_commands[i]->Check(cmd))
+				{
 					_commands[i]->Execute(cmd);
+					return;
+				}
 		};
 		~CmdResolver() {};
 	};

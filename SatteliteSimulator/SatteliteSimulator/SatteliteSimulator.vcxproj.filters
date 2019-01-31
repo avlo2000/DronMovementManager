@@ -29,8 +29,5 @@
     <ClInclude Include="Satellite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DefaultSatellite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

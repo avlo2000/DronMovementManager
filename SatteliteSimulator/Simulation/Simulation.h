@@ -10,7 +10,7 @@ namespace simulator
 		public ISimulation
 	{
 	private:
-		double _timeStep;
+		double _timeStep = 0.1;
 		vector<Object*> objects;
 
 	public:

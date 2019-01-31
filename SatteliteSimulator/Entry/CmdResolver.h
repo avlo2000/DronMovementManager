@@ -4,6 +4,7 @@
 #include"HelpCommand.h"
 #include "SetTimeStepCommand.h"
 #include "SimulateCommand.h"
+#include "ControlCommand.h"
 
 namespace simulator {
 
@@ -19,6 +20,7 @@ namespace simulator {
 			_commands.push_back(new HelpCommand());
 			_commands.push_back(new SetTimeStepCommand());
 			_commands.push_back(new SimulateCommand());
+			_commands.push_back(new ControlCommand());
 			for (int i = 0; i < _commands.size(); i++)
 				_commands[i]->SetLogger(logger);
 		};

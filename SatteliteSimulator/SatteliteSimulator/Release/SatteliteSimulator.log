@@ -1,0 +1,9 @@
+﻿  ReactionWheel.cpp
+  Satellite.cpp
+c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\sattelitesimulator\satellite.cpp(12): warning C4018: '<': signed/unsigned mismatch
+c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\sattelitesimulator\satellite.cpp(27): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+LINK : fatal error LNK1561: entry point must be defined

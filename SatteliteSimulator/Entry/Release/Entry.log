@@ -1,0 +1,21 @@
+﻿  GlbState.cpp
+c:\users\pavlo\source\repos\dronmovementmanager\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
+  main.cpp
+c:\users\pavlo\source\repos\dronmovementmanager\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
+c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\entry\cmdresolver.h(22): warning C4018: '<': signed/unsigned mismatch
+c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\entry\cmdresolver.h(28): warning C4018: '<': signed/unsigned mismatch
+GlbState.obj : error LNK2001: unresolved external symbol "public: void __thiscall simulator::Simulation::AddObject(class simulator::Object &)" (?AddObject@Simulation@simulator@@QAEXAAVObject@2@@Z)
+GlbState.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::Simulation::~Simulation(void)" (??1Simulation@simulator@@QAE@XZ)
+GlbState.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::Simulation::Simulation(void)" (??0Simulation@simulator@@QAE@XZ)
+GlbState.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall simulator::Controller::ControlRotation(class Eigen::Matrix<double,3,1,0,3,1>)" (?ControlRotation@Controller@simulator@@UAEXV?$Matrix@N$02$00$0A@$02$00@Eigen@@@Z)
+GlbState.obj : error LNK2001: unresolved external symbol "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall simulator::Object::GetName(void)" (?GetName@Object@simulator@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::MassPoint::~MassPoint(void)" (??1MassPoint@simulator@@QAE@XZ)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::Point::~Point(void)" (??1Point@simulator@@QAE@XZ)
+main.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall simulator::Point::Rotate(double)" (?Rotate@Point@simulator@@UAEXN@Z)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::Point::Point(double,double,double)" (??0Point@simulator@@QAE@NNN@Z)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::Satellite::Satellite(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::vector<class simulator::MassPoint,class std::allocator<class simulator::MassPoint> > &,class std::vector<class simulator::ReactionWheel,class std::allocator<class simulator::ReactionWheel> > &)" (??0Satellite@simulator@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV?$vector@VMassPoint@simulator@@V?$allocator@VMassPoint@simulator@@@std@@@3@AAV?$vector@VReactionWheel@simulator@@V?$allocator@VReactionWheel@simulator@@@std@@@3@@Z)
+main.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall simulator::ReactionWheel::Rotate(double)" (?Rotate@ReactionWheel@simulator@@UAEXN@Z)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::ReactionWheel::~ReactionWheel(void)" (??1ReactionWheel@simulator@@QAE@XZ)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall simulator::ReactionWheel::ReactionWheel(double,double,double,double,class Eigen::Matrix<double,3,1,0,3,1>,double)" (??0ReactionWheel@simulator@@QAE@NNNNV?$Matrix@N$02$00$0A@$02$00@Eigen@@N@Z)
+main.obj : error LNK2001: unresolved external symbol "public: void __thiscall simulator::Controller::Train(void)" (?Train@Controller@simulator@@QAEXXZ)
+C:\Users\Pavlo\Source\Repos\DronMovementManager\SatteliteSimulator\Release\Entry.exe : fatal error LNK1120: 14 unresolved externals

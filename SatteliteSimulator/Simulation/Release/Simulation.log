@@ -1,0 +1,7 @@
+﻿  MassPoint.cpp
+  Object.cpp
+  Point.cpp
+  Simulation.cpp
+c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\simulation\simulation.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\simulation\simulation.cpp(51): warning C4018: '<': signed/unsigned mismatch
+LINK : fatal error LNK1561: entry point must be defined

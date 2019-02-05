@@ -8,9 +8,9 @@ else()
 	set(BUILD_TYPE "RELEASE")
 endif()
 
-include_directories(/home/yuriy/SatelliteMovementManager/third_party/eigen)
-include_directories(/home/yuriy/SatelliteMovementManager/third_party/MiniDNN/include)
-include_directories(/home/yuriy/SatelliteMovementManager/third_party/tiny-dnn-master)
+include_directories(/../../SatelliteMovementManager/third_party/eigen)
+include_directories(/../../SatelliteMovementManager/third_party/MiniDNN/include)
+include_directories(/../../SatelliteMovementManager/third_party/tiny-dnn-master)
 
 SET(GCC_COVERAGE_COMPILE_FLAGS "-std=c++17  -O0 -g3 -pthread -fpermissive -fms-extensions  -Werror=return-type")
 

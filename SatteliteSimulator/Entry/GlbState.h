@@ -11,9 +11,9 @@ namespace simulator {
 	class GlbState
 	{
 	private:
-		static map<string, Controller>& ControllersInstance()
+		static map<string, Controller*>& ControllersInstance()
 		{
-			static map<string, Controller> contrs;
+			static map<string, Controller*> contrs;
 			return contrs;
 		};
 		static Simulation& SimulationInstance()
@@ -24,7 +24,7 @@ namespace simulator {
 	public:
 		GlbState();
 		void AddObject(Object& obj);
-		void AddController(Controller& cntr);
+		void AddController(Controller* cntr);
 		void Control(Vector3d& rots, string& satName);
 		void Simulate(double time, ostream& logger);
 		void SetTimeStep(double time);

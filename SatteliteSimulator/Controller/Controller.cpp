@@ -22,12 +22,12 @@ namespace simulator {
 			
 	}
 
-		void Controller::Train() {
+		void Controller::Train(string path) {
 			Generate(RANGESTART, RANGEEND, NUMBEROFSAMPLES);
 			this->_neuralNetwork.SetHiddenLayers(NUMBEROFHIDDENLAYERS, HIDDENLAYERSLENGTH, this->_obj->GetNumOfWheels());
 			this->_neuralNetwork.SetLearningRate(LEARNINGRATE);
 			this->_neuralNetwork.Train(this->_sample, BATCHSIZE, EPOCH);
-			this->_neuralNetwork.Save("parameters.txt");
+			this->_neuralNetwork.Save(path);
 	}
 
 	void Controller::LoadNetwork(string fileName) {

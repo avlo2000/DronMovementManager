@@ -12,6 +12,7 @@ int main()
 	string input = "";
 	while (input != "exit")
 	{
+		cout << ">>>";
 		getline(std::cin, input);
 		cmd.ExecuteAny(input);
 	}

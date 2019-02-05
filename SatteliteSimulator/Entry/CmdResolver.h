@@ -5,6 +5,7 @@
 #include "SetTimeStepCommand.h"
 #include "SimulateCommand.h"
 #include "ControlCommand.h"
+#include "LoadCommand.h"
 
 namespace simulator {
 
@@ -21,6 +22,8 @@ namespace simulator {
 			_commands.push_back(new SetTimeStepCommand());
 			_commands.push_back(new SimulateCommand());
 			_commands.push_back(new ControlCommand());
+			_commands.push_back(new LoadCommand());
+			
 			for (int i = 0; i < _commands.size(); i++)
 				_commands[i]->SetLogger(logger);
 		};

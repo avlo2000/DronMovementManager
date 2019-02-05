@@ -24,6 +24,6 @@ namespace simulator {
 		void ControlRotation(Vector3d rotSpeed);
 		void LoadNetwork(string fileName);
 		void Generate(double rangeStart, double rangeEnd, int sampleSize);
-		void Train();
+		void Train(string path);
 	};
 }

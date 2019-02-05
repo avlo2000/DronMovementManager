@@ -24,8 +24,8 @@ namespace simulator {
 			Controller cntr;
 			cntr.RegisterObject(sat);
 			this->Log("\n...warming up the controller...\n");
-			cntr.Train();
-			global.AddController(cntr);
+			cntr.Train(sat->GetName() + "_nnbiases.txt");
+			global.AddController(&cntr);
 			this->Log("\n...controller has been successfully warmed up...\n");
 		};
 

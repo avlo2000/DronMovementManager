@@ -142,6 +142,7 @@
     <ClInclude Include="GlbState.h" />
     <ClInclude Include="HelpCommand.h" />
     <ClInclude Include="CmdUtils.h" />
+    <ClInclude Include="LoadCommand.h" />
     <ClInclude Include="SetTimeStepCommand.h" />
     <ClInclude Include="SimulateCommand.h" />
   </ItemGroup>

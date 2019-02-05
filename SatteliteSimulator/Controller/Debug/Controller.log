@@ -1,8 +1,6 @@
 ﻿  Controller.cpp
 c:\users\pavlo\source\repos\dronmovementmanager\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
 c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\controller\controller.cpp(45): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  NeuralNetwork.cpp
-c:\users\pavlo\source\repos\dronmovementmanager\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
-  Sample.cpp
-  Generating Code...
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SatteliteSimulator.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Simulation.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Controller.vcxproj -> C:\Users\Pavlo\Source\Repos\DronMovementManager\SatteliteSimulator\Debug\Controller.lib

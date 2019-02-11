@@ -1,7 +1,6 @@
 #pragma once
 #include "Object.h"
 #include "ReactionWheel.h"
-#include "IControlable.h"
 #include <chrono>
 #include <random>
 
@@ -25,10 +24,6 @@ namespace simulator
 		void Rotate(double time) override;
 		int GetNumOfWheels();
 		~Satellite();
-
-		//// Inherited via IControlable
-		//virtual void RegisterControl(IController<Object>* simulator) override;
-		//virtual void Control(Vector3d instSpeed, Vector3d rotSpeed) override;
 	};
 
 }

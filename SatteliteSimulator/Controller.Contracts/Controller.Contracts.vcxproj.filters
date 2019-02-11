@@ -18,8 +18,5 @@
     <ClInclude Include="IController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IControlable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

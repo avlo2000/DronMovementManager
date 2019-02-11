@@ -1,11 +1,1 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SatteliteSimulator.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  ReactionWheel.cpp
-  Satellite.cpp
-c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\sattelitesimulator\satellite.cpp(12): warning C4018: '<': signed/unsigned mismatch
-c:\users\pavlo\source\repos\dronmovementmanager\sattelitesimulator\sattelitesimulator\satellite.cpp(27): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
-          with
-          [
-              _Rep=std::chrono::system_clock::rep
-          ]
-  Generating Code...
-  SatteliteSimulator.vcxproj -> C:\Users\Pavlo\Source\Repos\DronMovementManager\SatteliteSimulator\Debug\SatelliteSimulator.lib
+﻿

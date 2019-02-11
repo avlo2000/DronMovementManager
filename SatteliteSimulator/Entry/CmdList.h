@@ -19,7 +19,7 @@ namespace simulator {
 		const string simStep = "set step ";//time as param	
 		const string simulate = "simulate "; //time as param
 		const string control = "control ";//name of satellite and 3D vector of rotation speeds as params
-		const string powerToWheel = "pow to sat";//name of satellite number of wheel and power in Jouels as params
+		const string powerToWheel = "pow to sat";//name of satellite number of wheel and work in Jouels as params
 #pragma endregion
 	};
 

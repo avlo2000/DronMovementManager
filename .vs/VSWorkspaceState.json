@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\SatteliteSimulator",
-    "\\SatteliteSimulator\\Controller",
-    "\\third_party",
     "\\third_party\\tiny-dnn-master"
   ],
+  "SelectedNode": "\\SatteliteSimulator",
   "PreviewInSolutionExplorer": false
 }

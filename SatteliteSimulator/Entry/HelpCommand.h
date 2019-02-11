@@ -31,6 +31,8 @@ namespace simulator {
 				"| control rotation speeds of satellite\nname of satellite and 3D vector as params\n\n");
 			this->Log(this->commands.simulate + 
 				"| simulates during setted time\n double(time) as param\n\n");
+			this->Log(this->commands.powerToWheel +
+				"| giving power to a reaction wheel\n name of satellite number of the wheel and power in Jouels\n\n");
 			this->Log(this->commands.exit + 
 				"| exit the simulator\n");
 		};

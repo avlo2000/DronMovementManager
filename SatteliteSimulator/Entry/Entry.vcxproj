@@ -143,6 +143,7 @@
     <ClInclude Include="HelpCommand.h" />
     <ClInclude Include="CmdUtils.h" />
     <ClInclude Include="LoadCommand.h" />
+    <ClInclude Include="PowerToWheelCommand.h" />
     <ClInclude Include="SetTimeStepCommand.h" />
     <ClInclude Include="SimulateCommand.h" />
   </ItemGroup>

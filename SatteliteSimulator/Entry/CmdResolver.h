@@ -6,6 +6,7 @@
 #include "SimulateCommand.h"
 #include "ControlCommand.h"
 #include "LoadCommand.h"
+#include "PowerToWheelCommand.h"
 
 namespace simulator {
 
@@ -23,6 +24,7 @@ namespace simulator {
 			_commands.push_back(new SimulateCommand());
 			_commands.push_back(new ControlCommand());
 			_commands.push_back(new LoadCommand());
+			_commands.push_back(new PowerToWheelCommand());
 			
 			for (int i = 0; i < _commands.size(); i++)
 				_commands[i]->SetLogger(logger);

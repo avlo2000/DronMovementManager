@@ -22,8 +22,7 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libstdc++ -lc++abi
 set(CMAKE_CXX_COMPILER "clang++")
 
 #include_dir
-#set (SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-set (SRC_DIR /home/yuriy/SatelliteMovementManager/SatteliteSimulator)
+set (SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set (SRC_CONTROLLER_DIR ${SRC_DIR}/Controller)
 set (SRC_FINAL ${SRC_DIR}/SatteliteSimulator)
 set (SRC_CONTROLLER_CONTRACTS_DIR ${SRC_DIR}/Controller.Contracts)

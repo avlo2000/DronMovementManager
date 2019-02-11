@@ -34,6 +34,11 @@ namespace simulator {
 		this->SimulationInstance().SetTimeStep(time);
 	}
 
+	Controller* GlbState::GetController(string name)
+	{
+		return this->ControllersInstance().at(name);
+	}
+
 
 	GlbState::~GlbState()
 	{

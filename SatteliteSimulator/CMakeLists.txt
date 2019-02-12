@@ -29,7 +29,7 @@ set (SRC_CONTROLLER_CONTRACTS_DIR ${SRC_DIR}/Controller.Contracts)
 set (SRC_SATELITE_SIMULATOR_DIR ${SRC_DIR})
 set (SRC_SIMULATION_DIR ${SRC_DIR}/Simulation)
 set (SRC_SIMULATION_CONTRACTS_DIR ${SRC_DIR}/Simulation.Contracts)
-set (SRC_SIMULATION_TESTS_DIR ${SRC_DIR}/Simulation.Tests)
+set (SRC_SIMULATION_Entry ${SRC_DIR}/Entry)
 
 include_directories(${SRC_DIR})
 include_directories(${SRC_FINAL})
@@ -38,7 +38,7 @@ include_directories(${SRC_CONTROLLER_CONTRACTS_DIR})
 include_directories(${SRC_SATELITE_SIMULATOR_DIR})
 include_directories(${SRC_SIMULATION_DIR})
 include_directories(${SRC_SIMULATION_CONTRACTS_DIR})
-include_directories(${SRC_SIMULATION_TESTS_DIR})
+include_directories(${SRC_SIMULATION_Entry})
 
 FILE(GLOB SRCFILES
     ${SRC_DIR}/*.cpp
@@ -55,17 +55,17 @@ FILE(GLOB SRCFILES
     ${SRC_SIMULATION_DIR}/*.h
     ${SRC_SIMULATION_CONTRACTS_DIR}/*.cpp
     ${SRC_SIMULATION_CONTRACTS_DIR}/*.h
-    ${SRC_SIMULATION_TESTS_DIR}/*.cpp
-    ${SRC_SIMULATION_TESTS_DIR}/*.h)
+	${SRC_SIMULATION_Entry}/*.h
+	${SRC_SIMULATION_Entry}/*.cpp)
 
 list(REMOVE_ITEM SRCFILES ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
 message(${SRC_DIR} "SOUCRE ")
 
 add_library (satelite_lib OBJECT ${SRCFILES})
 ADD_EXECUTABLE(${PROJECT_NAME} $<TARGET_OBJECTS:satelite_lib> ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
-#LINK_DIRECTORIES(/usr/local/lib)
-#LINK_DIRECTORIES(/usr/lib)
-#set(LINKLIBS
-#    c++abi)
+LINK_DIRECTORIES(/usr/local/lib)
+LINK_DIRECTORIES(/usr/lib)
+set(LINKLIBS
+    c++abi)
 
 target_link_libraries(${PROJECT_NAME} ${LINKLIBS})

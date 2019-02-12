@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\third_party\MiniDNN\include;..\..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third_party\MiniDNN\include;..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessToFile>false</PreprocessToFile>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -86,7 +86,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\third_party\MiniDNN\include;..\..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third_party\MiniDNN\include;..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessToFile>false</PreprocessToFile>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -98,7 +98,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\third_party\MiniDNN\include;..\..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third_party\MiniDNN\include;..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -113,7 +113,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\third_party\MiniDNN\include;..\..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third_party\MiniDNN\include;..\third_party\eigen;..\Controller;..\Controller.Contracts;..\Simulation.Contracts;..\Simulation;..\SatteliteSimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

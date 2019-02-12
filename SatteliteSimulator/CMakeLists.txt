@@ -8,9 +8,11 @@ else()
 	set(BUILD_TYPE "RELEASE")
 endif()
 
-include_directories(/../../SatelliteMovementManager/third_party/eigen)
-include_directories(/../../SatelliteMovementManager/third_party/MiniDNN/include)
-include_directories(/../../SatelliteMovementManager/third_party/tiny-dnn-master)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/third_party/eigen)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/third_party/MiniDNN/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}r/third_party/tiny-dnn-master)
+
+message(../${CMAKE_CURRENT_SOURCE_DIR}/third_party/eigen)
 
 SET(GCC_COVERAGE_COMPILE_FLAGS "-std=c++17  -O0 -g3 -pthread -fpermissive -fms-extensions  -Werror=return-type")
 
@@ -58,7 +60,7 @@ FILE(GLOB SRCFILES
 	${SRC_SIMULATION_Entry}/*.h
 	${SRC_SIMULATION_Entry}/*.cpp)
 
-list(REMOVE_ITEM SRCFILES ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
+#list(REMOVE_ITEM SRCFILES ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
 message(${SRC_DIR} "SOUCRE ")
 
 add_library (satelite_lib OBJECT ${SRCFILES})

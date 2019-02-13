@@ -15,11 +15,11 @@ sudo make -j
 
 # build instructions for linux with clang
 
-cd SatelliteMovementManager/
+cd SatelliteMovementManager/SatteliteSimulator/
 
-sudo mv CMakelists_clang.txt CMakelists.txt
+sudo mv CMakeLists.txt CMakeLists.txt_back
 
-cd SatteliteSimulator/
+sudo mv CMakeLists_clang.txt CMakeLists.txt
 
 sudo mkdir build
 

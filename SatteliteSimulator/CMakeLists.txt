@@ -60,7 +60,7 @@ FILE(GLOB SRCFILES
 	${SRC_SIMULATION_Entry}/*.h
 	${SRC_SIMULATION_Entry}/*.cpp)
 
-#list(REMOVE_ITEM SRCFILES ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
+list(REMOVE_ITEM SRCFILES ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
 message(${SRC_DIR} "SOUCRE ")
 
 add_library (satelite_lib OBJECT ${SRCFILES})

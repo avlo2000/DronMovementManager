@@ -64,7 +64,6 @@ add_library (satelite_lib OBJECT ${SRCFILES})
 ADD_EXECUTABLE(${PROJECT_NAME} $<TARGET_OBJECTS:satelite_lib> ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
 LINK_DIRECTORIES(/usr/local/lib)
 LINK_DIRECTORIES(/usr/lib)
-set(LINKLIBS
-    c++abi)
+set(LINKLIBS)
 
 target_link_libraries(${PROJECT_NAME} ${LINKLIBS})

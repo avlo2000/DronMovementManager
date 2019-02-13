@@ -3,9 +3,9 @@ project(satelite VERSION 0.1)
 set(CMAKE_CXX_STANDART 14)
 
 if(DEBUG_OPTION)
-	set(BUILD_TYPE "DEBUG")
+    set(BUILD_TYPE "DEBUG")
 else()
-	set(BUILD_TYPE "RELEASE")
+    set(BUILD_TYPE "RELEASE")
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/third_party/eigen)
@@ -14,14 +14,11 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}r/third_party/tiny-dnn-master)
 
 message(../${CMAKE_CURRENT_SOURCE_DIR}/third_party/eigen)
 
-SET(GCC_COVERAGE_COMPILE_FLAGS "-std=c++17  -O0 -g3 -pthread -fpermissive -fms-extensions  -Werror=return-type")
+SET(GCC_COVERAGE_COMPILE_FLAGS "-fexceptions")
 
 SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
-SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -stdlib=libstdc++")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libstdc++ -lc++abi")
-set(CMAKE_CXX_COMPILER "clang++")
+set(CMAKE_CXX_COMPILER "g++")
 
 #include_dir
 set (SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
@@ -57,8 +54,8 @@ FILE(GLOB SRCFILES
     ${SRC_SIMULATION_DIR}/*.h
     ${SRC_SIMULATION_CONTRACTS_DIR}/*.cpp
     ${SRC_SIMULATION_CONTRACTS_DIR}/*.h
-	${SRC_SIMULATION_Entry}/*.h
-	${SRC_SIMULATION_Entry}/*.cpp)
+    ${SRC_SIMULATION_Entry}/*.h
+    ${SRC_SIMULATION_Entry}/*.cpp)
 
 list(REMOVE_ITEM SRCFILES ${SRC_SATELITE_SIMULATOR_DIR}/Entry/main.cpp)
 message(${SRC_DIR} "SOUCRE ")

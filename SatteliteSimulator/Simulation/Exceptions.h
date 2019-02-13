@@ -8,10 +8,10 @@ class WrongPointTypeException : public std::exception
 
 class NotImplementedException : public std::exception
 {
-	const char * what() const { return "Function not yet implemented"; }
+	const char * what() const throw () { return "Function not yet implemented"; }
 };
 
 class UnregisteredObjectException : public std::exception
 {
-	const char * what() const { return "Object for controler was not registered"; }
+	const char * what() const throw() { return "Object for controler was not registered"; }
 };

@@ -23,6 +23,13 @@ namespace simulator {
 			double xRot = stod(parse[2], &sz);
 			double yRot = stod(parse[3], &sz);
 			double zRot = stod(parse[4], &sz);
+
+			if (xRot > 0.5 || yRot > 0.5 || zRot > 0.5)
+			{
+				this->Log("\nINCORRECT SPEEDS\n(rotation speeds must in range[0..0.5])\n\n");
+				return;
+			}
+
 			Vector3d vec(xRot, yRot, zRot);
 			global.Control(vec, name);
 			this->Log("\n...controller has worked out...\n");

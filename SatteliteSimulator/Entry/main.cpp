@@ -14,6 +14,7 @@ int main()
 	{
 		cout << ">>>";
 		getline(std::cin, input);
+
 		cmd.ExecuteAny(input);
 	}
 	return 0;

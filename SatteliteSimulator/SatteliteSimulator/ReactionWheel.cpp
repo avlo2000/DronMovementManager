@@ -65,6 +65,5 @@ namespace simulator {
 		this->_rotAxes = RotateVector(this->_rotAxes, this->axesVector, Point(0, 0, 0), angle);
 
 		//TO DO(include friction)
-		this->Init();
 	}
 }

@@ -3,6 +3,8 @@
 #include "Exceptions.h"
 #include <random>
 
+
+using namespace std;
 namespace simulator {
 
 	void Controller::SetSample(Sample &sample) {
@@ -10,11 +12,16 @@ namespace simulator {
 	}
 
 	void Controller::ControlRotation(Vector3d rotSpeed) {
+		cout << 4142 << endl;
+		system("pause");
 		if (this->_obj == NULL)
 			throw UnregisteredObjectException();
+		cout << 1 << endl;
 		Vector3d previousRotationSpeed = _obj->GetRotationSpeeds();
-		VectorXd  previosAndCurrentRotationSpeed;
+		VectorXd  previosAndCurrentRotationSpeed(6);
+		cout << 2 << endl;
 		previosAndCurrentRotationSpeed << previousRotationSpeed, rotSpeed;
+		cout << 3 << endl;
 		MatrixXd rotSpeedMatrix = previosAndCurrentRotationSpeed;
 		MatrixXd predictionMatrix = this->_neuralNetwork.Predict(rotSpeedMatrix);
 		int numberOfWheels = _obj->GetNumOfWheels();
@@ -65,25 +72,23 @@ namespace simulator {
 
 			VectorXd inputVector(wheelSize);
 			Vector3d previousRotationVector;
-			for (int i = 0; i < previousAndCurentWheelSize; i++) {
-				if (i == wheelSize) {
-					previousRotationVector = sattelite.GetRotationSpeeds();
-				}
+			for (int i = 0; i < wheelSize; i++) {
 				int randIndex = rand() % size;
 				sattelite.EnergyToReactionWheel(i, vectorMatrix.at(i).at(randIndex));
-				if (i >= wheelSize)
-					inputVector(i - wheelSize) = vectorMatrix.at(i - wheelSize).at(randIndex);
 				vectorMatrix.at(i).erase(vectorMatrix.at(i).begin() + randIndex);
 			}
-
-			this->_sample.AddEnergy(inputVector); //power
+			previousRotationVector = sattelite.GetRotationSpeeds();
+			for (int i = wheelSize; i < previousAndCurentWheelSize; i++) {
+				int randIndex = rand() % size;
+				sattelite.EnergyToReactionWheel(i%wheelSize, vectorMatrix.at(i).at(randIndex));
+				inputVector(i%wheelSize) = vectorMatrix.at(i).at(randIndex);
+				vectorMatrix.at(i).erase(vectorMatrix.at(i).begin() + randIndex);
+			}
+			this->_sample.AddEnergy(inputVector); //power	
 			Vector3d rotationVector = sattelite.GetRotationSpeeds();
-			VectorXd previousAndCurrentRotation;
-			previousAndCurrentRotation << previousRotationVector, rotationVector;
-			VectorXd excpectedOutput = this->_sample.ConvertVector3dToXd(rotationVector);
-
-			this->_sample.AddRotSpeed(excpectedOutput);
-
+			VectorXd previousAndCurrentRotation(6);
+			previousAndCurrentRotation << this->_sample.ConvertVector3dToXd(previousRotationVector), this->_sample.ConvertVector3dToXd(rotationVector);
+			this->_sample.AddRotSpeed(previousAndCurrentRotation);
 		}
 
 	}

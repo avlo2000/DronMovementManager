@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\SatteliteSimulator",
-    "\\SatteliteSimulator\\Entry"
+    "\\SatteliteSimulator\\Controller",
+    "\\SatteliteSimulator\\Debug"
   ],
-  "SelectedNode": "\\SatteliteSimulator\\SatelliteRotator.sln",
+  "SelectedNode": "\\SatteliteSimulator\\Debug",
   "PreviewInSolutionExplorer": false
 }

@@ -1,7 +1,8 @@
-﻿  main.cpp
-c:\users\pavlo\source\repos\satellitemovementmanager\sattelitesimulator\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
-c:\users\pavlo\source\repos\satellitemovementmanager\sattelitesimulator\entry\cmdresolver.h(29): warning C4018: '<': signed/unsigned mismatch
-c:\users\pavlo\source\repos\satellitemovementmanager\sattelitesimulator\entry\cmdresolver.h(35): warning C4018: '<': signed/unsigned mismatch
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SatteliteSimulator.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Simulation.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Entry.vcxproj -> C:\Users\Pavlo\source\repos\SatelliteMovementManager\SatteliteSimulator\Debug\Entry.exe
+﻿  GlbState.cpp
+c:\users\ssj\source\repos\satellitemovementmanager2\sattelitesimulator\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
+  main.cpp
+c:\users\ssj\source\repos\satellitemovementmanager2\sattelitesimulator\third_party\minidnn\include\utils\sparsepp.h(995): warning C4244: 'return': conversion from 'uint64_t' to 'size_t', possible loss of data
+c:\users\ssj\source\repos\satellitemovementmanager2\sattelitesimulator\entry\cmdresolver.h(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\ssj\source\repos\satellitemovementmanager2\sattelitesimulator\entry\cmdresolver.h(35): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Entry.vcxproj -> C:\Users\SSJ\Source\Repos\SatelliteMovementManager2\SatteliteSimulator\Debug\Entry.exe

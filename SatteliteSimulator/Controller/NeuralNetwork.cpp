@@ -15,7 +15,7 @@ namespace simulator {
 	
 	void NeuralNetwork::SetHiddenLayers(int numberOfHiddenLayers, int hiddenLayersLength, int numberOfOutputNode) {
 
-		_net.add_layer(new FullyConnected<Identity>(3, hiddenLayersLength));//3 in input because there are 3 independant rotation speeds
+		_net.add_layer(new FullyConnected<Identity>(6, hiddenLayersLength));//3 in input because there are 3 independant rotation speeds
 											
 		for (int i = 0; i < numberOfHiddenLayers; i++) {
 			_net.add_layer(new FullyConnected<Sigmoid>(hiddenLayersLength, hiddenLayersLength));

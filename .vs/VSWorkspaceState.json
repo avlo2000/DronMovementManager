@@ -5,6 +5,6 @@
     "\\SatteliteSimulator\\Controller",
     "\\SatteliteSimulator\\Debug"
   ],
-  "SelectedNode": "\\SatteliteSimulator\\Debug",
+  "SelectedNode": "\\SatteliteSimulator\\Controller\\NeuralConfig.h",
   "PreviewInSolutionExplorer": false
 }

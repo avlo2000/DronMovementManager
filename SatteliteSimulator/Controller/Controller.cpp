@@ -12,16 +12,11 @@ namespace simulator {
 	}
 
 	void Controller::ControlRotation(Vector3d rotSpeed) {
-		cout << 4142 << endl;
-		system("pause");
 		if (this->_obj == NULL)
 			throw UnregisteredObjectException();
-		cout << 1 << endl;
 		Vector3d previousRotationSpeed = _obj->GetRotationSpeeds();
 		VectorXd  previosAndCurrentRotationSpeed(6);
-		cout << 2 << endl;
 		previosAndCurrentRotationSpeed << previousRotationSpeed, rotSpeed;
-		cout << 3 << endl;
 		MatrixXd rotSpeedMatrix = previosAndCurrentRotationSpeed;
 		MatrixXd predictionMatrix = this->_neuralNetwork.Predict(rotSpeedMatrix);
 		int numberOfWheels = _obj->GetNumOfWheels();

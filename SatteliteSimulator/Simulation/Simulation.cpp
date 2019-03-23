@@ -10,6 +10,19 @@ simulator::Simulation::~Simulation()
 {
 }
 
+int simulator::Simulation::NumOfObjects()
+{
+	return this->objects.size();
+}
+
+vector<string> simulator::Simulation::Names()
+{
+	vector<string> names;
+	for (auto obj : objects)
+		names.push_back(obj->GetName());
+	return names;
+}
+
 void simulator::Simulation::AddObject(Object &obj)
 {
 	this->objects.push_back(&obj);

@@ -34,6 +34,16 @@ namespace simulator {
 		this->SimulationInstance().SetTimeStep(time);
 	}
 
+	int GlbState::NumOfSats()
+	{
+		return this->SimulationInstance().NumOfObjects();
+	}
+
+	vector<string> GlbState::Names()
+	{
+		return this->SimulationInstance().Names();
+	}
+
 	Controller* GlbState::GetController(string name)
 	{
 		return this->ControllersInstance().at(name);

@@ -1,5 +1,6 @@
 #pragma once
 #include "Command.h"
+#include "Constants.h"
 
 namespace simulator {
 
@@ -24,9 +25,10 @@ namespace simulator {
 			double yRot = stod(parse[3], &sz);
 			double zRot = stod(parse[4], &sz);
 
-			if (xRot > 0.5 || yRot > 0.5 || zRot > 0.5)
+			if (xRot > ENERGY_THRESHOLD || yRot > ENERGY_THRESHOLD || zRot > ENERGY_THRESHOLD)
 			{
-				this->Log("\nINCORRECT SPEEDS\n(rotation speeds must in range[0..0.5])\n\n");
+				this->Log("\nINCORRECT SPEEDS\n(rotation speeds must in range[" 
+					+ std::to_string(-ENERGY_THRESHOLD) + ".."+ std::to_string(ENERGY_THRESHOLD) + "])\n\n");
 				return;
 			}
 

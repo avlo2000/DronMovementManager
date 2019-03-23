@@ -137,11 +137,13 @@
     <ClInclude Include="CmdList.h" />
     <ClInclude Include="CmdResolver.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="ControlCommand.h" />
     <ClInclude Include="DefaultSatellite.h" />
     <ClInclude Include="GlbState.h" />
     <ClInclude Include="HelpCommand.h" />
     <ClInclude Include="CmdUtils.h" />
+    <ClInclude Include="ListCommand.h" />
     <ClInclude Include="LoadCommand.h" />
     <ClInclude Include="PowerToWheelCommand.h" />
     <ClInclude Include="SetTimeStepCommand.h" />

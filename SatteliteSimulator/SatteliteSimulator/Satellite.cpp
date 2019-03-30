@@ -52,6 +52,8 @@ namespace simulator
 		Init();
 	}
 
+
+
 	void Satellite::SetWobbling(double wobbling)
 	{
 		this->_wobbling = wobbling;
@@ -72,8 +74,6 @@ namespace simulator
 			(*wheel).SetRotation(this->_rotationZ.AxisVector, this->_rotationZ.AxisPoint, this->_rotationZ.AngleSpeed);
 			(*wheel).Rotate(time);
 		}
-
-		Init();
 	}
 
 	int Satellite::GetNumOfWheels() {

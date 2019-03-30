@@ -39,6 +39,7 @@ namespace simulator
 		Vector3d GetInertia();
 		void LogInfo(ostream& out);
 		Vector3d GetRotationSpeeds();
+		Vector3d GetMomentum();
 		Point GetPoint(int index, char type);
 		void AddMassPoint(MassPoint mPoint);
 		~Object();

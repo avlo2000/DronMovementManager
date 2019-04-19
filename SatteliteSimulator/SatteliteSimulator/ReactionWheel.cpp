@@ -34,9 +34,15 @@ namespace simulator {
 		work = -work;
 
 		if(work > 0)
-			this->_speed = sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
+			if (_speed < 0)
+				this->_speed = sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
+			else
+				this->_speed = sqrt(abs(SQR(this->_speed) + 2 * abs(work) / this->_inertia));
 		else
-			this->_speed = -sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
+			if (_speed > 0)
+				this->_speed = -sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
+			else
+				this->_speed = -sqrt(abs(SQR(this->_speed) + 2 * abs(work) / this->_inertia));
 
 		this->Init();
 	}

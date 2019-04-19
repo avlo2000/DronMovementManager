@@ -15,7 +15,14 @@ int main()
 		cout << ">>>";
 		getline(std::cin, input);
 
-		cmd.ExecuteAny(input);
+		try
+		{
+			cmd.ExecuteAny(input);
+		}
+		catch(exception)
+		{
+			cout << "Incorrect input" << endl << endl;
+		}
 	}
 	return 0;
 }

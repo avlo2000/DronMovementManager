@@ -18,7 +18,12 @@ namespace simulator {
 		};
 		virtual void Execute(string params) override
 		{
-			Satellite* sat = CreateSatellite(Split(params, ' ').at(4));
+			string name;
+			if (Split(params, ' ').size() == 3)
+				name = Split(params, ' ').at(2);
+			else
+				name = "sat" + to_string(this->global.NumOfSats() + 1);
+			Satellite* sat = CreateSatellite(name);
 			global.AddObject(*sat);
 
 			this->Log("\n...satellite with name " + sat->GetName() + " has been added to the simulation...\n");
@@ -26,7 +31,7 @@ namespace simulator {
 			Controller *cntr = new Controller();
 			cntr->RegisterObject(sat);
 			this->Log("\n...loading neural network for " + sat->GetName() + " satellite...\n");
-			cntr->LoadNetwork("parameters.txt"/*Split(params, ' ').at(5)*/);
+			cntr->LoadNetwork(sat->GetName() + "_nnbiases.txt");
 			global.AddController(cntr);
 			this->Log("\n...neural network has been successfully loaded...\n");
 		};

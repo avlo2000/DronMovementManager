@@ -52,7 +52,6 @@ namespace simulator
 		return this->_name;
 	}
 
-
 	void Object::Rotate(double time)
 	{
 
@@ -96,6 +95,13 @@ namespace simulator
 		return Vector3d(this->_rotationX.AngleSpeed, 
 			this->_rotationY.AngleSpeed, 
 			this->_rotationZ.AngleSpeed);
+	}
+
+	Vector3d Object::GetMomentum()
+	{
+		return Vector3d(_inertiaX * _rotationX.AngleSpeed, 
+			_inertiaY * _rotationY.AngleSpeed,
+			_inertiaZ * _rotationZ.AngleSpeed);
 	}
 
 	Point Object::GetPoint(int index, char type)

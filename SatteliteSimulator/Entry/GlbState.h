@@ -28,6 +28,8 @@ namespace simulator {
 		void Control(Vector3d& rots, string& satName);
 		void Simulate(double time, ostream& logger);
 		void SetTimeStep(double time);
+		int NumOfSats();
+		vector<string> Names();
 		Controller* GetController(string name);
 
 		GlbState(GlbState const&) = delete;

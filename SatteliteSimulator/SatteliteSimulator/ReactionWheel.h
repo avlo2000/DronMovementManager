@@ -22,6 +22,7 @@ namespace simulator {
 	public:
 		ReactionWheel(double mass, double x, double y, double z, Vector3d rotAxes, double radius);
 		double GetSpeed();
+		double GetEnergy();
 		void PowerToWheel(double work);//work - energy that the wheel receivs from engine
 		void SetFrictionCoef(double friction); 
 		void SetRotation(Vector3d axesVector, Point axesPoint, double rotSpeed);

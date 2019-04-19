@@ -24,6 +24,11 @@ namespace simulator {
 		return this->_speed;
 	}
 
+	double ReactionWheel::GetEnergy()
+	{
+		return this->_inertia * SQR(this->_speed) / 2;
+	}
+
 	void ReactionWheel::PowerToWheel(double work)
 	{
 		work = -work;

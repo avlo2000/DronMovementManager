@@ -19,6 +19,7 @@ namespace simulator
 		void Wobble();
 	public:
 		Satellite(string name, vector<MassPoint>&, vector<ReactionWheel>&);
+		vector<double> GetWheelsEnergies();
 		void EnergyToReactionWheel(int index, double work);//work - energy that the wheel receivs from engine
 		void SetWobbling(double wobbling);
 		void Rotate(double time) override;

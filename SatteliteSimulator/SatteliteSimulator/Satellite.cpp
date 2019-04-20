@@ -45,6 +45,14 @@ namespace simulator
 		Object::Init();
 	}
 
+	vector<double> Satellite::GetWheelsEnergies()
+	{
+		vector<double> res;
+		for (auto wheel : this->_reactionWheels)
+			res.push_back(wheel.GetEnergy());
+		return res;
+	}
+
 	void Satellite::EnergyToReactionWheel(int index, double work)
 	{
 		this->_reactionWheels[index].PowerToWheel(work);

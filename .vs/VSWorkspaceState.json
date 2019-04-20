@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\SatteliteSimulator",
+    "\\SatteliteSimulator\\Controller",
+    "\\SatteliteSimulator\\Controller\\Debug",
+    "\\SatteliteSimulator\\Debug",
     "\\SatteliteSimulator\\Entry"
   ],
-  "SelectedNode": "\\SatteliteSimulator\\SatelliteRotator.sln",
+  "SelectedNode": "\\SatteliteSimulator\\Controller\\NeuralConfig.h",
   "PreviewInSolutionExplorer": false
 }

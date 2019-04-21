@@ -1,4 +1,1 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SatteliteSimulator.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  ReactionWheel.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Simulation.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  SatteliteSimulator.vcxproj -> C:\Users\Pavlo\source\repos\SatelliteMovementManager\SatteliteSimulator\Debug\SatelliteSimulator.lib
+﻿  SatteliteSimulator.vcxproj -> C:\Users\SSJ\source\repos\SatelliteMovementManager2\SatteliteSimulator\Debug\SatelliteSimulator.lib

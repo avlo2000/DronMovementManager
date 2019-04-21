@@ -32,19 +32,47 @@ namespace simulator {
 	void ReactionWheel::PowerToWheel(double work)
 	{
 		work = -work;
+		auto kinetic = this->_inertia * SQR(this->_speed) / 2;
+		auto rest = kinetic - abs(work);
 
-		if(work > 0)
-			if (_speed < 0)
-				this->_speed = sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
+		if(work > 0 && _speed >= 0)
+		{ 
+			this->_speed = sqrt(abs(SQR(this->_speed) + 2 * abs(work) / this->_inertia));
+			this->Init();
+			return;
+		}
+		if (work < 0 && _speed > 0)
+			if (rest > 0)
+			{
+				this->_speed = sqrt(2 * abs(rest) / this->_inertia);
+				this->Init();
+				return;
+			}
 			else
-				this->_speed = sqrt(abs(SQR(this->_speed) + 2 * abs(work) / this->_inertia));
-		else
-			if (_speed > 0)
-				this->_speed = -sqrt(abs(SQR(this->_speed) - 2 * abs(work) / this->_inertia));
+			{
+				this->_speed = -sqrt(2 * abs(rest) / this->_inertia);
+				this->Init();
+				return;
+			}
+		if(work < 0 && _speed <= 0)
+		{ 
+			this->_speed = -sqrt(abs(SQR(this->_speed) + 2 * abs(work) / this->_inertia));
+			this->Init();
+			return;
+		}
+		if (work > 0 && _speed < 0)
+			if (rest > 0)
+			{ 
+				this->_speed = -sqrt(2 * abs(rest) / this->_inertia);
+				this->Init();
+				return;
+			}
 			else
-				this->_speed = -sqrt(abs(SQR(this->_speed) + 2 * abs(work) / this->_inertia));
-
-		this->Init();
+			{ 
+				this->_speed = sqrt(2 * abs(rest) / this->_inertia);
+				this->Init();
+				return;
+			}
 	}
 
 	void ReactionWheel::SetFrictionCoef(double friction)

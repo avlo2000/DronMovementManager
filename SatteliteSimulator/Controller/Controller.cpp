@@ -18,11 +18,8 @@ namespace simulator {
 			int numberOfWheels = _obj->GetNumOfWheels();
 			vector<double> currentEnergy = _obj->GetWheelsEnergies();
 			for (int i = 0; i < numberOfWheels; i++) {
-				cout << currentEnergy[i] << " ";
-				_obj->EnergyToReactionWheel(i,  predictionMatrix(i, 0) - currentEnergy[i]);
-			}
-			cout << endl;
-			
+				_obj->EnergyToReactionWheel(i,  predictionMatrix(i, 0) - currentEnergy[i] );
+			}	
 	}
 
 		void Controller::Train(string path) {

@@ -53,6 +53,10 @@ namespace simulator
 		return res;
 	}
 
+	double Satellite::GetWheelSpeed(int index) {
+		return this->_reactionWheels[index].GetSpeed();
+	}
+
 	void Satellite::EnergyToReactionWheel(int index, double work)
 	{
 		this->_reactionWheels[index].PowerToWheel(work);

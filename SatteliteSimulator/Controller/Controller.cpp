@@ -15,10 +15,10 @@ namespace simulator {
 
 			MatrixXd rotSpeedMatrix = rotSpeed;
 			MatrixXd predictionMatrix = this->_neuralNetwork.Predict(rotSpeedMatrix);
-			int numberOfWheels = _obj->GetNumOfWheels();
+			int numberOfWheels = this->_obj->GetNumOfWheels();
 			vector<double> currentEnergy = _obj->GetWheelsEnergies();
 			for (int i = 0; i < numberOfWheels; i++) {
-				_obj->EnergyToReactionWheel(i,  predictionMatrix(i, 0) - currentEnergy[i] );
+				_obj->EnergyToReactionWheel(i, predictionMatrix(i, 0) - currentEnergy[i] * (this->_obj->GetWheelSpeed(i) > 0 ? -1: 1));
 			}	
 	}
 

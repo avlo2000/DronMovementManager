@@ -1,8 +1,2 @@
-﻿  Satellite.cpp
-c:\users\ssj\source\repos\satellitemovementmanager2\sattelitesimulator\sattelitesimulator\satellite.cpp(12): warning C4018: '<': signed/unsigned mismatch
-c:\users\ssj\source\repos\satellitemovementmanager2\sattelitesimulator\sattelitesimulator\satellite.cpp(27): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
-          with
-          [
-              _Rep=std::chrono::system_clock::rep
-          ]
+﻿  ReactionWheel.cpp
   SatteliteSimulator.vcxproj -> C:\Users\SSJ\source\repos\SatelliteMovementManager2\SatteliteSimulator\Debug\SatelliteSimulator.lib
